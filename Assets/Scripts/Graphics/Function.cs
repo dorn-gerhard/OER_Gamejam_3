@@ -67,7 +67,7 @@ public class Function : MonoBehaviour
 
             float yValue = EvalFunction(startValue + i * increment, parameter1.value, parameter2.value);
             Vector3 temp_vector = new Vector3(startValue + i * increment, yValue, 0);
-            vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector;
+            vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
         }
         return vertexPositions;
     }
