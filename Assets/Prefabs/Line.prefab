@@ -54,7 +54,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a630977d94cfa41c49a492132e20f623, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,8 +85,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.15966415
+        time: 0.002231598
+        value: 0.049019605
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -98,18 +98,18 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 1, g: 0, b: 0, a: 0}
+      key2: {r: 1, g: 1, b: 1, a: 0}
+      key3: {r: 1, g: 1, b: 1, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
+      ctime0: 193
+      ctime1: 33346
+      ctime2: 65535
+      ctime3: 65535
       ctime4: 0
       ctime5: 0
       ctime6: 0
@@ -123,8 +123,8 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
+      m_ColorSpace: 0
+      m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
@@ -156,3 +156,5 @@ MonoBehaviour:
   projectile: {fileID: -1575443569173872989, guid: 6095f39520783e847ba60cefe51a71c6,
     type: 3}
   numberOfPoints: 200
+  par1: 0.5
+  par2: 1

@@ -16,6 +16,8 @@ public class Function : MonoBehaviour
     public Projectile projectile;
 
     public int numberOfPoints = 200;
+    public float par1 = 0.5f;
+    public float par2 = 1f;
     float startValue = -2.0f;
     float endValue = 2.0f;
     float angle = 0;
@@ -30,7 +32,6 @@ public class Function : MonoBehaviour
         parameter2.minValue = -10;
         parameter1.maxValue = 10;
         parameter2.maxValue = 10;
-
     }
 
     // Update is called once per frame
@@ -41,8 +42,8 @@ public class Function : MonoBehaviour
         {
             SpawnProjectile();
         }
-        angle = Math.Clamp(angle + Input.GetAxis("Mouse ScrollWheel") * 180.0f, -180.0f, 180.0f);
-
+        //angle = Math.Clamp(angle + Input.GetAxis("Mouse ScrollWheel") * 180.0f, -180.0f, 180.0f);
+        par1 = Math.Clamp(par1 + Input.GetAxis("Mouse ScrollWheel") * 5, -5, 5);
     }
 
     public void SpawnProjectile()
@@ -55,8 +56,7 @@ public class Function : MonoBehaviour
     }
 
     private Vector3[] GetPath(float startValue, float endValue)
-    {
-        
+    {        
         float increment = (endValue - startValue) / (numberOfPoints + 1);
         float[] parameterVals = new float[numberOfPoints];
         float[] functionVals = new float[numberOfPoints];
@@ -65,7 +65,7 @@ public class Function : MonoBehaviour
         for (int i = 0; i < numberOfPoints; i++)
         {
 
-            float yValue = EvalFunction(startValue + i * increment, parameter1.value, parameter2.value);
+            float yValue = EvalFunction(startValue + i * increment, par1, par2);
             Vector3 temp_vector = new Vector3(startValue + i * increment, yValue, 0);
             vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
         }
@@ -80,7 +80,6 @@ public class Function : MonoBehaviour
     }
     void DrawLine(int nPoints, Vector3[] vertexPositions)
     {
-
         lineRenderer.positionCount = nPoints;
         lineRenderer.SetPositions(vertexPositions);
     }
@@ -93,5 +92,15 @@ public class Function : MonoBehaviour
     public void UpdateAngle()
     {
         angle = rotationSlider.value;
+    }
+
+    public void UpdatePar1()
+    {
+        par1 = parameter1.value;
+    }
+
+    public void UpdatePar2()
+    {
+        par2 = parameter2.value;
     }
 }

@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator OpenGameOverScreen()
     {
         yield return new WaitForSeconds(1f);
+        Time.timeScale = 0f;
         WinLossScreen.gameObject.SetActive(true);
         WinLossScreenText.text = "Game Over!";
         yield return null;
@@ -157,6 +158,7 @@ public class PlayerController : MonoBehaviour
     {
         if (youWin) return;
         youWin = true;
+        Time.timeScale = 0f;
         WinLossScreen.gameObject.SetActive(true);
         WinLossScreenText.text = "You Win!";
     }
