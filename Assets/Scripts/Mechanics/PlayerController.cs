@@ -5,14 +5,13 @@ using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 using Platformer.Model;
 using Platformer.Core;
+using Platformer.Mechanics;
 
-namespace Platformer.Mechanics
-{
-    /// <summary>
-    /// This is the main class used to implement control of the player.
-    /// It is a superset of the AnimationController class, but is inlined to allow for any kind of customisation.
-    /// </summary>
-    public class PlayerController : KinematicObject
+/// <summary>
+/// This is the main class used to implement control of the player.
+/// It is a superset of the AnimationController class, but is inlined to allow for any kind of customisation.
+/// </summary>
+public class PlayerController : MonoBehaviour
     {
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
@@ -27,7 +26,7 @@ namespace Platformer.Mechanics
         /// </summary>
         public float jumpTakeOffSpeed = 7;
 
-        public JumpState jumpState = JumpState.Grounded;
+        //public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
         /*internal new*/ public Collider2D collider2d;
         /*internal new*/ public AudioSource audioSource;
@@ -40,10 +39,16 @@ namespace Platformer.Mechanics
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
+        public float moveSpeed = 5f;
+        public float runMultiplier = 1.5f;
+        float currentMoveSpeed;
+        public static PlayerController current;
+
         public Bounds Bounds => collider2d.bounds;
 
         void Awake()
         {
+            current = this;
             health = GetComponent<Health>();
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();
@@ -51,91 +56,74 @@ namespace Platformer.Mechanics
             animator = GetComponent<Animator>();
         }
 
-        protected override void Update()
+        void Update()
         {
-            if (controlEnabled)
+            currentMoveSpeed = moveSpeed;
+            if (Input.GetKey(KeyCode.LeftShift))
             {
-                move.x = Input.GetAxis("Horizontal");
-                if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
-                    jumpState = JumpState.PrepareToJump;
-                else if (Input.GetButtonUp("Jump"))
-                {
-                    stopJump = true;
-                    Schedule<PlayerStopJump>().player = this;
-                }
+                currentMoveSpeed = moveSpeed * runMultiplier;
             }
-            else
-            {
-                move.x = 0;
-            }
-            UpdateJumpState();
-            base.Update();
+
+            HandleMovement();
         }
 
-        void UpdateJumpState()
+        void HandleMovement()
         {
-            jump = false;
-            switch (jumpState)
+            Vector3 moveDirection = Vector3.zero;
+
+            // Check input and set movement direction
+            if (Input.GetKey(KeyCode.W))
             {
-                case JumpState.PrepareToJump:
-                    jumpState = JumpState.Jumping;
-                    jump = true;
-                    stopJump = false;
-                    break;
-                case JumpState.Jumping:
-                    if (!IsGrounded)
-                    {
-                        Schedule<PlayerJumped>().player = this;
-                        jumpState = JumpState.InFlight;
-                    }
-                    break;
-                case JumpState.InFlight:
-                    if (IsGrounded)
-                    {
-                        Schedule<PlayerLanded>().player = this;
-                        jumpState = JumpState.Landed;
-                    }
-                    break;
-                case JumpState.Landed:
-                    jumpState = JumpState.Grounded;
-                    break;
+                moveDirection += Vector3.up; // Move up
             }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                moveDirection += Vector3.right; // Move right
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                moveDirection += Vector3.down; // Move down
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                moveDirection += Vector3.left; // Move left
+            }
+
+            // Normalize the movement direction to ensure consistent speed in all directions
+            moveDirection.Normalize();
+
+            // Move the spaceship
+            transform.Translate(moveDirection * currentMoveSpeed * Time.deltaTime);
         }
+        //public enum JumpState
+        //{
+        //    Grounded,
+        //    PrepareToJump,
+        //    Jumping,
+        //    InFlight,
+        //    Landed
+        //}
 
-        protected override void ComputeVelocity()
+        public void Death()
         {
-            if (jump && IsGrounded)
+            print("player death");
+            var player = model.player;
+            if (player.health.IsAlive)
             {
-                velocity.y = jumpTakeOffSpeed * model.jumpModifier;
-                jump = false;
+                player.health.Die();
+                model.virtualCamera.m_Follow = null;
+                model.virtualCamera.m_LookAt = null;
+                // player.collider.enabled = false;
+                player.controlEnabled = false;
+
+                if (player.audioSource && player.ouchAudio)
+                    player.audioSource.PlayOneShot(player.ouchAudio);
+                player.animator.SetTrigger("hurt");
+                player.animator.SetBool("dead", true);
+                //Simulation.Schedule<PlayerSpawn>(2);
             }
-            else if (stopJump)
-            {
-                stopJump = false;
-                if (velocity.y > 0)
-                {
-                    velocity.y = velocity.y * model.jumpDeceleration;
-                }
-            }
-
-            if (move.x > 0.01f)
-                spriteRenderer.flipX = false;
-            else if (move.x < -0.01f)
-                spriteRenderer.flipX = true;
-
-            animator.SetBool("grounded", IsGrounded);
-            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-
-            targetVelocity = move * maxSpeed;
-        }
-
-        public enum JumpState
-        {
-            Grounded,
-            PrepareToJump,
-            Jumping,
-            InFlight,
-            Landed
         }
     }
-}
