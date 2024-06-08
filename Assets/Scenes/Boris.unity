@@ -403,6 +403,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6898459140354446716, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 6898459140354446716, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 33153
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898459140354446716, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898459140354446716, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898459140354446716, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898459140354446716, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -878,7 +908,7 @@ MonoBehaviour:
   EnemyType: {fileID: 8798086396517331790, guid: 023d2e54aedf079489d0ea4056a42a2f,
     type: 3}
   spawnPoint: {fileID: 1662577647}
-  spawnDelay: 3
+  spawnDelay: 10
   maxSpaceBetweenSpawns: 30
 --- !u!1 &561535343
 GameObject:
@@ -1158,7 +1188,7 @@ MonoBehaviour:
   EnemyType: {fileID: 9214857006262057764, guid: 21914d9b815a81d42b1edd80fecb0c3c,
     type: 3}
   spawnPoint: {fileID: 1662577647}
-  spawnDelay: 4
+  spawnDelay: 20
   maxSpaceBetweenSpawns: 25
 --- !u!1 &694008298
 GameObject:
@@ -1518,6 +1548,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.7999878
       objectReference: {fileID: 0}
+    - target: {fileID: 1654467897410503180, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1256044726}
+    - target: {fileID: 1654467897410503180, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdatePar1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654467897410503180, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Function, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654467897410503180, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1809349798541230176, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1673,6 +1723,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939802572585989232, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939802572585989232, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939802572585989232, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1256044726}
+    - target: {fileID: 5939802572585989232, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939802572585989232, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdatePar2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939802572585989232, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Function, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939802572585989232, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6265379945900097829, guid: 9b22d8aabf8f8c94d8a7d7ece66605c7,
         type: 3}
@@ -2057,6 +2142,18 @@ Transform:
   - {fileID: 1315571345}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1256044726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2847011818119308337, guid: decb02a2972effc4a830295acc8cf4f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 141706605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d55e587dc680e48b2d881307446e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1256044728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6216652115559427629, guid: decb02a2972effc4a830295acc8cf4f7,
@@ -2701,7 +2798,7 @@ MonoBehaviour:
   EnemyType: {fileID: 4212740586082493851, guid: 2ee6885a1c866ae468f3a8503df9c4ad,
     type: 3}
   spawnPoint: {fileID: 694008299}
-  spawnDelay: 1
+  spawnDelay: 5
   maxSpaceBetweenSpawns: 10
 --- !u!1 &1727556512
 GameObject:
