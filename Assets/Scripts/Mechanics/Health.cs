@@ -39,8 +39,14 @@ namespace Platformer.Mechanics
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
             if (currentHP == 0)
             {
-                var ev = Schedule<HealthIsZero>();
-                ev.health = this;
+                if (GetComponent<PlayerController>())
+                {
+                    GetComponent<PlayerController>().Death();
+                }
+                else if (GetComponent<EnemyController>())
+                {
+                    GetComponent<EnemyController>().Death();
+                }
             }
         }
 
