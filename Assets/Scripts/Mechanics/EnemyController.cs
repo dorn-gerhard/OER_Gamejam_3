@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
         isFrozen = true;
     }
 
-    public void UnFreeze()
+    public void Unfreeze()
     {
         isFrozen = false;
     }
@@ -57,8 +57,16 @@ public class EnemyController : MonoBehaviour
         var player = collision.gameObject.GetComponent<PlayerController>();
         if (player != null)
         {
-            player.ChangeConfidence(-confidenceReductionOnTouch);
-            Destroy(gameObject);
+            if (health.IsAlive)
+            {
+                player.ChangeConfidence(-confidenceReductionOnTouch);
+                Destroy(gameObject);
+            }
+            else
+            {
+                player.OnTokenCollision(1);
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -68,7 +76,7 @@ public class EnemyController : MonoBehaviour
         if (projectile != null)
         {
             health.Decrement();
-            Destroy(projectile.gameObject);
+            //Destroy(projectile.gameObject);
         }
     }
 
@@ -84,19 +92,20 @@ public class EnemyController : MonoBehaviour
         //if (enemy._audio && enemy.ouch)
         //    enemy._audio.PlayOneShot(enemy.ouch);
 
-        Instantiate(Token, transform.position, Quaternion.identity);
+        //Instantiate(Token, transform.position, Quaternion.identity);
 
         ////spawn death fx
         //Destroy(gameObject);
 
-        GetComponent<SpriteRenderer>().enabled = false;
-        var deathFX = Instantiate(DeathFX, transform.position, Quaternion.identity);
-        deathFX.transform.localScale *= 0.5f;
+        GetComponent<SpriteRenderer>().color = Color.green;
+        //var deathFX = Instantiate(DeathFX, transform.position, Quaternion.identity);
+        //deathFX.transform.localScale *= 0.5f;
     }
 
     void HandleMovement()   
     {
         //if (isFrozen) return;
+        if (!health.IsAlive) return;
 
         Vector3 moveDirection = PlayerController.current.transform.position - transform.position;
 

@@ -13,6 +13,13 @@ public class FreezeController : MonoBehaviour
 
     bool isFrozen = false;
 
+    public static FreezeController current;
+
+    private void Awake()
+    {
+        current = this;
+    }
+
     private void Start()
     {
         timeSinceUnfrozen = 0;  
@@ -20,6 +27,15 @@ public class FreezeController : MonoBehaviour
 
     void Update()
     {
+        //if (isFrozen)
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        Unfreeze();
+        //    }
+        //    return;
+        //}
+
         timeSinceUnfrozen += Time.deltaTime;
         if (timeSinceUnfrozen >= freezeDelay)
         {

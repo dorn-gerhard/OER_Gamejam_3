@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         isFrozen = true;
     }
 
-    public void UnFreeze()
+    public void Unfreeze()
     {
         isFrozen = false;
     }

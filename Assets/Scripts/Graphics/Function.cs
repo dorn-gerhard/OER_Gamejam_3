@@ -38,12 +38,19 @@ public class Function : MonoBehaviour
     void Update()
     {
         Draw();
-        if (Input.GetMouseButtonDown(0))
-        {
-            SpawnProjectile();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    SpawnProjectile();
+        //    FreezeController.current.Unfreeze();
+        //}
         //angle = Math.Clamp(angle + Input.GetAxis("Mouse ScrollWheel") * 180.0f, -180.0f, 180.0f);
         par1 = Math.Clamp(par1 + Input.GetAxis("Mouse ScrollWheel") * 5, -5, 5);
+    }
+
+    public void Shoot()
+    {
+        SpawnProjectile();
+        FreezeController.current.Unfreeze();
     }
 
     public void SpawnProjectile()
