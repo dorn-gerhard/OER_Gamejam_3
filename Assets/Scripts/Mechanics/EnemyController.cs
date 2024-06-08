@@ -29,9 +29,11 @@ public class EnemyController : MonoBehaviour
 
     public GameObject DeathFX;
 
+    public Health health;
 
     void Awake()
     {
+        health = GetComponent<Health>();
         control = GetComponent<AnimationController>();
         _collider = GetComponent<Collider2D>();
         _audio = GetComponent<AudioSource>();
@@ -45,6 +47,16 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeConfidence(-confidenceReductionOnTouch);
             Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        var projectile = collider.gameObject.GetComponent<Projectile>();
+        if (projectile != null)
+        {
+            health.Decrement();
+            Destroy(projectile.gameObject);
         }
     }
 
@@ -65,7 +77,8 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
 
         GetComponent<SpriteRenderer>().enabled = false;
-        Instantiate(DeathFX, transform.position, Quaternion.identity);
+        var deathFX = Instantiate(DeathFX, transform.position, Quaternion.identity);
+        deathFX.transform.localScale *= 0.5f;
     }
 
     void HandleMovement()   
