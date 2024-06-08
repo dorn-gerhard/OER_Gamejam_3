@@ -16,7 +16,7 @@ namespace Code
             var commonFactors = new List<int>(factors[0]);
             for (int fs = 1; fs < input.Length; ++fs)
             {
-                commonFactors = commonFactors.Union(factors[fs]).ToList();
+                commonFactors = commonFactors.Common(factors[fs]).Concat(commonFactors.Except(factors[fs]).Union(factors[fs].Except(commonFactors))).ToList();
             }
 
             if (commonFactors.Count == 0) return 1;
@@ -35,7 +35,7 @@ namespace Code
             var commonFactors = new List<int>(factors[0]);
             for (int fs = 1; fs < input.Length; ++fs)
             {
-                commonFactors = commonFactors.Intersect(factors[fs]).ToList();
+                commonFactors = commonFactors.Common(factors[fs]).ToList();
             }
 
             if (commonFactors.Count == 0) return 1;
@@ -45,6 +45,7 @@ namespace Code
         
         public static List<int> GetPrimeFactors(int number)
         {
+            if (number == 1) return new List<int>{1};
             var primes = new List<int>();
 
             for (int div = 2; div <= number; div++)

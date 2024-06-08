@@ -6,7 +6,7 @@ namespace Code
     {
         public int nominator;
         public int denominator;
-
+        
         public override string ToString()
         {
             var sign = nominator >= 0 ? "" : "-";
@@ -21,15 +21,18 @@ namespace Code
 
         public bool Equals(MathValue other)
         {
-            var me = Simplify();
-            other = other.Simplify();
-            return me.nominator == other.nominator && me.denominator == other.denominator;
+            var simplifiedMe = Simplify();
+            var simplifiedOther = other.Simplify();
+            return simplifiedMe.nominator == simplifiedOther.nominator && 
+                   simplifiedMe.denominator == simplifiedOther.denominator;
         }
 
         public MathValue Simplify()
         {
-            var lcm = MathUseCases.HighestCommonFactor(new int[] { GetNominatorRemainder(), denominator });
-            return ChangeDenominator(lcm);
+            var lcm = MathUseCases.HighestCommonFactor(new int[] { nominator, denominator });
+            if (lcm == 1) return this;
+            var changed = ChangeDenominator(denominator / lcm);
+            return changed;
         }
 
         public int GetNominatorRemainder()
@@ -44,10 +47,20 @@ namespace Code
 
         public MathValue ChangeDenominator(int newDenominator)
         {
-            var differenceFactor = (float)newDenominator / denominator;
+            int newNominator;
+            var whole = GetWhole();
+            var remainder = GetNominatorRemainder();
+            if (newDenominator < denominator)
+            {
+                newNominator = remainder / (denominator / newDenominator);
+            }
+            else
+            {
+                newNominator = remainder * (newDenominator / denominator);
+            }
             return new MathValue
             {
-                nominator = Mathf.RoundToInt(nominator * differenceFactor),
+                nominator = newNominator + whole * newDenominator,
                 denominator = newDenominator
             };
         }

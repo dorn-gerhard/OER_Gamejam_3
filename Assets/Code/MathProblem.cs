@@ -104,7 +104,7 @@ namespace Code
                     var termFactors = new List<List<int>>();
                     foreach (var term in terms)
                     {
-                        var factors = MathUseCases.GetPrimeFactors(term.denominator);
+                        var factors = MathUseCases.GetPrimeFactors(term.GetNominatorRemainder() == 0 ? term.Simplify().denominator : term.denominator);
                         termFactors.Add(factors);
                         var factorsString = $"{term}: ";
                         for (int f = 0; f < factors.Count; ++f)
@@ -119,7 +119,7 @@ namespace Code
                     var commonFactors = new List<int>(termFactors[0]);
                     for (int fs = 1; fs < termFactors.Count; ++fs)
                     {
-                        commonFactors = commonFactors.Union(termFactors[fs]).ToList();
+                        commonFactors = commonFactors.Common(termFactors[fs]).Concat(commonFactors.Except(termFactors[fs]).Union(termFactors[fs].Except(commonFactors))).ToList();
                     }
                     var commonFactorsString = "";
                     for (int f = 0; f < commonFactors.Count; ++f)
@@ -154,7 +154,11 @@ namespace Code
                         finalResultString += $"{term.ChangeDenominator(productOfCommonFactors)} + ";
                     }
                     finalResultString = finalResultString.TrimEnd(' ', '+');
-                    finalResultString += $" = {Evaluate()}";
+                    var evaluated = Evaluate();
+                    finalResultString += $" = {evaluated}";
+                    var simplified = evaluated.Simplify();
+                    if(simplified.denominator != evaluated.denominator)
+                        finalResultString += $" = {simplified}";
                     result.Add(finalResultString);
                     break;
             }
