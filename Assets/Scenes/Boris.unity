@@ -1955,7 +1955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1406627641
 Transform:
   m_ObjectHideFlags: 0
@@ -2265,7 +2265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyType: {fileID: 5100720714764887388, guid: db799aee55a01bf418b2b57f4b427f3e,
     type: 3}
-  spawnDelay: 2
+  spawnDelay: 1
   maxSpaceBetweenSpawns: 10
 --- !u!1 &1727556512
 GameObject:
