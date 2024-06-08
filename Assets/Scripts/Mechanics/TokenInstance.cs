@@ -53,10 +53,12 @@ namespace Platformer.Mechanics
             sprites = collectedAnimation;
             if (controller != null)
                 collected = true;
-            //send an event into the gameplay system to perform some behaviour.
-            var ev = Schedule<PlayerTokenCollision>();
-            ev.token = this;
-            ev.player = player;
+
+            AudioSource.PlayClipAtPoint(tokenCollectAudio, transform.position);
+
+            player.OnTokenCollision(1);
+
+            Destroy(gameObject);
         }
     }
 }
