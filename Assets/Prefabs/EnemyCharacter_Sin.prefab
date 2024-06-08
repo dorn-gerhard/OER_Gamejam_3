@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2390306670377344045, guid: db799aee55a01bf418b2b57f4b427f3e,
+        type: 3}
+      propertyPath: confidenceReductionOnTouch
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4661254515494777926, guid: db799aee55a01bf418b2b57f4b427f3e,
         type: 3}
       propertyPath: m_Sprite
