@@ -81,7 +81,7 @@ public class Function : MonoBehaviour
 
             float yValue = EvalFunction(startValue + i * increment, par1, par2);
             Vector3 temp_vector = new Vector3(startValue + i * increment, yValue, 0);
-            vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector;
+            vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
         }
         return vertexPositions;
     }
@@ -90,13 +90,14 @@ public class Function : MonoBehaviour
     {
         Vector3[] vertexPositions = GetPath(startValue, endValue);
         Vector3[] shiftedVertexPositions = new Vector3[vertexPositions.Length];
-        addCollider(vertexPositions.ToList());
+        
         // add shift to real coordinates
         for (int i = 0; i < numberOfPoints; i++)
         {
-            shiftedVertexPositions[i] = vertexPositions[i] + transform.parent.transform.position;
+            shiftedVertexPositions[i] = vertexPositions[i] - transform.parent.transform.position;
         }
-        DrawLine(numberOfPoints, shiftedVertexPositions);
+        DrawLine(numberOfPoints, vertexPositions);
+        addCollider(shiftedVertexPositions.ToList());
     }
 
     void addCollider(List<Vector3> colliderPoints)
