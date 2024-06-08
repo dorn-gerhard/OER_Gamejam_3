@@ -10,6 +10,7 @@ using System.Linq;
 public class Function : MonoBehaviour
 {
     public LineRenderer lineRenderer;
+    EdgeCollider2D edge;
     public Slider rotationSlider;
     public Slider parameter1;
     public Slider parameter2;
@@ -25,24 +26,29 @@ public class Function : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        edge = GetComponent<EdgeCollider2D>();
         rotationSlider.minValue = -180;
         rotationSlider.maxValue = 180;
 
+        // phase
         parameter1.minValue = -10;
-        parameter2.minValue = -10;
         parameter1.maxValue = 10;
-        parameter2.maxValue = 10;
+        // amplitude
+        parameter2.minValue = -2;
+        parameter2.maxValue = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
         Draw();
+
         //if (Input.GetMouseButtonDown(0))
         //{
         //    SpawnProjectile();
         //    FreezeController.current.Unfreeze();
         //}
+
         //angle = Math.Clamp(angle + Input.GetAxis("Mouse ScrollWheel") * 180.0f, -180.0f, 180.0f);
         par1 = Math.Clamp(par1 + Input.GetAxis("Mouse ScrollWheel") * 5, -5, 5);
     }
@@ -60,6 +66,7 @@ public class Function : MonoBehaviour
 
         List<Vector3> vec2 = GetPath(0.0f, startValue).ToList();
         Instantiate(projectile).InitializePath(vec2);
+       
     }
 
     private Vector3[] GetPath(float startValue, float endValue)
@@ -74,7 +81,7 @@ public class Function : MonoBehaviour
 
             float yValue = EvalFunction(startValue + i * increment, par1, par2);
             Vector3 temp_vector = new Vector3(startValue + i * increment, yValue, 0);
-            vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
+            vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector;
         }
         return vertexPositions;
     }
@@ -82,9 +89,33 @@ public class Function : MonoBehaviour
     public void Draw()
     {
         Vector3[] vertexPositions = GetPath(startValue, endValue);
-        DrawLine(numberOfPoints, vertexPositions);
-
+        Vector3[] shiftedVertexPositions = new Vector3[vertexPositions.Length];
+        addCollider(vertexPositions.ToList());
+        // add shift to real coordinates
+        for (int i = 0; i < numberOfPoints; i++)
+        {
+            shiftedVertexPositions[i] = vertexPositions[i] + transform.parent.transform.position;
+        }
+        DrawLine(numberOfPoints, shiftedVertexPositions);
     }
+
+    void addCollider(List<Vector3> colliderPoints)
+    {
+        List<Vector2> colliderPoints2 = new List<Vector2>();
+
+        for (int i = 0; i < colliderPoints.Count; i++)
+        {
+            colliderPoints2.Add(new Vector3(colliderPoints[i].x, colliderPoints[i].y, 0f));
+        }
+
+        for (int i = colliderPoints.Count - 1; i > 0; i--)
+        {
+            colliderPoints2.Add(new Vector3(colliderPoints[i].x, colliderPoints[i].y, 0f));
+        }
+
+        edge.points = colliderPoints2.ToArray();
+    }
+
     void DrawLine(int nPoints, Vector3[] vertexPositions)
     {
         lineRenderer.positionCount = nPoints;
@@ -109,5 +140,9 @@ public class Function : MonoBehaviour
     public void UpdatePar2()
     {
         par2 = parameter2.value;
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Name of collider: " + collision.name);
     }
 }
