@@ -71,6 +71,17 @@ public class PlayerController : MonoBehaviour
         //animator = GetComponent<Animator>();
     }
 
+    bool isFrozen = false;
+    public void Freeze()
+    {
+        isFrozen = true;
+    }
+
+    public void UnFreeze()
+    {
+        isFrozen = false;
+    }
+
     private void UpdateConfidenceUI()
     {
         confidenceImage.fillAmount = currentConfidence / 100;
@@ -90,6 +101,8 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
+        //if (!isFrozen) return;
+
         Vector3 moveDirection = Vector3.zero;
 
         // Check input and set movement direction

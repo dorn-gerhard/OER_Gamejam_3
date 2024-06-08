@@ -40,6 +40,18 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+
+    bool isFrozen = false;
+    public void Freeze()
+    {
+        isFrozen = true;
+    }
+
+    public void UnFreeze()
+    {
+        isFrozen = false;
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         var player = collision.gameObject.GetComponent<PlayerController>();
@@ -73,8 +85,9 @@ public class EnemyController : MonoBehaviour
         //    enemy._audio.PlayOneShot(enemy.ouch);
 
         Instantiate(Token, transform.position, Quaternion.identity);
-        //spawn death fx
-        Destroy(gameObject);
+
+        ////spawn death fx
+        //Destroy(gameObject);
 
         GetComponent<SpriteRenderer>().enabled = false;
         var deathFX = Instantiate(DeathFX, transform.position, Quaternion.identity);
@@ -83,6 +96,8 @@ public class EnemyController : MonoBehaviour
 
     void HandleMovement()   
     {
+        //if (isFrozen) return;
+
         Vector3 moveDirection = PlayerController.current.transform.position - transform.position;
 
         // Normalize the movement direction to ensure consistent speed in all directions
