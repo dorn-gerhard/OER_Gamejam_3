@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject EnemyType;
+    public Transform spawnPoint;
     public float spawnDelay = 1;
     public float maxSpaceBetweenSpawns = 25;
 
@@ -23,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
         {
             timeSinceLastSpawn = 0;
             var enemy = Instantiate(EnemyType, transform);
-            enemy.transform.position += new Vector3(Random.Range(-maxSpaceBetweenSpawns, maxSpaceBetweenSpawns), Random.Range(-maxSpaceBetweenSpawns, maxSpaceBetweenSpawns));
+            enemy.transform.position = spawnPoint.transform.position + new Vector3(Random.Range(-maxSpaceBetweenSpawns, maxSpaceBetweenSpawns), Random.Range(-maxSpaceBetweenSpawns, maxSpaceBetweenSpawns));
         }
     }
 }

@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
     public GameObject WinLossScreen;
     public TMP_Text WinLossScreenText;
 
+    public GameObject DeathFX;
+
     void Awake()
     {
         current = this;
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
     {
         if (gameOver) return;
         gameOver = true;
+        enabled = false;
         
         StartCoroutine(OpenGameOverScreen());
     }
@@ -173,6 +176,9 @@ public class PlayerController : MonoBehaviour
                 audioSource.PlayOneShot(ouchAudio);
 
             GameOver();
+
+            GetComponent<SpriteRenderer>().enabled = false;
+            Instantiate(DeathFX, transform.position, Quaternion.identity);
 
             //animator.SetTrigger("hurt");
             //animator.SetBool("dead", true);

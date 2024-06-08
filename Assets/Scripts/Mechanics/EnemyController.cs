@@ -27,6 +27,9 @@ public class EnemyController : MonoBehaviour
 
     public float confidenceReductionOnTouch = 1;
 
+    public GameObject DeathFX;
+
+
     void Awake()
     {
         control = GetComponent<AnimationController>();
@@ -60,6 +63,9 @@ public class EnemyController : MonoBehaviour
         Instantiate(Token, transform.position, Quaternion.identity);
         //spawn death fx
         Destroy(gameObject);
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        Instantiate(DeathFX, transform.position, Quaternion.identity);
     }
 
     void HandleMovement()   
