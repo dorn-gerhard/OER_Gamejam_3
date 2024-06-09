@@ -66,6 +66,8 @@ namespace Code
                 animator.Play("Run");
             else
                 animator.Play("Idle");
+
+            _model.playerY = bottomOfCharacter.position.y;
         }
     }
 }

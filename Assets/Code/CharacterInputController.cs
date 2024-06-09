@@ -1,3 +1,4 @@
+using System;
 using R3;
 using R3.Triggers;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Code
     {
         [Inject] private Model _model;
 
+        [SerializeField] private bool useKeyboard;
         [SerializeField] private Button leftButton;
         [SerializeField] private Button rightButton;
         [SerializeField] private Button jumpButton;
@@ -110,6 +112,24 @@ namespace Code
                 _model.isJumping = v.up;
                 _model.isDropping.Value = v.down;
             }).AddTo(this);
+        }
+
+        private void Update()
+        {
+            if (useKeyboard)
+            {
+                _input.horizontal = new PlayerHorizontalInput
+                {
+                    left = Input.GetKey(KeyCode.A),
+                    right = Input.GetKey(KeyCode.D)
+                };
+            
+                _input.vertical = new PlayerVerticalInput()
+                {
+                    up = Input.GetKey(KeyCode.W),
+                    down = Input.GetKey(KeyCode.S)
+                };
+            }
         }
     }
 }

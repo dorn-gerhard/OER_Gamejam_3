@@ -26,5 +26,11 @@ namespace Code
                 _isDeactivated = false;
             }).AddTo(this);
         }
+
+        private void Update()
+        {
+            if (_isDeactivated) return;
+            _collider.enabled = _model.playerY >= transform.position.y;
+        }
     }
 }

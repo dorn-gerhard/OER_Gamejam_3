@@ -12,6 +12,7 @@ public class Model
     public ReactiveProperty<bool> isDropping;
     public float platformDeactivationDuration;
     public float dropSpeed;
+    public float playerY;
 
     public Model()
     {
@@ -19,9 +20,9 @@ public class Model
         minJumpHeight = 2;
         maxJumpHeight = 8;
         horizontalSpeed = 12;
-        platformDeactivationDuration = 0.5f;
+        platformDeactivationDuration = 0.2f;
         isDropping = new();
-        dropSpeed = 25F;
-        jumpSpeed = 25F;
+        dropSpeed = 22F;
+        jumpSpeed = 20F;
     }
 }
