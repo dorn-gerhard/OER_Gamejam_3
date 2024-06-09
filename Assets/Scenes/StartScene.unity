@@ -72181,9 +72181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: b7f741588644cd64bbee6387cb54a96d, type: 3}
-  - {fileID: 8300000, guid: dd6057fd464f77942a0bf39c54651b32, type: 3}
-  - {fileID: 8300000, guid: 67975c08d56ceb147bad38572d805aa8, type: 3}
+  - {fileID: 8300000, guid: 2db6d14ba93a60f4eb7c1f940af8969c, type: 3}
+  - {fileID: 8300000, guid: b4cf0adf4e9808c4292f47ab26355f65, type: 3}
   cameraSpeed: 0.01
 --- !u!82 &2113319745
 AudioSource:

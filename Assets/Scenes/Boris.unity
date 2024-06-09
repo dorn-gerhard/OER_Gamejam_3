@@ -399,33 +399,39 @@ PrefabInstance:
     - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.32
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.32
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.32
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.32
+      value: -0.054
       objectReference: {fileID: 0}
     - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.98
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4576148584230786630, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0235edbe33aa0804882ff2a9c9fca3a8,
+        type: 3}
     - target: {fileID: 5412344670162738350, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_Name
@@ -1047,6 +1053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736700993279003158, guid: ef2a5fddee5c91e4f853f6b59c2f80f8,
+        type: 3}
+      propertyPath: orthographic size
+      value: 6.51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2358,7 +2369,7 @@ PrefabInstance:
     - target: {fileID: 1052249892879861926, guid: 1525bec6ffcc6984aaad41839a963dd4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1550098465593940397, guid: 1525bec6ffcc6984aaad41839a963dd4,
         type: 3}
@@ -2633,6 +2644,11 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 7937988650417516634}
+    - target: {fileID: 7074883675099159048, guid: 6553ea679c092c7498f7cd12dfaf4a20,
+        type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6.51
+      objectReference: {fileID: 0}
     - target: {fileID: 8906913982528298670, guid: 6553ea679c092c7498f7cd12dfaf4a20,
         type: 3}
       propertyPath: m_LocalPosition.x
