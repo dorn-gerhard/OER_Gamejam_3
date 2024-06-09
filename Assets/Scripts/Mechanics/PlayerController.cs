@@ -209,6 +209,8 @@ public class PlayerController : MonoBehaviour
     {
         weaponsCompleted++;
 
+        PlaySound("levelup");
+
         lvlUpUI.gameObject.SetActive(true);
         lvlUpUI.Setup(currentWeaponIndex + 1);
 
@@ -223,6 +225,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnSwitchWeapon(int index)
     {
+        PlaySound("switch2");
+
         if (weaponsCompleted >= numberOfWeapons) return;
 
         //switch weapon UI
@@ -299,11 +303,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnTokenCollision(float amount)
     {
+        PlaySound("collectable");
         ChangeConfidence(amount);
     }
 
     public void UnfreezeMovementAfterDelay()
     {
+        PlaySound("sfx_lazer1");
+
         StartCoroutine(UnfreezeMovementAfterDelayCoroutine());
     }
 
@@ -316,5 +323,25 @@ public class PlayerController : MonoBehaviour
         Unfreeze();
 
         yield return null;
+    }
+
+    [Serializable]
+    public struct SoundFX
+    {
+        public string clipName;
+        public AudioClip audioClip;
+    }
+
+    public List<SoundFX> SoundFXes = new List<SoundFX>();
+
+    public void PlaySound(string clipName)
+    {
+        foreach (SoundFX soundFX in SoundFXes)
+        {
+            if (soundFX.clipName == clipName)
+            {
+                audioSource.PlayOneShot(soundFX.audioClip);
+            }
+        }
     }
 }

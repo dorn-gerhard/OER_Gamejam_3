@@ -37,6 +37,10 @@ namespace Platformer.Mechanics
         public void Decrement()
         {
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+            if (GetComponent<PlayerController>())
+            {
+                GetComponent<PlayerController>().PlaySound("ouch");
+            }
             if (currentHP == 0)
             {
                 if (GetComponent<PlayerController>())
