@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 using System.Linq;
+using TMPro;
 
 public class Function : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Function : MonoBehaviour
     public Slider rotationSlider;
     public Slider parameter1;
     public Slider parameter2;
+    public TMP_Text FunctionDynamicLabel;
+    public TMP_Text LabelParameter1;
+    public TMP_Text LabelParameter2;
+
     public Projectile projectile;
     public int WeaponID = 0;
 
@@ -51,7 +56,7 @@ public class Function : MonoBehaviour
         //}
 
         //angle = Math.Clamp(angle + Input.GetAxis("Mouse ScrollWheel") * 180.0f, -180.0f, 180.0f);
-        par1 = Math.Clamp(par1 + Input.GetAxis("Mouse ScrollWheel") * 5, -5, 5);
+        par1 = Math.Clamp(par1 + Input.GetAxis("Mouse ScrollWheel") * 2, -5, 5);
     }
 
     public void Shoot()
@@ -92,6 +97,7 @@ public class Function : MonoBehaviour
             {
                 yValue = EvalFunction(startValue + i * increment, par1, par2);
             }
+            GetDynamicFunctionString();
             Vector3 temp_vector = new Vector3(startValue + i * increment, yValue, 0);
             vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
         }
@@ -172,6 +178,31 @@ public class Function : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyController>().health.Decrement();
         }
+    }
+
+    public string GetDynamicFunctionString()
+    {
+        string functionString = "";
+        if (WeaponID == 0)
+        {
+            functionString = "f(x) = " + Math.Round(par1, 2) + " * x + " + Math.Round(par2, 2);
+            LabelParameter1.text = "k: " + Math.Round(par1, 2);
+            LabelParameter2.text = "d: " + Math.Round(par2, 2);
+        }
+        else if (WeaponID == 1)
+        {
+            functionString = "f(x) = " + Math.Round(par1, 2) + " * x² + " + Math.Round(par2, 2);
+            LabelParameter1.text = "a: " + Math.Round(par1, 2);
+            LabelParameter2.text = "b: " + Math.Round(par2, 2);
+        }
+        else if (WeaponID == 2)
+        {
+            functionString = "f(x) = " + Math.Round(par1, 2) + " * sin(" + Math.Round(par2, 2) + " * x)";
+            LabelParameter1.text = "a: " + Math.Round(par1, 2);
+            LabelParameter2.text = "b: " + Math.Round(par2, 2);
+        }
+        FunctionDynamicLabel.text = functionString;
+        return functionString;
     }
 
     public string GetFunctionString()

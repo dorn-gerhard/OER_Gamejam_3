@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6216652115559427629
 Transform:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.20481205, y: -0.04539752, z: 90}
   m_LocalScale: {x: 1.4925373, y: 1.4925373, z: 1.4925373}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4198181210275108663}
   m_Father: {fileID: 0}
@@ -155,6 +155,7 @@ MonoBehaviour:
   rotationSlider: {fileID: 0}
   parameter1: {fileID: 0}
   parameter2: {fileID: 0}
+  FunctionDynamicLabel: {fileID: 0}
   projectile: {fileID: -1575443569173872989, guid: 6095f39520783e847ba60cefe51a71c6,
     type: 3}
   WeaponID: 0
@@ -228,9 +229,9 @@ Transform:
   m_GameObject: {fileID: 8958718889224894586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.83781, y: 1.06463, z: 0}
-  m_LocalScale: {x: 0.315, y: 0.315, z: 0.315}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 3.32, y: 1.98, z: 0}
+  m_LocalScale: {x: 0.32, y: 0.32, z: 0.32}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6216652115559427629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
