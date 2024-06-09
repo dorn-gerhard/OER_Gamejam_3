@@ -21,7 +21,7 @@ namespace Code
             {
                 canEncounter = false;
                 await _diContainer.InstantiatePrefab(encounterPrefab, _screenRoot.transform)
-                    .GetComponent<EnemyEncounterController>().Init();
+                    .GetComponent<EnemyEncounterTestController>().Init();
                 canEncounter = true;
             }
 

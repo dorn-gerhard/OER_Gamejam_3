@@ -29,6 +29,12 @@ namespace Code
                         denominator = commonDenominator;
                         break;
                     case MathDifficulties.MedDifficulty:
+                        var thisDenominator = Random.Range(minNumber, maxNumber + 1);
+                        if(nominatorLargerThanDenominator)
+                            nominator = Random.Range(thisDenominator, maxNumber + 1);
+                        else
+                            nominator = Random.Range(minNumber, thisDenominator);
+                        denominator = thisDenominator;
                         break;
                     case MathDifficulties.BossDifficulty:
                         break;

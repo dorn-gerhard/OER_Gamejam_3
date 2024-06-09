@@ -112,6 +112,14 @@ namespace Code
                 _model.isJumping = v.up;
                 _model.isDropping.Value = v.down;
             }).AddTo(this);
+
+            Observable.EveryValueChanged(_model, model => model.inputEnabled).Subscribe(inputOn =>
+            {
+                jumpButton.gameObject.SetActive(inputOn);
+                dropDownButton.gameObject.SetActive(inputOn);
+                leftButton.gameObject.SetActive(inputOn);
+                rightButton.gameObject.SetActive(inputOn);
+            }).AddTo(this);
         }
 
         private void Update()

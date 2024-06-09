@@ -13,16 +13,18 @@ public class Model
     public float platformDeactivationDuration;
     public float dropSpeed;
     public float playerY;
+    public bool inputEnabled;
 
     public Model()
     {
+        inputEnabled = true;
         health = 5;
         minJumpHeight = 2;
         maxJumpHeight = 8;
-        horizontalSpeed = 12;
+        horizontalSpeed = 6;
         platformDeactivationDuration = 0.2f;
         isDropping = new();
-        dropSpeed = 22F;
-        jumpSpeed = 20F;
+        dropSpeed = 11F;
+        jumpSpeed = 10F;
     }
 }
