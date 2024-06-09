@@ -288,6 +288,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2847011818119308337, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
+      propertyPath: par2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847011818119308337, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
       propertyPath: parameter1
       value: 
       objectReference: {fileID: 1131622574}
@@ -411,6 +416,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: decb02a2972effc4a830295acc8cf4f7, type: 3}
+--- !u!1 &246957257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246957258}
+  - component: {fileID: 246957259}
+  m_Layer: 0
+  m_Name: EnemySpawner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246957258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246957257}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.62, y: -7.09, z: -0.039468184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425041786}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &246957259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246957257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d342448c86580c43bf3aaf769a0817e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyType: {fileID: 8798086396517331790, guid: 023d2e54aedf079489d0ea4056a42a2f,
+    type: 3}
+  spawnPoint: {fileID: 1170605602}
+  spawnDelay: 0.7
+  maxSpaceBetweenSpawns: 10
 --- !u!1 &287406122
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +954,7 @@ Transform:
   m_Children:
   - {fileID: 1663930209}
   - {fileID: 477454998}
+  - {fileID: 246957258}
   - {fileID: 658011943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -961,8 +1016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyType: {fileID: 8798086396517331790, guid: 023d2e54aedf079489d0ea4056a42a2f,
     type: 3}
-  spawnPoint: {fileID: 1662577647}
-  spawnDelay: 2
+  spawnPoint: {fileID: 2044030083}
+  spawnDelay: 0.5
   maxSpaceBetweenSpawns: 30
 --- !u!1 &624742365
 GameObject:
@@ -1049,7 +1104,7 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 1662577647}
   spawnDelay: 4
-  maxSpaceBetweenSpawns: 25
+  maxSpaceBetweenSpawns: 5
 --- !u!1001 &673065267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3970,6 +4025,16 @@ PrefabInstance:
       objectReference: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
     - target: {fileID: 4296565125424215966, guid: 221854b4d7010ff4c82d0b336a54533d,
         type: 3}
+      propertyPath: confidences
+      value: 
+      objectReference: {fileID: 1320800459}
+    - target: {fileID: 4296565125424215966, guid: 221854b4d7010ff4c82d0b336a54533d,
+        type: 3}
+      propertyPath: lineFunction
+      value: 
+      objectReference: {fileID: 1256044726}
+    - target: {fileID: 4296565125424215966, guid: 221854b4d7010ff4c82d0b336a54533d,
+        type: 3}
       propertyPath: WinLossScreen
       value: 
       objectReference: {fileID: 2021362367}
@@ -3983,6 +4048,11 @@ PrefabInstance:
       propertyPath: WinLossScreenText
       value: 
       objectReference: {fileID: 1286531251}
+    - target: {fileID: 4296565125424215966, guid: 221854b4d7010ff4c82d0b336a54533d,
+        type: 3}
+      propertyPath: currentConfidence
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4296565125424215966, guid: 221854b4d7010ff4c82d0b336a54533d,
         type: 3}
       propertyPath: confidenceProcentage

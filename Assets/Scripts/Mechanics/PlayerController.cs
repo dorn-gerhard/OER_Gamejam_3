@@ -16,6 +16,8 @@ using System;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    public Function lineFunction;
+    public GameObject confidences;
     public AudioClip jumpAudio;
     public AudioClip respawnAudio;
     public AudioClip ouchAudio;
@@ -59,16 +61,24 @@ public class PlayerController : MonoBehaviour
 
     public GameObject DeathFX;
 
+    int currentWeaponIndex = 0;
+
     void Awake()
     {
         current = this;
         currentConfidence = startConfidence;
-        UpdateConfidenceUI();
+        currentConfidenceUI = confidences.transform.GetChild(0).GetComponent<Confidence>();
+        currentConfidenceUI.UpdateConfidenceUI();
         health = GetComponent<Health>();
         audioSource = GetComponent<AudioSource>();
         collider2d = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         //animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        OnSwitchWeapon(0);
     }
 
     bool isFrozen = false;
@@ -82,11 +92,7 @@ public class PlayerController : MonoBehaviour
         isFrozen = false;
     }
 
-    private void UpdateConfidenceUI()
-    {
-        confidenceImage.fillAmount = currentConfidence / 100;
-        confidenceProcentage.text = currentConfidence.ToString("F0") + "%";
-    }
+
 
     void Update()
     {
@@ -136,15 +142,16 @@ public class PlayerController : MonoBehaviour
     public void ChangeConfidence(float Amount)
     {
         currentConfidence = Mathf.Clamp(currentConfidence + Amount, 0, 100);
-        UpdateConfidenceUI();
+        currentConfidenceUI.confidence = currentConfidence;
+        currentConfidenceUI.UpdateConfidenceUI();
 
         if (currentConfidence <= 0)
         {
-            Death();
+            //Death();
         }
         else if (currentConfidence >= 100)
         {
-            Win();
+            OnUnlockNextWeapon();
             // TODO get update
             // change weapon on click?
         }
@@ -160,18 +167,34 @@ public class PlayerController : MonoBehaviour
         if (weaponsCompleted >= numberOfWeapons)
         {
             Win();
+            return;
         }
+
+        OnSwitchWeapon(currentWeaponIndex + 1);
     }
 
-    public void OnSwitchWeapon()
+    public void OnSwitchWeapon(int index)
     {
         //switch weapon UI
+        currentWeaponIndex = index;
 
         // switch current confidence
+        lineFunction.WeaponID = index;
+
+        foreach (Transform child in confidences.transform)
+        {
+            child.gameObject.GetComponent<CanvasGroup>().alpha = 0.3f;
+        }
+
+        currentConfidenceUI = confidences.transform.GetChild(index).GetComponent<Confidence>();
+        currentConfidenceUI.gameObject.GetComponent<CanvasGroup>().alpha = 1f;
+        currentConfidence = currentConfidenceUI.confidence;
     }
 
     bool gameOver = false;
     bool youWin = false;
+    private Confidence currentConfidenceUI;
+
     private void GameOver()
     {
         if (gameOver) return;

@@ -218,6 +218,7 @@ MonoBehaviour:
   ouch: {fileID: 0}
   Token: {fileID: 4019668278944627829, guid: c54304580c164584fb9b100287b5d63e, type: 3}
   moveSpeed: 1.5
+  confidenceGain: 5
   confidenceReductionOnTouch: 1
   DeathFX: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   health: {fileID: 3032825500096207229}

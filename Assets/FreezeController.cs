@@ -41,6 +41,19 @@ public class FreezeController : MonoBehaviour
         {
             Freeze();
         }
+
+        if (PlayerController.current.currentConfidence > 25)
+        {
+
+        }
+        else if (PlayerController.current.currentConfidence > 50)
+        {
+
+        }
+        else if (PlayerController.current.currentConfidence > 75)
+        {
+
+        }
     }
 
     public void Freeze()

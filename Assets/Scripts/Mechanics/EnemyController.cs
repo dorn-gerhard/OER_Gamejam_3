@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     public float moveSpeed = 2.5f;
+    public float confidenceGain = 5f;
     float currentMoveSpeed;
 
     public Bounds Bounds => _collider.bounds;
@@ -64,7 +65,7 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                player.OnTokenCollision(1);
+                player.OnTokenCollision(confidenceGain);
                 Destroy(gameObject);
             }
         }
