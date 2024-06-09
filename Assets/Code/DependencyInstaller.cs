@@ -9,6 +9,7 @@ namespace Code
         
         public override void InstallBindings()
         {
+            Container.Bind<Model>().AsSingle();
             Container.BindInstance(screenRoot).AsSingle();
         }
     }
