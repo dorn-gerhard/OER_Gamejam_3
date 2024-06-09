@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
 
     public float lazerShootDuration = 0.5f;
 
+    public LvlUpUI lvlUpUI;
+
     void Awake()
     {
         current = this;
@@ -110,11 +112,18 @@ public class PlayerController : MonoBehaviour
         //    currentMoveSpeed = moveSpeed * runMultiplier;
         //}
 
-        if (youWin)
+
+
+        if (Input.GetKey(KeyCode.Space))
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (youWin)
             {
+                Time.timeScale = 1f;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else
+            {
+                lineFunction.Shoot();
             }
         }
 
@@ -197,6 +206,8 @@ public class PlayerController : MonoBehaviour
     public void OnUnlockNextWeapon()
     {
         weaponsCompleted++;
+
+        lvlUpUI.Setup(currentWeaponIndex + 1);
 
         //if (weaponsCompleted >= numberOfWeapons)
         //{

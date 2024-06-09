@@ -191,4 +191,22 @@ public class Function : MonoBehaviour
         }
         return functionString;
     }
+
+    public string GetFunctionString(int index)
+    {
+        string functionString = "";
+        if (index == 0)
+        {
+            functionString = "k * x + d";
+        }
+        else if (index == 1)
+        {
+            functionString = "a * x^2 + b";
+        }
+        else if (index == 2)
+        {
+            functionString = "a * sin(b * x)";
+        }
+        return functionString;
+    }
 }

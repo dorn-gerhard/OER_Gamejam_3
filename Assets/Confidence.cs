@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Confidence : MonoBehaviour
 {
-    public Image functionExampleImage;
+    public Sprite functionExampleImage;
     public float confidence = 0;
     public Image fillBar;
     public TMP_Text procentageText;
