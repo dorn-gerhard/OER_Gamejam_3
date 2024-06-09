@@ -110,10 +110,14 @@ public class PlayerController : MonoBehaviour
         //    currentMoveSpeed = moveSpeed * runMultiplier;
         //}
 
-        if (Input.GetKey(KeyCode.Space))
+        if (youWin)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (Input.GetKey(KeyCode.Space))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
+
 
         HandleMovement();
     }
