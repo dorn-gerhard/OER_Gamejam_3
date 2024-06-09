@@ -9,7 +9,6 @@ using Platformer.Mechanics;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This is the main class used to implement control of the player.
@@ -64,8 +63,6 @@ public class PlayerController : MonoBehaviour
 
     int currentWeaponIndex = 0;
 
-    public float lazerShootDuration = 0.5f;
-
     void Awake()
     {
         current = this;
@@ -81,11 +78,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        foreach (Transform child in confidences.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-
         OnSwitchWeapon(0);
     }
 
@@ -109,11 +101,6 @@ public class PlayerController : MonoBehaviour
         //{
         //    currentMoveSpeed = moveSpeed * runMultiplier;
         //}
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
 
         HandleMovement();
     }
@@ -164,24 +151,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (currentConfidence >= 100)
         {
-            bool allConfidencesFull = true;
-            foreach (Confidence confidence in confidences.GetComponentsInChildren<Confidence>(true))
-            {
-                if (confidence.confidence < 90)
-                {
-                    allConfidencesFull = false;
-                    break;
-                }
-            }
-
-            if (allConfidencesFull)
-            {
-                Win();
-            }
-            else
-            {
-                OnUnlockNextWeapon();
-            }
+            OnUnlockNextWeapon();
             // TODO get update
             // change weapon on click?
         }
@@ -194,11 +164,11 @@ public class PlayerController : MonoBehaviour
     {
         weaponsCompleted++;
 
-        //if (weaponsCompleted >= numberOfWeapons)
-        //{
-        //    Win();
-        //    return;
-        //}
+        if (weaponsCompleted >= numberOfWeapons)
+        {
+            Win();
+            return;
+        }
 
         OnSwitchWeapon(currentWeaponIndex + 1);
     }
@@ -217,7 +187,6 @@ public class PlayerController : MonoBehaviour
         }
 
         currentConfidenceUI = confidences.transform.GetChild(index).GetComponent<Confidence>();
-        currentConfidenceUI.gameObject.SetActive(true);
         currentConfidenceUI.gameObject.GetComponent<CanvasGroup>().alpha = 1f;
         currentConfidence = currentConfidenceUI.confidence;
     }
@@ -280,15 +249,5 @@ public class PlayerController : MonoBehaviour
     public void OnTokenCollision(float amount)
     {
         ChangeConfidence(amount);
-    }
-
-    public void UnfreezeMovementAfterDelay()
-    {
-        StartCoroutine(UnfreezeMovementAfterDelayCoroutine());
-    }
-
-    IEnumerator UnfreezeMovementAfterDelayCoroutine()
-    {
-        yield return null;
     }
 }
