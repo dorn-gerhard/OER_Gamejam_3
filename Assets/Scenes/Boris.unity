@@ -306,6 +306,36 @@ PrefabInstance:
       propertyPath: rotationSlider
       value: 
       objectReference: {fileID: 979952067}
+    - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198181210275108663, guid: decb02a2972effc4a830295acc8cf4f7,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5412344670162738350, guid: decb02a2972effc4a830295acc8cf4f7,
         type: 3}
       propertyPath: m_Name
