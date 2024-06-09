@@ -62,7 +62,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject DeathFX;
 
-    int currentWeaponIndex = 0;
+    int currentWeaponIndex = -1;
+    public int weaponsCompleted = -1;
+    public int numberOfWeapons = 3;
 
     public float lazerShootDuration = 0.5f;
 
@@ -88,7 +90,8 @@ public class PlayerController : MonoBehaviour
             child.gameObject.SetActive(false);
         }
 
-        OnSwitchWeapon(0);
+        OnUnlockNextWeapon();
+        //OnSwitchWeapon(0);
     }
 
     bool isMovementFrozen = false;
@@ -200,13 +203,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public int weaponsCompleted = 0;
-    public int numberOfWeapons = 3;
+
 
     public void OnUnlockNextWeapon()
     {
         weaponsCompleted++;
 
+        lvlUpUI.gameObject.SetActive(true);
         lvlUpUI.Setup(currentWeaponIndex + 1);
 
         //if (weaponsCompleted >= numberOfWeapons)

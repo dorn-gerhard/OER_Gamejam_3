@@ -207,20 +207,7 @@ public class Function : MonoBehaviour
 
     public string GetFunctionString()
     {
-        string functionString = "";
-        if (WeaponID == 0)
-        {
-            functionString = "k * x + d";
-        }
-        else if (WeaponID == 1)
-        {
-            functionString = "a * x^2 + b";
-        }
-        else if (WeaponID == 2)
-        {
-            functionString = "a * sin(b * x)";
-        }
-        return functionString;
+        return GetFunctionString(WeaponID);
     }
 
     public string GetFunctionString(int index)
