@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 84430188}
   - component: {fileID: 84430187}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2358,7 +2358,7 @@ PrefabInstance:
     - target: {fileID: 1052249892879861926, guid: 1525bec6ffcc6984aaad41839a963dd4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1550098465593940397, guid: 1525bec6ffcc6984aaad41839a963dd4,
         type: 3}
@@ -2414,6 +2414,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 636.6556
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639963503598233979, guid: 1525bec6ffcc6984aaad41839a963dd4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639963503598233979, guid: 1525bec6ffcc6984aaad41839a963dd4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639963503598233979, guid: 1525bec6ffcc6984aaad41839a963dd4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 4639963503598233979, guid: 1525bec6ffcc6984aaad41839a963dd4,
         type: 3}
@@ -2474,6 +2489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639963503598233979, guid: 1525bec6ffcc6984aaad41839a963dd4,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5842713758979603730, guid: 1525bec6ffcc6984aaad41839a963dd4,
         type: 3}
@@ -4704,7 +4724,7 @@ PrefabInstance:
         type: 3}
       propertyPath: SoundFXes.Array.data[3].audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 913c9bdc9a8bc6a45ba83956ee53ff44, type: 3}
+      objectReference: {fileID: 8300000, guid: df46960ee53741347b2c3729ddab7010, type: 3}
     - target: {fileID: 4296565125424215966, guid: 221854b4d7010ff4c82d0b336a54533d,
         type: 3}
       propertyPath: SoundFXes.Array.data[4].audioClip

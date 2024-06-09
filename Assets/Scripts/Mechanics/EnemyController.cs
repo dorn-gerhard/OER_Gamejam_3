@@ -61,6 +61,7 @@ public class EnemyController : MonoBehaviour
             if (health.IsAlive)
             {
                 player.ChangeConfidence(-confidenceReductionOnTouch);
+                player.PlaySound("ouch");
                 Destroy(gameObject);
             }
             else
