@@ -89,18 +89,18 @@ public class PlayerController : MonoBehaviour
         OnSwitchWeapon(0);
     }
 
-    bool isFrozen = false;
+    bool isMovementFrozen = false;
     public void Freeze()
     {
-        isFrozen = true;
+        isMovementFrozen = true;
+        GetComponentInChildren<Function>(true).gameObject.SetActive(true);
     }
 
     public void Unfreeze()
     {
-        isFrozen = false;
+        isMovementFrozen = false;
+        GetComponentInChildren<Function>(true).gameObject.SetActive(false);
     }
-
-
 
     void Update()
     {
@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
-        //if (!isFrozen) return;
+        if (isMovementFrozen) return;
 
         Vector3 moveDirection = Vector3.zero;
 
@@ -289,6 +289,12 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator UnfreezeMovementAfterDelayCoroutine()
     {
+        isMovementFrozen = true;
+
+        yield return new WaitForSeconds(lazerShootDuration);
+
+        Unfreeze();
+
         yield return null;
     }
 }

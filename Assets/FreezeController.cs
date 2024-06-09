@@ -62,7 +62,7 @@ public class FreezeController : MonoBehaviour
 
         Time.timeScale = 0;
 
-        //PlayerController.current.Freeze();
+        PlayerController.current.Freeze();
         //foreach (EnemyController enemy in FindObjectsOfType<EnemyController>())
         //{
         //    enemy.Freeze();
