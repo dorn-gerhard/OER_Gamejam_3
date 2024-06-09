@@ -63,6 +63,46 @@ public class Function : MonoBehaviour
     {
         FreezeController.current.Unfreeze();
         PlayerController.current.UnfreezeMovementAfterDelay();
+        StartCoroutine(LaserBeam(1.0f));
+
+    }
+
+    AnimationCurve GetLaserCurve(float t, float width)
+    {
+        float height = 0.3f;
+        if ( t < width/2)
+            return new AnimationCurve(new Keyframe(0, 0),
+                                      new Keyframe(0.5f - t - width/2, 0.05f),
+                                      new Keyframe(0.5f - t, height),
+                                      new Keyframe(0.5f, height * (width/2 - t)/width/2),
+                                      new Keyframe(0.5f + t , height),
+                                      new Keyframe(0.5f + t + width/2, 0.05f),
+                                      new Keyframe(1, 0));
+        else
+            return new AnimationCurve(new Keyframe(0, 0),
+                                      new Keyframe(0.5f - t - width / 2, 0.05f),
+                                      new Keyframe(0.5f - t, height),
+                                      new Keyframe(0.5f - t + width / 2, 0.05f),
+                                      new Keyframe(0.5f + t - width / 2, 0.05f),
+                                      new Keyframe(0.5f + t, height),
+                                      new Keyframe(0.5f + t + width / 2, 0.05f),
+                                      new Keyframe(1, 0));
+
+    }
+
+
+
+    private IEnumerator LaserBeam(float waitTime)
+    {
+        int k = 0;
+        int k_final = 40;
+        while (k < k_final)
+        {
+            yield return new WaitForSeconds(0.004f);
+            print("WaitAndPrint " + Time.time);
+            lineRenderer.widthCurve = GetLaserCurve((float)k / (2.0f + (float)k_final), 0.2f);
+            k++;
+        }
     }
 
     public void SpawnProjectile()
@@ -115,6 +155,7 @@ public class Function : MonoBehaviour
             shiftedVertexPositions[i] = vertexPositions[i] - transform.parent.transform.position;
         }
         DrawLine(numberOfPoints, vertexPositions);
+        lineRenderer.widthCurve =  new AnimationCurve(new Keyframe(0, 0.1f), new Keyframe(1, 0.1f));
         addCollider(shiftedVertexPositions.ToList());
     }
 
