@@ -207,6 +207,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnUnlockNextWeapon()
     {
+        if (weaponsCompleted >= numberOfWeapons)
+        {
+            return;
+        }
+
         weaponsCompleted++;
 
         PlaySound("levelup");
@@ -214,11 +219,6 @@ public class PlayerController : MonoBehaviour
         lvlUpUI.gameObject.SetActive(true);
         lvlUpUI.Setup(currentWeaponIndex + 1);
 
-        //if (weaponsCompleted >= numberOfWeapons)
-        //{
-        //    Win();
-        //    return;
-        //}
 
         OnSwitchWeapon(currentWeaponIndex + 1);
     }
@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
     {
         PlaySound("switch2");
 
-        if (weaponsCompleted >= numberOfWeapons) return;
+        //if (weaponsCompleted >= numberOfWeapons) return;
 
         //switch weapon UI
         currentWeaponIndex = index;
