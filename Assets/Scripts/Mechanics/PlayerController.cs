@@ -205,6 +205,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnSwitchWeapon(int index)
     {
+        if (weaponsCompleted >= numberOfWeapons) return;
+
         //switch weapon UI
         currentWeaponIndex = index;
 
