@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://di3ikqqiyff4x"]
+
+[ext_resource type="Script" path="res://scripts/triangle_angle_2d.gd" id="1_w37vp"]
+
+[node name="Angle2D" type="Node2D"]
+script = ExtResource("1_w37vp")
+
+[node name="Selection" type="StaticBody2D" parent="."]

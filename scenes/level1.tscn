@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://duckuk8h1lwv4"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_c3ssa"]
+[ext_resource type="PackedScene" uid="uid://c4ah5udylimr8" path="res://scenes/point.tscn" id="1_ppba2"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="2_3fgod"]
+[ext_resource type="Script" path="res://scripts/angle.gd" id="3_jvylr"]
+
+[sub_resource type="Resource" id="Resource_e33lc"]
+script = ExtResource("2_3fgod")
+point_a = NodePath("A")
+point_b = NodePath("B")
+known = true
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_5hjva"]
+script = ExtResource("2_3fgod")
+point_a = NodePath("B")
+point_b = NodePath("C")
+known = false
+target = true
+parallel = false
+
+[sub_resource type="Resource" id="Resource_gsley"]
+script = ExtResource("2_3fgod")
+point_a = NodePath("C")
+point_b = NodePath("A")
+known = true
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_f3daf"]
+script = ExtResource("3_jvylr")
+point_a = NodePath("B")
+point_b = NodePath("A")
+point_c = NodePath("C")
+known = true
+target = false
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_c3ssa")
+lines = Array[ExtResource("2_3fgod")]([SubResource("Resource_e33lc"), SubResource("Resource_5hjva"), SubResource("Resource_gsley")])
+angles = Array[ExtResource("3_jvylr")]([SubResource("Resource_f3daf")])
+
+[node name="A" parent="." instance=ExtResource("1_ppba2")]
+offset_left = 360.0
+offset_top = 360.0
+offset_right = 360.0
+offset_bottom = 360.0
+metadata/_edit_use_anchors_ = true
+
+[node name="B" parent="." instance=ExtResource("1_ppba2")]
+offset_left = 360.0
+offset_top = 195.0
+offset_right = 360.0
+offset_bottom = 195.0
+metadata/_edit_use_anchors_ = true
+
+[node name="C" parent="." instance=ExtResource("1_ppba2")]
+offset_left = 120.0
+offset_top = 360.0
+offset_right = 120.0
+offset_bottom = 360.0
+metadata/_edit_use_anchors_ = true

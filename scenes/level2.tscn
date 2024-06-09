@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://dg0n7cfk4nvtc"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_bsj3o"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="2_xxpub"]
+[ext_resource type="Script" path="res://scripts/angle.gd" id="3_hhrak"]
+[ext_resource type="PackedScene" uid="uid://c4ah5udylimr8" path="res://scenes/point.tscn" id="4_ydhg7"]
+
+[sub_resource type="Resource" id="Resource_lyrvh"]
+script = ExtResource("2_xxpub")
+point_a = NodePath("A")
+point_b = NodePath("B")
+known = false
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_y0rgc"]
+script = ExtResource("2_xxpub")
+point_a = NodePath("C")
+point_b = NodePath("B")
+known = true
+target = false
+parallel = true
+
+[sub_resource type="Resource" id="Resource_qq1jn"]
+script = ExtResource("2_xxpub")
+point_a = NodePath("C")
+point_b = NodePath("A")
+known = false
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_i1mms"]
+script = ExtResource("2_xxpub")
+point_a = NodePath("C")
+point_b = NodePath("D")
+known = false
+target = true
+parallel = false
+
+[sub_resource type="Resource" id="Resource_ywrd0"]
+script = ExtResource("2_xxpub")
+point_a = NodePath("A")
+point_b = NodePath("D")
+known = true
+target = false
+parallel = true
+
+[sub_resource type="Resource" id="Resource_km2h4"]
+script = ExtResource("3_hhrak")
+point_a = NodePath("A")
+point_b = NodePath("C")
+point_c = NodePath("B")
+known = true
+target = false
+
+[sub_resource type="Resource" id="Resource_nfach"]
+resource_local_to_scene = true
+script = ExtResource("3_hhrak")
+point_a = NodePath("C")
+point_b = NodePath("B")
+point_c = NodePath("A")
+known = true
+target = false
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_bsj3o")
+lines = Array[ExtResource("2_xxpub")]([SubResource("Resource_lyrvh"), SubResource("Resource_y0rgc"), SubResource("Resource_qq1jn"), SubResource("Resource_i1mms"), SubResource("Resource_ywrd0")])
+angles = Array[ExtResource("3_hhrak")]([SubResource("Resource_km2h4"), SubResource("Resource_nfach")])
+
+[node name="A" parent="." instance=ExtResource("4_ydhg7")]
+offset_left = 360.0
+offset_top = 240.0
+offset_right = 360.0
+offset_bottom = 240.0
+metadata/_edit_use_anchors_ = true
+
+[node name="B" parent="." instance=ExtResource("4_ydhg7")]
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 120.0
+metadata/_edit_use_anchors_ = true
+
+[node name="C" parent="." instance=ExtResource("4_ydhg7")]
+offset_left = 120.0
+offset_top = 240.0
+offset_right = 120.0
+offset_bottom = 240.0
+metadata/_edit_use_anchors_ = true
+
+[node name="D" parent="." instance=ExtResource("4_ydhg7")]
+offset_left = 360.0
+offset_top = 480.0
+offset_right = 360.0
+offset_bottom = 480.0
+metadata/_edit_use_anchors_ = true

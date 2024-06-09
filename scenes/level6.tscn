@@ -1,0 +1,142 @@
+[gd_scene load_steps=17 format=3 uid="uid://dlanj3u6pipof"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_35iyw"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="2_0s1sj"]
+[ext_resource type="Script" path="res://scripts/angle.gd" id="3_6g0he"]
+[ext_resource type="PackedScene" uid="uid://c4ah5udylimr8" path="res://scenes/point.tscn" id="4_ndqq0"]
+
+[sub_resource type="Resource" id="Resource_e33lc"]
+script = ExtResource("2_0s1sj")
+point_a = NodePath("A")
+point_b = NodePath("B")
+known = true
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_5hjva"]
+script = ExtResource("2_0s1sj")
+point_a = NodePath("B")
+point_b = NodePath("C")
+known = false
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_7w7oe"]
+script = ExtResource("2_0s1sj")
+point_a = NodePath("C")
+point_b = NodePath("A")
+known = false
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_crmmg"]
+script = ExtResource("2_0s1sj")
+point_a = NodePath("B")
+point_b = NodePath("D")
+known = false
+target = false
+parallel = true
+
+[sub_resource type="Resource" id="Resource_5cuyv"]
+script = ExtResource("2_0s1sj")
+point_a = NodePath("C")
+point_b = NodePath("F")
+known = false
+target = false
+parallel = true
+
+[sub_resource type="Resource" id="Resource_0va4v"]
+script = ExtResource("2_0s1sj")
+point_a = NodePath("F")
+point_b = NodePath("D")
+known = false
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_qcsrs"]
+script = ExtResource("2_0s1sj")
+point_a = NodePath("C")
+point_b = NodePath("D")
+known = true
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_5ahtg"]
+script = ExtResource("3_6g0he")
+point_a = NodePath("B")
+point_b = NodePath("A")
+point_c = NodePath("C")
+known = true
+target = false
+
+[sub_resource type="Resource" id="Resource_d11ki"]
+script = ExtResource("3_6g0he")
+point_a = NodePath("D")
+point_b = NodePath("B")
+point_c = NodePath("C")
+known = true
+target = false
+
+[sub_resource type="Resource" id="Resource_oyqml"]
+script = ExtResource("3_6g0he")
+point_a = NodePath("C")
+point_b = NodePath("F")
+point_c = NodePath("D")
+known = true
+target = false
+
+[sub_resource type="Resource" id="Resource_dmsc4"]
+script = ExtResource("3_6g0he")
+point_a = NodePath("A")
+point_b = NodePath("C")
+point_c = NodePath("B")
+known = true
+target = false
+
+[sub_resource type="Resource" id="Resource_ngjle"]
+script = ExtResource("3_6g0he")
+point_a = NodePath("F")
+point_b = NodePath("D")
+point_c = NodePath("C")
+known = false
+target = true
+
+[node name="Level6" type="Node2D"]
+script = ExtResource("1_35iyw")
+lines = Array[ExtResource("2_0s1sj")]([SubResource("Resource_e33lc"), SubResource("Resource_5hjva"), SubResource("Resource_7w7oe"), SubResource("Resource_crmmg"), SubResource("Resource_5cuyv"), SubResource("Resource_0va4v"), SubResource("Resource_qcsrs")])
+angles = Array[ExtResource("3_6g0he")]([SubResource("Resource_5ahtg"), SubResource("Resource_d11ki"), SubResource("Resource_oyqml"), SubResource("Resource_dmsc4"), SubResource("Resource_ngjle")])
+
+[node name="A" parent="." instance=ExtResource("4_ndqq0")]
+offset_left = 80.0
+offset_top = 448.0
+offset_right = 80.0
+offset_bottom = 448.0
+metadata/_edit_use_anchors_ = true
+
+[node name="B" parent="." instance=ExtResource("4_ndqq0")]
+offset_left = 208.0
+offset_top = 448.0
+offset_right = 208.0
+offset_bottom = 448.0
+metadata/_edit_use_anchors_ = true
+
+[node name="C" parent="." instance=ExtResource("4_ndqq0")]
+offset_left = 80.0
+offset_top = 256.0
+offset_right = 80.0
+offset_bottom = 256.0
+metadata/_edit_use_anchors_ = true
+
+[node name="D" parent="." instance=ExtResource("4_ndqq0")]
+offset_left = 424.0
+offset_top = 304.0
+offset_right = 424.0
+offset_bottom = 304.0
+metadata/_edit_use_anchors_ = true
+
+[node name="F" parent="." instance=ExtResource("4_ndqq0")]
+offset_left = 296.0
+offset_top = 112.0
+offset_right = 296.0
+offset_bottom = 112.0
+metadata/_edit_use_anchors_ = true

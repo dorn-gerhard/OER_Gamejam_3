@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://c0o7s28lr1o5a"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_uwp2e"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="2_wq1vy"]
+[ext_resource type="Script" path="res://scripts/angle.gd" id="3_btxdg"]
+[ext_resource type="PackedScene" uid="uid://c4ah5udylimr8" path="res://scenes/point.tscn" id="4_gevbb"]
+
+[sub_resource type="Resource" id="Resource_e33lc"]
+script = ExtResource("2_wq1vy")
+point_a = NodePath("A")
+point_b = NodePath("B")
+known = false
+target = true
+parallel = false
+
+[sub_resource type="Resource" id="Resource_5hjva"]
+script = ExtResource("2_wq1vy")
+point_a = NodePath("B")
+point_b = NodePath("C")
+known = false
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_7w7oe"]
+script = ExtResource("2_wq1vy")
+point_a = NodePath("C")
+point_b = NodePath("A")
+known = true
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_crmmg"]
+script = ExtResource("2_wq1vy")
+point_a = NodePath("B")
+point_b = NodePath("D")
+known = true
+target = false
+parallel = false
+
+[sub_resource type="Resource" id="Resource_5cuyv"]
+script = ExtResource("2_wq1vy")
+point_a = NodePath("C")
+point_b = NodePath("D")
+known = false
+target = true
+parallel = false
+
+[sub_resource type="Resource" id="Resource_5ahtg"]
+script = ExtResource("3_btxdg")
+point_a = NodePath("A")
+point_b = NodePath("C")
+point_c = NodePath("B")
+known = true
+target = false
+
+[sub_resource type="Resource" id="Resource_fg5xy"]
+script = ExtResource("3_btxdg")
+point_a = NodePath("D")
+point_b = NodePath("B")
+point_c = NodePath("C")
+known = true
+target = false
+
+[sub_resource type="Resource" id="Resource_nva4o"]
+script = ExtResource("3_btxdg")
+point_a = NodePath("C")
+point_b = NodePath("D")
+point_c = NodePath("B")
+known = false
+target = true
+
+[sub_resource type="Resource" id="Resource_dwf3b"]
+script = ExtResource("3_btxdg")
+point_a = NodePath("B")
+point_b = NodePath("A")
+point_c = NodePath("C")
+known = true
+target = false
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_uwp2e")
+lines = Array[ExtResource("2_wq1vy")]([SubResource("Resource_e33lc"), SubResource("Resource_5hjva"), SubResource("Resource_7w7oe"), SubResource("Resource_crmmg"), SubResource("Resource_5cuyv")])
+angles = Array[ExtResource("3_btxdg")]([SubResource("Resource_5ahtg"), SubResource("Resource_fg5xy"), SubResource("Resource_nva4o"), SubResource("Resource_dwf3b")])
+
+[node name="A" parent="." instance=ExtResource("4_gevbb")]
+offset_left = 96.0
+offset_top = 416.0
+offset_right = 96.0
+offset_bottom = 416.0
+metadata/_edit_use_anchors_ = true
+
+[node name="B" parent="." instance=ExtResource("4_gevbb")]
+offset_left = 256.0
+offset_top = 416.0
+offset_right = 256.0
+offset_bottom = 416.0
+metadata/_edit_use_anchors_ = true
+
+[node name="C" parent="." instance=ExtResource("4_gevbb")]
+offset_left = 96.0
+offset_top = 256.0
+offset_right = 96.0
+offset_bottom = 256.0
+metadata/_edit_use_anchors_ = true
+
+[node name="D" parent="." instance=ExtResource("4_gevbb")]
+offset_left = 416.0
+offset_top = 256.0
+offset_right = 416.0
+offset_bottom = 256.0
+metadata/_edit_use_anchors_ = true

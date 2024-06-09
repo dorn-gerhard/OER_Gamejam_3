@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvdpor3f0vbvg"]
+
+[ext_resource type="Script" path="res://scripts/triangle_line_2d.gd" id="1_7jgda"]
+
+[node name="Line2D" type="Line2D"]
+script = ExtResource("1_7jgda")
