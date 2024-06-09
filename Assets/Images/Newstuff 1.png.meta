@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Newstuff 1_0
+      name: ButtonImage
       rect:
         serializedVersion: 2
         x: 10
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Newstuff 1_3
+      name: FrameImage
       rect:
         serializedVersion: 2
         x: 10
@@ -182,7 +182,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 5, y: 5, z: 5, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -288,10 +288,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Newstuff 1_0: -1555409213
+      ButtonImage: -1555409213
+      FrameImage: 1986447670
       Newstuff 1_1: -553880291
       Newstuff 1_2: -874895979
-      Newstuff 1_3: 1986447670
       Newstuff 1_4: -520997230
       Newstuff 1_5: -139138352
       Newstuff 1_6: 1284488459

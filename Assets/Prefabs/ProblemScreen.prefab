@@ -610,6 +610,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6887008588309735502}
     m_Modifications:
+    - target: {fileID: 1547963602692558586, guid: f88f623071b7d473faab25f790baab7c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1555409213, guid: 2b4bf0f18b5d54459ad92b248471f7b4, type: 3}
+    - target: {fileID: 1547963602692558586, guid: f88f623071b7d473faab25f790baab7c, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2509264069056712432, guid: f88f623071b7d473faab25f790baab7c, type: 3}
       propertyPath: m_Name
       value: OkButton
