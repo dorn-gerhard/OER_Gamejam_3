@@ -25,8 +25,8 @@ public class Function : MonoBehaviour
     public int numberOfPoints = 200;
     public float par1 = 0.5f;
     public float par2 = 1f;
-    float startValue = -2.0f;
-    float endValue = 2.0f;
+    public float startValue = -5.0f;
+    public float endValue = 5.0f;
     float angle = 0;
 
     // Start is called before the first frame update
