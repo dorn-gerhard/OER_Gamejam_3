@@ -41,7 +41,7 @@ namespace Platformer.Mechanics
             {
                 if (GetComponent<PlayerController>())
                 {
-                    GetComponent<PlayerController>().Death();
+                    //GetComponent<PlayerController>().Death();
                 }
                 else if (GetComponent<EnemyController>())
                 {

@@ -91,10 +91,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentMoveSpeed = moveSpeed;
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            currentMoveSpeed = moveSpeed * runMultiplier;
-        }
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    currentMoveSpeed = moveSpeed * runMultiplier;
+        //}
 
         HandleMovement();
     }
@@ -145,7 +145,29 @@ public class PlayerController : MonoBehaviour
         else if (currentConfidence >= 100)
         {
             Win();
+            // TODO get update
+            // change weapon on click?
         }
+    }
+
+    public int weaponsCompleted = 0;
+    public int numberOfWeapons = 3;
+
+    public void OnUnlockNextWeapon()
+    {
+        weaponsCompleted++;
+
+        if (weaponsCompleted >= numberOfWeapons)
+        {
+            Win();
+        }
+    }
+
+    public void OnSwitchWeapon()
+    {
+        //switch weapon UI
+
+        // switch current confidence
     }
 
     bool gameOver = false;
