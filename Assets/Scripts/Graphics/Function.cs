@@ -15,6 +15,7 @@ public class Function : MonoBehaviour
     public Slider parameter1;
     public Slider parameter2;
     public Projectile projectile;
+    public int WeaponID = 0;
 
     public int numberOfPoints = 200;
     public float par1 = 0.5f;
@@ -78,8 +79,19 @@ public class Function : MonoBehaviour
 
         for (int i = 0; i < numberOfPoints; i++)
         {
-
-            float yValue = EvalFunction(startValue + i * increment, par1, par2);
+            float yValue = 0;
+            if (WeaponID == 0)
+            {
+                yValue = EvalFunctionLinear(startValue + i * increment, par1, par2);
+            }
+            else if (WeaponID == 1)
+            {
+                yValue = EvalFunctionQuadratic(startValue + i * increment, par1, par2);
+            }
+            else if (WeaponID == 2)
+            {
+                yValue = EvalFunction(startValue + i * increment, par1, par2);
+            }
             Vector3 temp_vector = new Vector3(startValue + i * increment, yValue, 0);
             vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
         }
@@ -121,6 +133,17 @@ public class Function : MonoBehaviour
     {
         lineRenderer.positionCount = nPoints;
         lineRenderer.SetPositions(vertexPositions);
+    }
+
+
+    float EvalFunctionLinear(float x, float param1, float param2)
+    {
+        return param1 * x + param2;
+    }
+
+    float EvalFunctionQuadratic(float x, float param1, float param2)
+    {
+        return param1 * x * x + param2;
     }
 
     float EvalFunction(float x, float param1, float param2)
