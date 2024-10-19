@@ -12,7 +12,7 @@ namespace Platformer.Gameplay
     public class PlayerTokenCollision : Simulation.Event<PlayerTokenCollision>
     {
         public PlayerController player;
-        public TokenInstance token;
+        public Pickup_Token token;
 
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 

@@ -14,14 +14,14 @@ namespace Platformer.Mechanics
         [Tooltip("Frames per second at which tokens are animated.")]
         public float frameRate = 12;
         [Tooltip("Instances of tokens which are animated. If empty, token instances are found and loaded at runtime.")]
-        public TokenInstance[] tokens;
+        public Pickup_Token[] tokens;
 
         float nextFrameTime = 0;
 
         [ContextMenu("Find All Tokens")]
         void FindAllTokensInScene()
         {
-            tokens = UnityEngine.Object.FindObjectsOfType<TokenInstance>();
+            tokens = UnityEngine.Object.FindObjectsOfType<Pickup_Token>();
         }
 
         void Awake()

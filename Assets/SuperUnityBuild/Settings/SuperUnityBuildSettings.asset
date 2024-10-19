@@ -1,0 +1,541 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7243382729796350716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef8779c491f5c644abe870eaa46e52c, type: 3}
+  m_Name: iOS
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions: []
+  architectures:
+  - target: 9
+    name: iOS
+    enabled: 1
+    binaryNameFormat: 
+  variants:
+  - variantName: Device Type
+    selectedIndex: 0
+    values:
+    - iPhoneOnly
+    - iPadOnly
+    - iPhoneAndiPad
+    isFlag: 0
+  - variantName: Target SDK
+    selectedIndex: 0
+    values:
+    - Device SDK
+    - Simulator SDK
+    isFlag: 0
+  - variantName: Build Type
+    selectedIndex: 0
+    values:
+    - Debug
+    - Release
+    isFlag: 0
+  scriptingBackends:
+  - scriptingImplementation: 1
+    name: IL2CPP
+    enabled: 1
+  platformName: iOS
+  targetGroup: 4
+--- !u!114 &-5721701077449063969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89df54eebccd0704dbbe96915fbb9a6f, type: 3}
+  m_Name: Android
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions: []
+  architectures:
+  - target: 13
+    name: Android
+    enabled: 1
+    binaryNameFormat: '{0}.apk'
+  variants:
+  - variantName: Device Type
+    selectedIndex: 0
+    values:
+    - ARMv7
+    - ARM64
+    - X86
+    - X86_64
+    isFlag: 1
+  - variantName: Texture Compression
+    selectedIndex: 0
+    values:
+    - Generic
+    - DXT
+    - PVRTC
+    - ATC
+    - ETC
+    - ETC2
+    - ASTC
+    isFlag: 0
+  - variantName: Build Output
+    selectedIndex: 0
+    values:
+    - App
+    - Gradle Project
+    isFlag: 0
+  - variantName: Binary Type
+    selectedIndex: 0
+    values:
+    - APK
+    - Split APK
+    - AAB
+    isFlag: 0
+  - variantName: APK Expansion Type
+    selectedIndex: 0
+    values:
+    - Single Binary
+    - Split App Binary
+    isFlag: 0
+  - variantName: Min SDK Version
+    selectedIndex: 0
+    values:
+    - Auto
+    - 16
+    - 17
+    - 18
+    - 19
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    isFlag: 0
+  - variantName: Target SDK Version
+    selectedIndex: 0
+    values:
+    - Auto
+    - 16
+    - 17
+    - 18
+    - 19
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    isFlag: 0
+  - variantName: Create symbols.zip
+    selectedIndex: 0
+    values:
+    - Disabled
+    - Public
+    - Debugging
+    isFlag: 0
+  scriptingBackends:
+  - scriptingImplementation: 0
+    name: Mono
+    enabled: 0
+  - scriptingImplementation: 1
+    name: IL2CPP
+    enabled: 1
+  platformName: Android
+  targetGroup: 7
+--- !u!114 &-5399367232879082640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab85f23b640cc654dbcaff8ec59e443e, type: 3}
+  m_Name: ScriptRunner
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: ScriptRunner
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 2
+    clauses:
+    - type: 1
+      comparison: 0
+      test: WebGL
+    - type: 0
+      comparison: 0
+      test: RELEASE
+  scriptPath: publish-itch-webgl-test.bat
+  scriptArguments: $BUILDPATH/$PRODUCT_NAME-$RELEASE_TYPE-$YEAR_$MONTH_$DAY.zip
+--- !u!114 &-2292998090909825587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0acaf75cc66fc934ea46bf602fc7c245, type: 3}
+  m_Name: WebGL
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions: []
+  architectures:
+  - target: 20
+    name: WebGL
+    enabled: 1
+    binaryNameFormat: '{0}'
+  variants: []
+  scriptingBackends:
+  - scriptingImplementation: 1
+    name: IL2CPP
+    enabled: 1
+  platformName: WebGL
+  targetGroup: 13
+--- !u!114 &-357035767136543594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab85f23b640cc654dbcaff8ec59e443e, type: 3}
+  m_Name: ScriptRunner
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: ScriptRunner
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 2
+    clauses:
+    - type: 1
+      comparison: 0
+      test: WebGL
+    - type: 0
+      comparison: 0
+      test: TEST
+  scriptPath: publish-itch-webgl-test.bat
+  scriptArguments: $BUILDPATH/$PRODUCT_NAME-$RELEASE_TYPE-$YEAR_$MONTH_$DAY.zip
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5886119a5c7b34d8872ab527ca3e1b, type: 3}
+  m_Name: SuperUnityBuildSettings
+  m_EditorClassIdentifier: 
+  _basicSettings:
+    baseBuildFolder: Builds
+    buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM
+    openFolderPostBuild: 1
+    constantsFileLocation: Assets\SuperUnityBuild
+  _productParameters:
+    buildCounter: 17
+    buildVersion: 1.0.17
+    versionTemplate: 1.0.$BUILD
+    autoGenerate: 1
+    syncWithPlayerSettings: 0
+  _releaseTypeList:
+    releaseTypes:
+    - typeName: dev
+      bundleIdentifier: com.edventureStudios.MathOdyssey
+      companyName: edventureStudios
+      productName: MathOdyssey
+      syncAppNameWithProduct: 1
+      appBuildName: MathOdyssey
+      buildOptions: 1
+      customDefines: 
+      sceneList:
+        releaseScenes:
+        - fileGUID: c7dff6466366c4c45b723cffadf2de0e
+          sceneActive: 1
+        - fileGUID: 608c769c178cf164e85ccb35cf503cde
+          sceneActive: 1
+    - typeName: test
+      bundleIdentifier: com.edventureStudios.MathOdyssey
+      companyName: edventureStudios
+      productName: MathOdyssey
+      syncAppNameWithProduct: 1
+      appBuildName: MathOdyssey
+      buildOptions: 1
+      customDefines: 
+      sceneList:
+        releaseScenes:
+        - fileGUID: c7dff6466366c4c45b723cffadf2de0e
+          sceneActive: 1
+        - fileGUID: 608c769c178cf164e85ccb35cf503cde
+          sceneActive: 1
+    - typeName: release
+      bundleIdentifier: com.edventureStudios.MathOdyssey
+      companyName: edventureStudios
+      productName: MathOdyssey
+      syncAppNameWithProduct: 1
+      appBuildName: MathOdyssey
+      buildOptions: 0
+      customDefines: 
+      sceneList:
+        releaseScenes:
+        - fileGUID: c7dff6466366c4c45b723cffadf2de0e
+          sceneActive: 1
+        - fileGUID: 608c769c178cf164e85ccb35cf503cde
+          sceneActive: 1
+  _platformList:
+    platforms:
+    - {fileID: -2292998090909825587}
+    - {fileID: -5721701077449063969}
+    - {fileID: -7243382729796350716}
+  _projectConfigurations:
+    configSet:
+      _Buckets: ffffffffffffffff1d0000001b000000ffffffffffffffff12000000ffffffff13000000ffffffff180000000b00000007000000ffffffff19000000ffffffffffffffff0e000000ffffffff0d000000ffffffff08000000000000001c000000ffffffff1600000011000000ffffffff1000000014000000ffffffff1a000000ffffffff01000000ffffffffffffffff05000000
+      _HashCodes: 0cb3bd0317b4ae270f006130dc53325a659af11b5bacae133996587d02690a740dcd5d6157621a342d00437b8613d74650352250e75a744f4a22a4103a59f83fc48b4516276b306a682723258673124cd25fcf488db520774d2680272e442643275ff0714d977a121f531205d86e1233f3d69e554de9ec4800000000000000000000000000000000000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffff02000000ffffffffffffffff06000000ffffffffffffffffffffffff0a000000ffffffffffffffff030000000c0000000f00000004000000ffffffff09000000ffffffffffffffff15000000ffffffffffffffffffffffff17000000ffffffffffffffff00000000000000000000000000000000000000000000000000000000
+      _Count: 30
+      _Version: 30
+      _FreeList: -1
+      _FreeCount: 0
+      _Keys:
+      - dev/WebGL/WebGL/IL2CPP
+      - dev/WebGL/WebGL
+      - dev/WebGL
+      - dev/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)/IL2CPP
+      - dev/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)
+      - dev/Android
+      - dev/iOS/iOS (iPhoneOnly,Device SDK,Debug)/IL2CPP
+      - dev/iOS/iOS (iPhoneOnly,Device SDK,Debug)
+      - dev/iOS
+      - dev
+      - test/WebGL/WebGL/IL2CPP
+      - test/WebGL/WebGL
+      - test/WebGL
+      - test/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)/IL2CPP
+      - test/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)
+      - test/Android
+      - test/iOS/iOS (iPhoneOnly,Device SDK,Debug)/IL2CPP
+      - test/iOS/iOS (iPhoneOnly,Device SDK,Debug)
+      - test/iOS
+      - test
+      - release/WebGL/WebGL/IL2CPP
+      - release/WebGL/WebGL
+      - release/WebGL
+      - release/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)/IL2CPP
+      - release/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)
+      - release/Android
+      - release/iOS/iOS (iPhoneOnly,Device SDK,Debug)/IL2CPP
+      - release/iOS/iOS (iPhoneOnly,Device SDK,Debug)
+      - release/iOS
+      - release
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      _Values:
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - dev/WebGL/WebGL/IL2CPP
+      - enabled: 1
+        childKeys:
+        - dev/WebGL/WebGL
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - dev/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)/IL2CPP
+      - enabled: 1
+        childKeys:
+        - dev/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - dev/iOS/iOS (iPhoneOnly,Device SDK,Debug)/IL2CPP
+      - enabled: 1
+        childKeys:
+        - dev/iOS/iOS (iPhoneOnly,Device SDK,Debug)
+      - enabled: 1
+        childKeys:
+        - dev/WebGL
+        - dev/Android
+        - dev/iOS
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - test/WebGL/WebGL/IL2CPP
+      - enabled: 1
+        childKeys:
+        - test/WebGL/WebGL
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - test/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)/IL2CPP
+      - enabled: 1
+        childKeys:
+        - test/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - test/iOS/iOS (iPhoneOnly,Device SDK,Debug)/IL2CPP
+      - enabled: 1
+        childKeys:
+        - test/iOS/iOS (iPhoneOnly,Device SDK,Debug)
+      - enabled: 1
+        childKeys:
+        - test/WebGL
+        - test/Android
+        - test/iOS
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - release/WebGL/WebGL/IL2CPP
+      - enabled: 1
+        childKeys:
+        - release/WebGL/WebGL
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - release/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)/IL2CPP
+      - enabled: 1
+        childKeys:
+        - release/Android/Android (,Generic,App,APK,Single Binary,Auto,Auto,Disabled)
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - release/iOS/iOS (iPhoneOnly,Device SDK,Debug)/IL2CPP
+      - enabled: 1
+        childKeys:
+        - release/iOS/iOS (iPhoneOnly,Device SDK,Debug)
+      - enabled: 1
+        childKeys:
+        - release/WebGL
+        - release/Android
+        - release/iOS
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+    showViewOptions: 0
+    showConfigs: 0
+    showBuildInfo: 0
+    hideDisabled: 0
+    treeView: 0
+    selectedKeyChain: dev/WebGL/WebGL/IL2CPP
+  _preBuildActions:
+    buildActions: []
+  _postBuildActions:
+    buildActions:
+    - {fileID: 6972447428362421442}
+    - {fileID: 1543192960369899659}
+    - {fileID: -357035767136543594}
+    - {fileID: -5399367232879082640}
+--- !u!114 &1543192960369899659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab85f23b640cc654dbcaff8ec59e443e, type: 3}
+  m_Name: ScriptRunner
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: ScriptRunner
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 2
+    clauses:
+    - type: 1
+      comparison: 0
+      test: WebGL
+    - type: 0
+      comparison: 0
+      test: DEV|
+  scriptPath: publish-itch-webgl-dev.bat
+  scriptArguments: $BUILDPATH/$PRODUCT_NAME-$RELEASE_TYPE-$YEAR_$MONTH_$DAY.zip
+--- !u!114 &6972447428362421442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0f7a04940394844a505e73c3eb8cec, type: 3}
+  m_Name: ZipFileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: ZipFileOperation
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 2
+    clauses:
+    - type: 1
+      comparison: 0
+      test: WebGL
+  inputPath: $BUILDPATH
+  outputPath: $BUILDPATH
+  outputFileName: $PRODUCT_NAME-$RELEASE_TYPE-$YEAR_$MONTH_$DAY.zip

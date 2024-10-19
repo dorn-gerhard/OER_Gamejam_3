@@ -1,0 +1,11 @@
+{
+    "m_Dictionary": {
+        "m_DictionaryValues": [
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "buildOutputDirList",
+                "value": "{\"m_Value\":\"D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.14/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.13/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.12/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.0.10/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.0.9/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.0.6/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.0.7/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.0.5/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.0.4/dev/WebGL/SpaceFunctionShooter;D:/dev/games/konomondo/SpaceFunctionShooter/Builds/1.0.0.3/dev/WebGL/SpaceFunctionShooter\"}"
+            }
+        ]
+    }
+}

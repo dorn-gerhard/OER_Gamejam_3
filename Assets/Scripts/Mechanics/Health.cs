@@ -10,6 +10,8 @@ namespace Platformer.Mechanics
     /// </summary>
     public class Health : MonoBehaviour
     {
+        public FunctionType functionType;
+
         /// <summary>
         /// The maximum hit points for the entity.
         /// </summary>
@@ -34,13 +36,27 @@ namespace Platformer.Mechanics
         /// Decrement the HP of the entity. Will trigger a HealthIsZero event when
         /// current HP reaches 0.
         /// </summary>
-        public void Decrement()
+        public void Decrement(FunctionType fT)
         {
+            if (fT != functionType) return;
+
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+
             if (currentHP == 0)
             {
-                var ev = Schedule<HealthIsZero>();
-                ev.health = this;
+                OnNoHealth();
+            }
+        }
+
+        private void OnNoHealth()
+        {
+            if (GetComponent<PlayerController>())
+            {
+                //GetComponent<PlayerController>().Death();
+            }
+            else if (GetComponent<EnemyController>())
+            {
+                GetComponent<EnemyController>().Death();
             }
         }
 
@@ -49,7 +65,8 @@ namespace Platformer.Mechanics
         /// </summary>
         public void Die()
         {
-            while (currentHP > 0) Decrement();
+            currentHP = 0;
+            OnNoHealth();
         }
 
         void Awake()

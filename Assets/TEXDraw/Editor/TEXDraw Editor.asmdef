@@ -1,0 +1,21 @@
+{
+    "name": "TEXDrawEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:139e0f3fe23ff453fb7a46251f5b0ee2",
+        "GUID:880e668efa4b7476bbac38252bba4224",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:6546d7765b4165b40850b3667f981c26"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
