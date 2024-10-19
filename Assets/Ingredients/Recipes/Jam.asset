@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633573e475dfd488fafc2c82d75c353b, type: 3}
   m_Name: Jam
   m_EditorClassIdentifier: 
-  ingredientName: 
+  ingredientName: StrawberryJam
   ingredientWeight: 0
   ingredients:
   - ingredient: {fileID: 11400000, guid: cb3c0974dde33f74a8ea6c31e893d140, type: 2}
