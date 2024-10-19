@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class IngredientSpawner : MonoBehaviour
 {
     [SerializeField] GameObject ingredientPrefab;
+    [SerializeField] Recipe recipe;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,20 @@ public class IngredientSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space) && recipe != null)
+        {
+            SpawnRecipeIngredients();
+        }
+    }
 
+    public void SpawnRecipeIngredients()
+    {
+        foreach (IngredientAmount ingredientAmount in recipe.GetIngredients)
+        {
+            
+            if (ingredientAmount.ingredient is BasicIngredient)
+                SpawnObject(ingredientAmount.ingredient as BasicIngredient, null);
+        }
     }
 
     public void SpawnObject(BasicIngredient ingredient, Transform transform)
@@ -28,7 +42,7 @@ public class IngredientSpawner : MonoBehaviour
 
         Debug.Log($"{ingredient.Name} spawned.");
 
-        newInstance.GetComponent<Image>().sprite = ingredient.Sprite;
+        newInstance.GetComponent<SpriteRenderer>().sprite = ingredient.Sprite;
     }
 
   
