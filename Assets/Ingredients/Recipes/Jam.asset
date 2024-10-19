@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: 
   ingredientWeight: 0
-  ingredients: []
+  ingredients:
+  - ingredient: {fileID: 11400000, guid: cb3c0974dde33f74a8ea6c31e893d140, type: 2}
+    amount: 0
   recipeInstruction: 
   sprite: {fileID: 0}
