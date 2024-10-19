@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: 
   ingredientWeight: 0
+  sprite: {fileID: 21300000, guid: 3387227dc052144c6b1d622c3c44d091, type: 3}
