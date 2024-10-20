@@ -8,33 +8,15 @@ public class CalculateWeight : MonoBehaviour
     public float weight = 0f;
     public TMP_Text weightText; // Reference to the Text UI component
     public Slider weightSlider; // Reference to the Slider UI component
-    private List<BasicIngredient> collidedIngredients = new List<BasicIngredient>();
+
+    // Dictionary to keep track of the weights of each ingredient
+    private Dictionary<GameObject, float> ingredientWeights = new Dictionary<GameObject, float>();
 
     void Update()
     {
         // Update the total weight and UI elements every frame
-        //weight = GetTotalWeight();
         UpdateUI();
     }
-
-    // Function to calculate the total weight of all currently collided ingredients
-   /* public float GetTotalWeight()
-    {
-        //float totalWeight = 0f;
-
-
-        // Iterate through all currently collided ingredients
-        foreach (BasicIngredient ingredient in collidedIngredients)
-        {
-            if (ingredient != null)
-            {
-                // Add the weight of the ingredient to the total weight
-                totalWeight += ingredient.Weight;
-            }
-        }
-
-        return totalWeight;
-    }*/
 
     // Update the UI elements (Text and Slider) with the current weight value
     private void UpdateUI()
@@ -54,33 +36,41 @@ public class CalculateWeight : MonoBehaviour
     // Called when another collider enters the trigger collider attached to the object
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        float ingredientWeight = collision.gameObject.GetComponent<IngredientDataHolder>().ingredient.Weight;
-        weight += ingredientWeight;
-        Debug.Log("weight" + weight);
-        collision.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        // Get the IngredientDataHolder component from the collided object
+        IngredientDataHolder ingredientData = collision.gameObject.GetComponent<IngredientDataHolder>();
+        if (ingredientData != null)
+        {
+            float ingredientWeight = ingredientData.ingredient.Weight;
 
+            // Add the weight to the total weight
+            weight += ingredientWeight;
+            Debug.Log("Added weight: " + ingredientWeight + ", Total weight: " + weight);
 
-        //collidedIngredients.Add(ingredient);
-        // Check if the collided object has an Ingredient component
-        /*        BasicIngredient ingredient = collision.GetComponent<BasicIngredient>();
-                if (ingredient != null && !collidedIngredients.Contains(ingredient))
-                {
-                    // Add the ingredient to the list of collided ingredients
-                    collidedIngredients.Add(ingredient);
-                }*/
+            // Store the weight in the dictionary
+            ingredientWeights[collision.gameObject] = ingredientWeight;
+
+            // Make the Rigidbody2D dynamic (if needed)
+            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.bodyType = RigidbodyType2D.Dynamic;
+            }
+        }
     }
 
     // Called when another collider exits the trigger collider attached to the object
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // Check if the object leaving the trigger has an Ingredient component
-        /*        BasicIngredient ingredient = collision.GetComponent<BasicIngredient>();
-                if (ingredient != null && collidedIngredients.Contains(ingredient))
-                {
-                    // Remove the ingredient from the list of collided ingredients
-                    collidedIngredients.Remove(ingredient);
-                }*/
-        weight -= 0.100f;
+        // Check if the ingredient is in the dictionary
+        if (ingredientWeights.ContainsKey(collision.gameObject))
+        {
+            // Get the stored weight and subtract it from the total weight
+            float ingredientWeight = ingredientWeights[collision.gameObject];
+            weight -= ingredientWeight;
+            Debug.Log("Removed weight: " + ingredientWeight + ", Total weight: " + weight);
 
+            // Remove the ingredient from the dictionary
+            ingredientWeights.Remove(collision.gameObject);
+        }
     }
 }
