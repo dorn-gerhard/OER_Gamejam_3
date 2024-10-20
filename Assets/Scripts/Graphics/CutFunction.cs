@@ -114,7 +114,7 @@ public class CutFunction : MonoBehaviour
         float upperValue = 0;
 
         Vector2 closestPointUpper = new Vector2();
-        int numPoints = brettPolygon.nPoints;
+        int numPoints = brettPolygon.xgrid.Length;
         float[] lower = new float[numPoints];
         float[] middle = new float[numPoints];
         float[] upper = new float[numPoints];
@@ -127,8 +127,8 @@ public class CutFunction : MonoBehaviour
         int startLower = 0;
         int endLower = 0;
 
-        Debug.Log("Number of grid points: " + (brettPolygon.nPoints));
-        for (int k = 0; k < brettPolygon.nPoints; k++)
+        Debug.Log("Number of grid points: " + (brettPolygon.xgrid.Length));
+        for (int k = 0; k < brettPolygon.xgrid.Length; k++)
         {
             xValue = brettPolygon.xgrid[k];
 

@@ -2,18 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Polygon : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    
     public float[] xgrid;
     public float[] lower;
     public float[] upper;
-    public int nPoints;
     
     PolygonCollider2D polygon;
 
@@ -72,20 +69,16 @@ public class Polygon : MonoBehaviour
 
     public void InitBoard(float minXInput, float maxXInput, int numberOfGridPoints, float minYInput, float maxYInput)
     {
-        minX = minXInput;
-        maxX = maxXInput;
-        minY = minYInput;
-        maxY = maxYInput;
-        nPoints = numberOfGridPoints;
+        
        
-        xgrid = new float[nPoints];
-        lower = new float[nPoints];
-        upper = new float[nPoints];
-        float increment = (maxX - minX) / nPoints;
+        xgrid = new float[numberOfGridPoints];
+        lower = new float[numberOfGridPoints];
+        upper = new float[numberOfGridPoints];
+        float increment = (maxXInput - minXInput) / numberOfGridPoints;
 
         for (int k = 0; k < numberOfGridPoints; k++)
         {
-            xgrid[k] = minX + k * increment;
+            xgrid[k] = minXInput + k * increment;
             lower[k] = minYInput;
             upper[k] = maxYInput;
            
@@ -95,14 +88,10 @@ public class Polygon : MonoBehaviour
     public void UpdatePolygon(float minXInput, float maxXInput, float minYInput, float maxYInput, float[] xgridInput, float[] lowerPointsInput, float[] upperPointsInput, int numberPoints, PolygonCollider2D polygonInput)
     {
         
-        minX = minXInput;
-        maxX = maxXInput;
-        minY = minYInput;
-        maxY = maxYInput;
+        
         xgrid = xgridInput;
         lower = lowerPointsInput;
         upper = upperPointsInput;
-        nPoints = numberPoints;
         polygon = polygonInput;
         SetPolygon();
 
@@ -112,10 +101,10 @@ public class Polygon : MonoBehaviour
     {
         Polygon reference = GameObject.FindGameObjectWithTag("Ziel").GetComponent<Polygon>();
 
-        float gridMinX = Math.Min(minX, reference.minX);
-        float gridMaxX = Math.Max(maxX, reference.maxX);
-        float gridMinY = Math.Min(minY, reference.minY);
-        float gridMaxY = Math.Max(maxY, reference.maxY);
+        float gridMinX = Math.Min(xgrid.Min(), reference.xgrid.Min());
+        float gridMaxX = Math.Max(xgrid.Max(), reference.xgrid.Max());
+        float gridMinY = Math.Min(lower.Min(), reference.lower.Min());
+        float gridMaxY = Math.Max(upper.Max(), reference.upper.Max());
 
         float xrange = gridMaxX - gridMinX;
         float yrange = gridMaxY - gridMinY;
