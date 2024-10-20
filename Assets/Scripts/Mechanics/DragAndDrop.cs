@@ -6,23 +6,31 @@ public class DragAndDrop : MonoBehaviour
 {
     private Vector3 offset;
     private Camera mainCamera;
+    IngredientDataHolder data;
     private bool isDragging = false;
 
     void Start()
     {
         mainCamera = Camera.main;
+        data = gameObject.GetComponent<IngredientDataHolder>();
     }
 
     void OnMouseDown()
     {
-        Vector3 mousePosition = GetMouseWorldPosition();
-        offset = transform.position - mousePosition;
-        isDragging = true;
+        if (data != null)
+        {
+            if (data.isDraggable)
+            {
+                Vector3 mousePosition = GetMouseWorldPosition();
+                offset = transform.position - mousePosition;
+                isDragging = true;
+            }
+        }
     }
 
     void OnMouseDrag()
     {
-        if (isDragging)
+        if (isDragging && data.isDraggable)
         {
             Vector3 mousePosition = GetMouseWorldPosition();
             transform.position = mousePosition + offset;

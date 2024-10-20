@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Sugar
   ingredientWeight: 0
-  sprite: {fileID: 21300000, guid: 4efaff15fb64b2443843a0df601c2d90, type: 3}
+  ingredienContainerSprite: {fileID: 21300000, guid: 10d31d5f762f24fc0acb6ff3fbf789ae,
+    type: 3}
+  ingredientPortionSprite: {fileID: 21300000, guid: cdf44b08cc9c64193bf6ee5678b80687,
+    type: 3}
