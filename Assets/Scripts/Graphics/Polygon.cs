@@ -12,7 +12,7 @@ public class Polygon : MonoBehaviour
     public float[] lower;
     public float[] upper;
     
-    PolygonCollider2D polygon;
+    public PolygonCollider2D polygon;
 
     public bool setPolygon = false;
     public bool initBoard = false;
@@ -45,7 +45,7 @@ public class Polygon : MonoBehaviour
     private void Start()
     {
         polygon = GetComponent<PolygonCollider2D>();
-        SetPolygon();
+        
     }
     public void SetPolygon()
     {
