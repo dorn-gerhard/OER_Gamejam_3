@@ -46,6 +46,7 @@ public class SpawnPortion : MonoBehaviour
 
         //newInstance.transform.position = Vector3.zero;
         newInstance.transform.position = position != null ? position : Vector3.zero;
+        newInstance.transform.localScale *= 0.75f;
         SpriteRenderer spriteRenderer = newInstance.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = ingredient.IngredientPortionSprite;
 
