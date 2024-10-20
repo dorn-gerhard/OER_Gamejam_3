@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
         PopUpController.current.OpenPopUp("hallo");
 
-        OnUnlockNextWeapon(true);
+        //OnUnlockNextWeapon(true);
         //OnSwitchWeapon(0);
     }
 

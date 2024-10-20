@@ -65,59 +65,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
+      propertyPath: m_Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
+        type: 3}
       propertyPath: m_Positions.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 473f1c6b2d95343ce828c49da96210ca, type: 2}
+    - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
+        type: 3}
       propertyPath: m_Positions.Array.data[0].x
-      value: -3
+      value: -9.1
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[0].y
-      value: 0
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[1].x
-      value: -3
+      value: -9.1
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[1].y
-      value: 8
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[2].x
-      value: 3
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[2].y
-      value: 8
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[3].x
-      value: 0.44
+      value: -5.66
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[3].y
-      value: 0
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0.16502942
+      value: 0.1622218
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.3162384
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6257463974816810821, guid: f2651cd63e3914b48857bf1378319585,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a9ab8cdb304f7124bacba024ec1d1c8b, type: 2}
     - target: {fileID: 7754860272734236364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -201,6 +221,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -558979011176203715}
+    - targetCorrespondingSourceObject: {fileID: 8922073436719911350, guid: f2651cd63e3914b48857bf1378319585,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8849278191011754745}
   m_SourcePrefab: {fileID: 100100000, guid: f2651cd63e3914b48857bf1378319585, type: 3}
 --- !u!1 &6546282220351639553 stripped
 GameObject:
@@ -224,4 +248,19 @@ MonoBehaviour:
   maxX: 0
   lowerPoints: []
   upperPoints: []
+  nPoints: 0
   setPolygon: 0
+  initBoard: 0
+--- !u!114 &8849278191011754745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546282220351639553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c68b252012d044abbf83c4558f9450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionLineWidth: 0.4
