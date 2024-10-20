@@ -32,11 +32,13 @@ public class GameManager : MonoBehaviour
     {
         if (EvaluateResultForStrawberryJam() == true)
         {
+            chefImage.enabled = true;
             chefImage.sprite = chefHappy;
             Debug.Log("The cooking was successful. Showing happy chef.");
         }
         else
         {
+            chefImage.enabled = true;
             chefImage.sprite = chefSad;
             Debug.Log("The cooking was unsuccessful. Showing sad chef.");
         }
@@ -67,8 +69,8 @@ public class GameManager : MonoBehaviour
             bool isSugarWithinRange = Mathf.Abs(sugarWeight - targetSugarWeight) <= tolerance;
 
             // Log the results for debugging
-            Debug.Log("Strawberry weight: " + strawberryWeight + " (Target: " + targetStrawberryWeight + " ± " + tolerance + ")");
-            Debug.Log("Sugar weight: " + sugarWeight + " (Target: " + targetSugarWeight + " ± " + tolerance + ")");
+            Debug.Log("Strawberry weight: " + strawberryWeight + " (Target: " + targetStrawberryWeight + " ? " + tolerance + ")");
+            Debug.Log("Sugar weight: " + sugarWeight + " (Target: " + targetSugarWeight + " ? " + tolerance + ")");
 
             // Return true if both ingredients are within the acceptable range
             return isStrawberryWithinRange && isSugarWithinRange;

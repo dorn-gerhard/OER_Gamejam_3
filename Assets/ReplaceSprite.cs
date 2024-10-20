@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReplaceSprite : MonoBehaviour
 {
     public Sprite pot_filled;
+    [SerializeField] AudioSource dropSound;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class ReplaceSprite : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         string ingredient = collision.gameObject.name;
+        dropSound.Play();
+
         if (ingredient == "Strawberry")
         {
             // Get the SpriteRenderer component from the parent GameObject

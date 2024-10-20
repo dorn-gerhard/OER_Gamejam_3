@@ -19,6 +19,7 @@ public class Pot : MonoBehaviour
          float weight = collision.gameObject.GetComponent<IngredientDataHolder>().ingredient.Weight; 
          weightIngredient.Add(weight);
 
+
         // Check if the object has a Rigidbody2D before modifying it
         Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
         if (rb != null)

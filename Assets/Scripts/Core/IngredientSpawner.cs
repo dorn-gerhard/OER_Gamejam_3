@@ -13,7 +13,7 @@ public class IngredientSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        start.x -= 3.5f;
+        start.x -= 2.5f;
         start.y -= 2;
         start.z -= 0.5f;
         SpawnRecipeIngredients();
@@ -43,9 +43,9 @@ public class IngredientSpawner : MonoBehaviour
         GameObject newInstance = Instantiate(ingredientPrefab);
         newInstance.name = ingredient.Name;
         
-        start.x -= 1.5f;
+        start.x -= 2f;
         newInstance.transform.position = transform != null ? transform.position : start;
-
+        newInstance.transform.localScale *= 2;
         SpriteRenderer spriteRenderer = newInstance.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = ingredient.IngredientContainerSprite;
 
