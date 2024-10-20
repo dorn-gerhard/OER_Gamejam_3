@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private Pot potScript; // Reference to the Pot script
+    public Sprite chefHappy;
+    public Sprite chefSad;
+    public Image chefImage; // Reference to the UI.Image component
+
 
     // Start is called before the first frame update
     void Start()
     {
         // Find the Pot GameObject in the scene
-        GameObject potObject = GameObject.Find("Pot"); // Make sure the Pot GameObject is named "Pot" in the scene
+        GameObject potObject = GameObject.Find("Pot"); 
         if (potObject != null)
         {
             // Get the Pot script component
@@ -27,17 +32,19 @@ public class GameManager : MonoBehaviour
     {
         if (EvaluateResultForStrawberryJam() == true)
         {
-            //load the picture with happy chef
+            chefImage.sprite = chefHappy;
+            Debug.Log("The cooking was successful. Showing happy chef.");
         }
         else
         {
-            //load the picture with sad chef
+            chefImage.sprite = chefSad;
+            Debug.Log("The cooking was unsuccessful. Showing sad chef.");
         }
 
     }
 
     // Method to evaluate the result based on the pot's weight
-    //Straberrirs= 500 gramm, sugar= 375 gramm
+    //Straberrirs= 900 gramm, sugar= 300 gramm
     public bool EvaluateResultForStrawberryJam()
     {
         Dictionary<string, float> ingredientWeights = potScript.CalculateWeightOfEachIngredient();
@@ -49,8 +56,8 @@ public class GameManager : MonoBehaviour
             float sugarWeight = ingredientWeights["Sugar"];
 
             // Define the target weights
-            float targetStrawberryWeight = 500f;
-            float targetSugarWeight = 375f;
+            float targetStrawberryWeight = 900f;
+            float targetSugarWeight = 300f;
 
             // Define the acceptable tolerance
             float tolerance = 20f;
