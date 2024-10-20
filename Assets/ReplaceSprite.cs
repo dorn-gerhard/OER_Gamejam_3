@@ -23,7 +23,8 @@ public class ReplaceSprite : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         string ingredient = collision.gameObject.name;
-        dropSound.Play();
+        if(ingredient == "Strawberry" || ingredient=="Sugar")
+            dropSound.Play();
 
         if (ingredient == "Strawberry")
         {
