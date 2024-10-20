@@ -54,9 +54,10 @@ public class CalculateWeight : MonoBehaviour
     // Called when another collider enters the trigger collider attached to the object
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ONTRIGGERENTER +");
         weight += 3;
         Debug.Log("weight" + weight);
+        collision.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
 
         //collidedIngredients.Add(ingredient);
         // Check if the collided object has an Ingredient component
