@@ -23,7 +23,7 @@ public class CalculateWeight : MonoBehaviour
     {
         if (weightText != null)
         {
-            weightText.text = weight.ToString("F2") + " kg";
+            weightText.text = weight.ToString("F3") + " kg";
         }
     }
 
