@@ -54,7 +54,8 @@ public class CalculateWeight : MonoBehaviour
     // Called when another collider enters the trigger collider attached to the object
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        weight += 3;
+        float ingredientWeight = collision.gameObject.GetComponent<IngredientDataHolder>().ingredient.Weight;
+        weight += ingredientWeight;
         Debug.Log("weight" + weight);
         collision.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
@@ -79,7 +80,7 @@ public class CalculateWeight : MonoBehaviour
                     // Remove the ingredient from the list of collided ingredients
                     collidedIngredients.Remove(ingredient);
                 }*/
-        weight -= 3;
+        weight -= 0.100f;
 
     }
 }
