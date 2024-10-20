@@ -100,6 +100,7 @@ public class Polygon : MonoBehaviour
     public float ComparePolygon()
     {
         Polygon reference = GameObject.FindGameObjectWithTag("Ziel").GetComponent<Polygon>();
+        reference.GetComponent<PolygonCollider2D>().enabled = true;
 
         float gridMinX = Math.Min(xgrid.Min(), reference.xgrid.Min());
         float gridMaxX = Math.Max(xgrid.Max(), reference.xgrid.Max());
@@ -116,9 +117,6 @@ public class Polygon : MonoBehaviour
 
         GameObject  cursor= new GameObject();
         //Instantiate(cursor);
-        
-    
-        
 
         BoxCollider2D box = cursor.AddComponent<BoxCollider2D>();
 
@@ -127,8 +125,8 @@ public class Polygon : MonoBehaviour
         mode = mode.NoFilter();
 
         List<Collider2D> collisions = new List<Collider2D>();
-        int union = 0;
-        int intersection = 0;
+        float union = 0;
+        float intersection = 0;
 
         for (int ix = 0; ix < ixMax; ix++)
         {
@@ -136,8 +134,8 @@ public class Polygon : MonoBehaviour
             {
                 box.transform.position = new Vector3(gridMinX + ix * increment, gridMinY + iy * increment, 0);
 
-                
-                box.OverlapCollider(mode, collisions);
+                collisions = Physics2D.OverlapBoxAll(new Vector2(gridMinX + ix * increment, gridMinY + iy * increment), box.size, 0).ToList();
+                //box.OverlapCollider(mode, collisions);
                 if (collisions.Contains(polygon) || collisions.Contains(reference.polygon))
                 {
                     union += 1;
@@ -153,11 +151,10 @@ public class Polygon : MonoBehaviour
             }
         }
 
-        Debug.Log("Overlap: " + intersection / union + " %");
+        Debug.Log("Overlap: " + (intersection / union) * 100 + " %");
+
+        reference.GetComponent<PolygonCollider2D>().enabled = false;
 
         return intersection / union;
-
     }
-
-
 }
