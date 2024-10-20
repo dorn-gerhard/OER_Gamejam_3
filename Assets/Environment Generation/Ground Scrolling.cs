@@ -49,8 +49,8 @@ public class GroundScrolling : MonoBehaviour
             }
         }
 
-        SelectRandomUnusedPlatform(140f);
-        _lastZPosition = 140f;
+        SelectRandomUnusedPlatform(150f);
+        _lastZPosition = 150f;
     }
 
     public PlatformEntry SelectRandomUnusedPlatform(float? zPosition = null)

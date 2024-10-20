@@ -11,4 +11,20 @@ public class UserInterface : MonoBehaviour
         // Set the text of the voting power UI element
         votingPowerText.text = votingPower.ToString();
     }
+
+    private void Update()
+    {
+        // Check if the Escape key was pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseApplication();
+        }
+    }
+
+    // Method to close the application
+    private void CloseApplication()
+    {
+        
+        Application.Quit();
+    }
 }
