@@ -13,6 +13,7 @@ public class IngredientSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //TODO: slots for spawning on the table
         start.x -= 2.5f;
         start.y -= 2;
         start.z -= 0.5f;
@@ -22,10 +23,7 @@ public class IngredientSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && recipe != null)
-        {
-            //SpawnRecipeIngredients();
-        }
+        
     }
 
     public void SpawnRecipeIngredients()
@@ -43,7 +41,7 @@ public class IngredientSpawner : MonoBehaviour
         GameObject newInstance = Instantiate(ingredientPrefab);
         newInstance.name = ingredient.Name;
         
-        start.x -= 2f;
+        start.x -= 2f; //TODO: slots for spawning on the table
         newInstance.transform.position = transform != null ? transform.position : start;
         newInstance.transform.localScale *= 2;
         SpriteRenderer spriteRenderer = newInstance.GetComponent<SpriteRenderer>();
