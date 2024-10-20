@@ -20,6 +20,8 @@ public class TischlerGameController : MonoBehaviour
     public GameObject resultDisplay;
     public TMP_Text resultDisplayText;
 
+    public TMP_Text gleichheit;
+
     CutOption currentCutOption;
 
     public TMP_Text cutSelectionOptionDisplayText1; 
@@ -113,6 +115,8 @@ public class TischlerGameController : MonoBehaviour
         }
 
         choosePartDisplay.SetActive(false);
+
+        gleichheit.text = (selectedPolygon.GetComponent<Polygon>().ComparePolygon() * 100).ToString("F0") + "%";
 
         StartCutSelection();
     }
