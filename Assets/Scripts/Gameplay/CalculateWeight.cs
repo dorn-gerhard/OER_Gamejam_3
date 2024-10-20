@@ -9,7 +9,7 @@ public class CalculateWeight : MonoBehaviour
     public TMP_Text weightText; // Reference to the Text UI component
     public Slider weightSlider; // Reference to the Slider UI component
 
-    // Dictionary to keep track of the weights of each ingredient
+    // Dictionary to keep track of the weights of each ingredient (stored in kilograms)
     private Dictionary<GameObject, float> ingredientWeights = new Dictionary<GameObject, float>();
 
     void Update()
@@ -23,9 +23,8 @@ public class CalculateWeight : MonoBehaviour
     {
         if (weightText != null)
         {
-            weightText.text = "" + weight.ToString("F2") + " kg";
+            weightText.text = weight.ToString("F2") + " kg";
         }
-
     }
 
     // Called when another collider enters the trigger collider attached to the object
@@ -35,13 +34,16 @@ public class CalculateWeight : MonoBehaviour
         IngredientDataHolder ingredientData = collision.gameObject.GetComponent<IngredientDataHolder>();
         if (ingredientData != null)
         {
-            float ingredientWeight = ingredientData.ingredient.Weight;
+            float ingredientWeightInGrams = ingredientData.ingredient.Weight;
+
+            // Convert the weight to kilograms
+            float ingredientWeightInKg = ingredientWeightInGrams / 1000f;
 
             // Add the weight to the total weight
-            weight += ingredientWeight/1000f;
+            weight += ingredientWeightInKg;
 
-            // Store the weight in the dictionary
-            ingredientWeights[collision.gameObject] = ingredientWeight;
+            // Store the weight in the dictionary (in kilograms)
+            ingredientWeights[collision.gameObject] = ingredientWeightInKg;
 
             // Make the Rigidbody2D dynamic (if needed)
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
@@ -49,6 +51,8 @@ public class CalculateWeight : MonoBehaviour
             {
                 rb.bodyType = RigidbodyType2D.Dynamic;
             }
+
+            Debug.Log("Added weight: " + ingredientWeightInKg + " kg, Total weight: " + weight + " kg");
         }
     }
 
@@ -58,12 +62,14 @@ public class CalculateWeight : MonoBehaviour
         // Check if the ingredient is in the dictionary
         if (ingredientWeights.ContainsKey(collision.gameObject))
         {
-            // Get the stored weight and subtract it from the total weight
-            float ingredientWeight = ingredientWeights[collision.gameObject];
-            weight -= ingredientWeight;
+            // Get the stored weight in kilograms and subtract it from the total weight
+            float ingredientWeightInKg = ingredientWeights[collision.gameObject];
+            weight -= ingredientWeightInKg;
 
             // Remove the ingredient from the dictionary
             ingredientWeights.Remove(collision.gameObject);
+
+            Debug.Log("Removed weight: " + ingredientWeightInKg + " kg, Total weight: " + weight + " kg");
         }
     }
 }
