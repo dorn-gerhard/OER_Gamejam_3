@@ -55,7 +55,7 @@ public class TischlerGameController : MonoBehaviour
         StartNewRound();
     }
 
-    void StartNewRound()
+    public void StartNewRound()
     {
         doSelection = false;
 
@@ -66,6 +66,7 @@ public class TischlerGameController : MonoBehaviour
         cutDisplay.SetActive(false);
 
         playerController.SetActive(false);
+        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
 
         StartCutSelection();
     }
@@ -131,11 +132,14 @@ public class TischlerGameController : MonoBehaviour
         cutDisplay.SetActive(true);
 
         playerController.SetActive(true);
+        playerController.GetComponent<PlayerMove2D>().enabled = true;
+        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(true);
     }
 
     public void Cut()
     {
         playerController.SetActive(false);
+        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
 
         StartCoroutine(CutRoutine());
     }
@@ -157,10 +161,12 @@ public class TischlerGameController : MonoBehaviour
 
         Line.SetActive(false);
 
-        playerController.GetComponent<PlayerMove2D>().enabled = true;
+        playerController.GetComponent<PlayerMove2D>().enabled = false;
+        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
+
         playerController.SetActive(false);
 
-        if (IsStillPossible)
+        if (false)
         {
             choosePartDisplay.SetActive(true);
             doSelection = true;
