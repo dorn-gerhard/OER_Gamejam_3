@@ -182,6 +182,8 @@ public class TischlerGameController : MonoBehaviour
 
         playerController.GetComponent<PlayerMove2D>().enabled = false;
 
+        playerController.GetComponent<AudioSource>().Play();
+
         // do we need to call cut directly here?
         cutDisplay.SetActive(false);
 
