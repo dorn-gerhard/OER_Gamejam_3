@@ -52,7 +52,7 @@ public class TischlerGameController : MonoBehaviour
     public struct Goal
     {
         public int cutTries;
-        public List<Vector2> points;
+        public GameObject polygon;
     }
 
     public List<Goal> goals = new List<Goal>();
@@ -70,25 +70,24 @@ public class TischlerGameController : MonoBehaviour
     {
         current = this;
 
-        currentGoal = goals[0];
+        currentGoal = goals[currentLevel];
         //currentGoal = goals[UnityEngine.Random.Range(1, goals.Count - 1)];
 
         //var brett = FindObjectOfType<PolygonSelecter>().GetComponent<Polygon>();
         //brett.InitBoard(-3, 3, 500, 0, 8);
         //brett.SetPolygon();
+        Instantiate(currentGoal.polygon, new Vector3(0, 0, -5), Quaternion.identity);
+        currentCutTriesLeft = 999999;
+        //currentCutTriesLeft = currentGoal.cutTries;
 
-        StartNewRound();
-
-
+        StartNewCut();
     }
 
-    public void StartNewRound()
+    public void StartNewCut()
     {
         doSelection = false;
 
-        currentCutTriesLeft = currentGoal.cutTries;
-
-        cutTryCounterDisplay.text = currentCutTriesLeft.ToString();
+        //cutTryCounterDisplay.text = currentCutTriesLeft.ToString();
 
         Line.SetActive(false);
 
@@ -200,22 +199,27 @@ public class TischlerGameController : MonoBehaviour
 
         if (true)
         {
+            //StartCutSelection();
             choosePartDisplay.SetActive(true);
             doSelection = true;
-            //StartCutSelection();
 
-            if (currentLevel >= goals.Count - 1)
-            {
-                resultDisplayText.text = "Alle Kunden sind zufrieden, Feierabend!";
-                resultDisplay.SetActive(true);
-                // finished game
-            }
-            else
-            {
-                currentLevel++;
+            //currentCutTriesLeft--;
 
-                resultDisplayText.text = "Sehr gut!";
-                resultDisplay.SetActive(true);
+            if (currentCutTriesLeft == 0)
+            {
+                if (currentLevel >= goals.Count - 1)
+                {
+                    resultDisplayText.text = "Alle Kunden sind zufrieden, Feierabend!";
+                    resultDisplay.SetActive(true);
+                    // finished game
+                }
+                else
+                {
+                    currentLevel++;
+
+                    resultDisplayText.text = "Sehr gut!";
+                    resultDisplay.SetActive(true);
+                }
             }
         }
         else
@@ -247,6 +251,15 @@ public class TischlerGameController : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void NextLevel()
+    {
+        currentLevel++;
+
+        if (currentLevel > goals.Count - 1) currentLevel = 0;
+
+        ReloadScene();
     }
 
     public void ReloadScene()
