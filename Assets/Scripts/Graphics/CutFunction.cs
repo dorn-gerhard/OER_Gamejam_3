@@ -67,7 +67,7 @@ public class CutFunction : MonoBehaviour
 
         if (fireNow)
         {
-            Cut();
+            StartCoroutine(Cut());
             Debug.Log("Fire Now");
             fireNow = false;
         }
@@ -87,13 +87,16 @@ public class CutFunction : MonoBehaviour
         currentLineLengthData = newLineLengthData;
     }
 
-    public void Cut()
+    public IEnumerator Cut()
     {
 
         // Animation
         cutPoints = edge.points.ToList<Vector2>();
-        StartCoroutine(LaserBeam(2.0f));
+        yield return StartCoroutine(LaserBeam(2.0f));
+
         CutCurveWithPolygon();
+
+        yield return null;
     }
 
     public Polygon CutCurveWithPolygon()
