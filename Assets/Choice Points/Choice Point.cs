@@ -3,8 +3,6 @@ using UnityEngine.Splines;
 
 public class ChoicePoint : MonoBehaviour
 {
-    public bool blockNextChoice = false;
-
     public Gate leftGate;
     public Gate rightGate;
 

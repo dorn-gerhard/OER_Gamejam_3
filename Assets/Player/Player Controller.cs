@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (LevelState.CurrentPlayerState == PlayerState.MakingChoice) return;
+        if (LevelState.CurrentPlayerState == PlayerState.MakingChoice || LevelState.CurrentPlayerState == PlayerState.GameWon) return;
 
         MoveCamera();
 

@@ -11,6 +11,11 @@ public class ChoiceMaking : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Check Votes"))
+        {
+            return;
+        }
+
         if (LevelState.CurrentPlayerState == PlayerState.MovingThroughGate) return;
 
         // Entered the trigger, set the player state to making a choice

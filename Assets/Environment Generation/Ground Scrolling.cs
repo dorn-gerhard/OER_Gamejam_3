@@ -141,7 +141,7 @@ public class GroundScrolling : MonoBehaviour
     // Method to set random opponent voting power
     private void SetRandomOpponentVotingPower(Platform platform)
     {
-        VotingGate votingGate = platform.GetComponent<VotingGate>();
+        VotingGate votingGate = platform.votingGate;
         if (votingGate != null)
         {
             votingGate.SetOpponentVotingPower();
