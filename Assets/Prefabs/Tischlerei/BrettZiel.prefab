@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrettZiel
       objectReference: {fileID: 0}
+    - target: {fileID: 6546282220351639553, guid: da702d9c84f214300848818fe7edd521,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ziel
+      objectReference: {fileID: 0}
     - target: {fileID: 7576897780795529532, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
       propertyPath: m_Enabled
