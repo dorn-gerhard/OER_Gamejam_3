@@ -21,17 +21,16 @@ public class CutFunction : MonoBehaviour
     public float par2 = 1f;
     public bool drawNow = false;
     public bool fireNow = false;
-    public Vector2[] cutPoints;
+    public List<Vector2> cutPoints;
     public Transform circle; 
 
     public float ComboConfidenceGain = 3;
-    public PolygonCollider2D brett;
+    public Polygon brett;
 
     [Header("Slider")]
     
     [Header("TextInput")]
   
-
     //public float RandomizedValue;
 
     float angle = 0;
@@ -92,17 +91,60 @@ public class CutFunction : MonoBehaviour
     {
 
         // Animation
-        cutPoints = edge.points;
+        cutPoints = edge.points.ToList<Vector2>();
         StartCoroutine(LaserBeam(2.0f));
         CutCurveWithPolygon();
     }
 
-    public PolygonCollider2D CutCurveWithPolygon()
+    public Polygon CutCurveWithPolygon()
     {
-        for (int k = 0; k < brett.points.Length; k++)
+        /*
+        int oldLaserPos = 0;
+        // -1 below lower, 0 in between, 1 above upper
+        int laserPos = 0;
+        float xValue = 0;
+        float laserValue = 0;
+        Vector2 closestPointUpper = new Vector2();
+        for (int k = 0; k < brett.nPoints; k++)
         {
+            xValue = brett.lowerPoints[k].x;
 
+            laserValue = cutPoints[cutPoints.Select((x, index) => (Math.Abs(x.x - xValue), index)).Min().index].y;
+
+            if (laserValue < brett.lowerPoints[k].y)
+            {
+
+                laserPos = -1;
+                if (oldLaserPos == -1)
+                {
+                    // laser remains below - lower and upper limit remain the same
+                }
+                else if (oldLaserPos == 0)
+                {
+                    // laser enters area -> split in two polygons
+                    brett.lowerPoints[k].y = laserValue;
+
+                    // create new Polygon
+                    // min = xValue
+                    // max ... unknown
+                    // new.lowerPoints[0] = brett.lowerPoint[k]
+                }
+
+
+
+            }
+            else if (laserValue < brett.upperPoints[k].y)
+            {
+                laserPos = 0;
+            }
+            else
+            {
+                laserPos = 1;
+            }
+
+            
         }
+        */
         //brett.points = 
         return brett;
     }

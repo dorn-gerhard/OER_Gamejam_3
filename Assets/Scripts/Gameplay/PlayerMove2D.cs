@@ -21,7 +21,7 @@ public class PlayerMove2D : MonoBehaviour
     {
         currentMoveSpeed = moveSpeed;
         //if (Input.GetKey(KeyCode.LeftShift))
-        //{
+        //{ 
         //    currentMoveSpeed = moveSpeed * runMultiplier;
         //}
 
