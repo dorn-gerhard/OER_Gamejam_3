@@ -11,8 +11,8 @@ using Platformer.Mechanics;
 
 public class CutFunction : MonoBehaviour
 {
-    public LineRenderer lineRenderer;
-    EdgeCollider2D edge;
+    public LineRenderer lineRenderer; // needs global coordinates
+    EdgeCollider2D edge; // needs local coordinates
 
     public FunctionType currentWeaponType = 0;
 
@@ -72,6 +72,8 @@ public class CutFunction : MonoBehaviour
             fireNow = false;
         }
 
+      
+
 
     }
 
@@ -91,65 +93,234 @@ public class CutFunction : MonoBehaviour
     {
 
         // Animation
-        cutPoints = edge.points.ToList<Vector2>();
-        yield return StartCoroutine(LaserBeam(2.0f));
-
-        CutCurveWithPolygon();
+        Vector3 shift = transform.parent.transform.position;
+        cutPoints = edge.points.ToList<Vector2>().Select(x => new Vector2(x.x + shift.x, x.y  + shift.y)).ToList();
+        yield return StartCoroutine(LaserBeam(2.0f)); 
+        GameObject brett = FindObjectOfType<Polygon>().gameObject;
+        CutCurveWithPolygon(brett);
 
         yield return null;
     }
 
-    public Polygon CutCurveWithPolygon()
+    public Polygon CutCurveWithPolygon(GameObject brett)
     {
-        /*
+        Polygon brettPolygon = brett.GetComponent<Polygon>();
+        
         int oldLaserPos = 0;
         // -1 below lower, 0 in between, 1 above upper
         int laserPos = 0;
         float xValue = 0;
         float laserValue = 0;
+        float lowerValue = 0;
+        float upperValue = 0;
+
         Vector2 closestPointUpper = new Vector2();
-        for (int k = 0; k < brett.nPoints; k++)
+        int numPoints = brettPolygon.nPoints;
+        float[] lower = new float[numPoints];
+        float[] middle = new float[numPoints];
+        float[] upper = new float[numPoints];
+        int[] laser = new int[numPoints];
+        bool[] upValid = new bool[numPoints];
+        bool[] lowValid = new bool[numPoints];
+
+        int startUpper = 0;
+        int endUpper = 0;
+        int startLower = 0;
+        int endLower = 0;
+
+        Debug.Log("Number of grid points: " + (brettPolygon.nPoints));
+        for (int k = 0; k < brettPolygon.nPoints; k++)
         {
-            xValue = brett.lowerPoints[k].x;
+            xValue = brettPolygon.xgrid[k];
 
             laserValue = cutPoints[cutPoints.Select((x, index) => (Math.Abs(x.x - xValue), index)).Min().index].y;
+            lowerValue = brettPolygon.lower[k];
+            upperValue = brettPolygon.upper[k];
 
-            if (laserValue < brett.lowerPoints[k].y)
+            if (laserValue < lowerValue) // laser is below board
             {
+                lower[k] = laserValue;
+                middle[k] = lowerValue;
+                upper[k] = upperValue;
 
-                laserPos = -1;
-                if (oldLaserPos == -1)
+                lowValid[k] = false;
+                upValid[k] = true;
+                laser[k] = -1;
+
+                if ((k > 0) && lowValid[k - 1])
                 {
-                    // laser remains below - lower and upper limit remain the same
+                    // laser left lower part
+                    // create Polygon starting from startLower till endLower
+                    GameObject newBrett = Instantiate(brett);
+                    newBrett.name = "newBrettLower";
+                    Polygon newPolygon = newBrett.GetComponent<Polygon>();
+                    PolygonCollider2D polygonCollider = newBrett.GetComponent<PolygonCollider2D>();
+                    newPolygon.UpdatePolygon(brettPolygon.xgrid[startLower], brettPolygon.xgrid[k], lower[startLower..k].Min(), middle[startLower..k].Max(), brettPolygon.xgrid[startLower..k], lower[startLower..k], middle[startLower..k], k - startLower, polygonCollider);
+
+
+
                 }
-                else if (oldLaserPos == 0)
-                {
-                    // laser enters area -> split in two polygons
-                    brett.lowerPoints[k].y = laserValue;
-
-                    // create new Polygon
-                    // min = xValue
-                    // max ... unknown
-                    // new.lowerPoints[0] = brett.lowerPoint[k]
-                }
-
-
-
-            }
-            else if (laserValue < brett.upperPoints[k].y)
-            {
-                laserPos = 0;
             }
             else
             {
-                laserPos = 1;
-            }
+                lower[k] = lowerValue;
+                if (laserValue > upperValue)  // laser is above board
+                {
+                    upper[k] = laserValue;
+                    middle[k] = upperValue;
 
-            
+                    laser[k] = 1;
+                    lowValid[k] = true;
+                    upValid[k] = false;
+
+                    if ((k > 0) && upValid[k - 1])
+                    {
+                        // laser just has left upper part
+                        // Create Polygon starting from startUpper till now
+                        GameObject newBrett = Instantiate(brett);
+
+                        newBrett.name = "newBrettUpper";
+                        Polygon newPolygon = newBrett.GetComponent<Polygon>();
+                        PolygonCollider2D polygonCollider = newBrett.GetComponent<PolygonCollider2D>();
+                        newPolygon.UpdatePolygon(brettPolygon.xgrid[startUpper],
+                            brettPolygon.xgrid[k],
+                            lower[startUpper..k].Min(),
+                            middle[startUpper..k].Max(),
+                            brettPolygon.xgrid[startUpper..k],
+                            middle[startUpper..k],
+                            upper[startUpper..k],
+                            k - startUpper,
+                            polygonCollider);
+
+
+                    }
+                }
+                else // laser is in between
+                {
+                    upper[k] = upperValue;
+                    middle[k] = laserValue;
+
+                    laser[k] = 0;
+                    lowValid[k] = true;
+                    upValid[k] = true;
+
+                    if ((k > 0) && !upValid[k - 1])
+                    {
+                        // laser was up before -> set startUpper
+                        startUpper = k;
+                    }
+
+                    if ((k > 0) && !lowValid[k - 1])
+                    {
+                        // laser enters from below -> set startLower
+                        startLower = k;
+                    }
+                }
+            }
         }
-        */
+
+        endLower = laser.Length - 1;
+        endUpper = laser.Length - 1;
+        // handle right side handling
+        // three posibilities:
+        Debug.Log("laser last: " + (laser.Last()));
+
+        Debug.Log("startLower: " + startLower + ", start Upper: " + startUpper);
+        if (laser.Last() == 1) // above
+        {
+            // laser is above
+            // create Polygon starting from startLower till endLower
+            GameObject newBrett = Instantiate(brett);
+            newBrett.name = "newBrettLowerRightSide";
+            Polygon newPolygon = newBrett.GetComponent<Polygon>();
+            PolygonCollider2D polygonCollider = newBrett.GetComponent<PolygonCollider2D>();
+           
+            newPolygon.UpdatePolygon(
+                brettPolygon.xgrid[startLower],
+                brettPolygon.xgrid[endLower],
+                lower[startLower..^0].Min(),
+                middle[startLower..^0].Max(),
+                brettPolygon.xgrid[startLower..^0],
+                lower[startLower..^0],
+                middle[startLower..^0],
+                brettPolygon.xgrid.Length - startLower,
+                polygonCollider);
+        }
+        else if (laser.Last() == -1) // below
+        {
+            // laser is below
+            GameObject newBrett = Instantiate(brett);
+
+            newBrett.name = "newBrettUpperRightSide";
+            Polygon newPolygon = newBrett.GetComponent<Polygon>();
+            PolygonCollider2D polygonCollider = newBrett.GetComponent<PolygonCollider2D>();
+            newPolygon.UpdatePolygon(
+                brettPolygon.xgrid[startUpper],
+                brettPolygon.xgrid[endUpper],
+                lower[startUpper..^0].Min(),
+                middle[startUpper..^0].Max(),
+                brettPolygon.xgrid[startUpper..^0],
+                middle[startUpper..^0],
+                upper[startUpper..^0],
+                brettPolygon.xgrid.Length - startUpper,
+                polygonCollider);
+        }
+
+        
+        else
+        {
+            // laser is in between - create two parts
+
+            // laser is above
+            // create Polygon starting from startLower till endLower
+            GameObject newBrett = Instantiate(brett);
+            newBrett.name = "newBrettLowerRightSide";
+            Polygon newPolygon = newBrett.GetComponent<Polygon>();
+            PolygonCollider2D polygonCollider = newBrett.GetComponent<PolygonCollider2D>();
+            newPolygon.UpdatePolygon(
+                brettPolygon.xgrid[startLower],
+                brettPolygon.xgrid[endLower],
+                lower[startLower..^0].Min(),
+                middle[startLower..^0].Max(),
+                brettPolygon.xgrid[startLower..^0],
+                lower[startLower..^0],
+                middle[startLower..^0],
+                brettPolygon.xgrid.Length - startLower,
+                polygonCollider);
+
+
+            // laser is below
+            GameObject newBrett2 = Instantiate(brett);
+
+            newBrett2.name = "newBrettUpperRightSide";
+            Polygon newPolygon2 = newBrett2.GetComponent<Polygon>();
+            PolygonCollider2D polygonCollider2 = newBrett2.GetComponent<PolygonCollider2D>();
+                
+            newPolygon2.UpdatePolygon(
+                brettPolygon.xgrid[startUpper],
+                brettPolygon.xgrid[endUpper],
+                lower[startUpper..].Min(),
+                middle[startUpper..^0].Max(),
+                brettPolygon.xgrid[startUpper..^0],
+                middle[startUpper..^0],
+                upper[startUpper..^0],
+                brettPolygon.xgrid.Length - startUpper,
+                polygonCollider2);
+
+        }
+        
+
+
+        Destroy(brett);
+
+
+
+
+
+        
+        
         //brett.points = 
-        return brett;
+        return brettPolygon;
     }
 
 
@@ -188,12 +359,54 @@ public class CutFunction : MonoBehaviour
         }
     }
 
+  
+
+    public LayerMask layerMask;   // The layer(s) to check for collisions
+
+    public Vector3[] Draw()
+    {
+        Vector3[] globalVertexPositions = CalculateVertexPositions();
+        Vector3[] localVertexPositions = ShiftVertexPositions(globalVertexPositions);
+
+        DrawLine(globalVertexPositions.Length, globalVertexPositions);
+        lineRenderer.widthCurve = new AnimationCurve(new Keyframe(0, 0.1f), new Keyframe(1, 0.1f));
+        addCollider(localVertexPositions.ToList());
+
+        
+
+        return globalVertexPositions;
+    }
+
+    float GetDistanceToEdge(Collider2D collider, EdgeCollider2D edge)
+    {
+        if (collider == null) return Mathf.Infinity;
+
+        // Find the closest point on the edgeCollider and calculate the distance
+        Vector2 closestPoint = edge.ClosestPoint(collider.transform.position);
+        return Vector2.Distance(collider.transform.position, closestPoint);
+    }
+
+    public Vector3[] CalculateVertexPositions()
+    {
+        Vector3[] globalVertexPositionsPositive = GetPath(0.0f, currentLineLengthData.endValue, currentLineLengthData.maxLength);
+        Vector3[] globalVertexPositionsNegative = GetPath(0.0f, currentLineLengthData.startValue, currentLineLengthData.maxLength);
+
+        Array.Reverse(globalVertexPositionsNegative);
+
+        Vector3[] globalVertexPositions = new Vector3[globalVertexPositionsNegative.Length + globalVertexPositionsPositive.Length];
+
+        globalVertexPositionsNegative.CopyTo(globalVertexPositions, 0);
+        globalVertexPositionsPositive.CopyTo(globalVertexPositions, globalVertexPositionsNegative.Length);
+
+        return globalVertexPositions;
+    }
+
     private Vector3[] GetPath(float startValue, float endValue, float maxLengthOverride)
     {
         float increment = (endValue - startValue) / (numberOfPoints + 1);
         float[] parameterVals = new float[numberOfPoints];
         float[] functionVals = new float[numberOfPoints];
-        Vector3[] vertexPositions = new Vector3[numberOfPoints];
+        Vector3[] globalVertexPositions = new Vector3[numberOfPoints];
         float length = 0.0f;
         int lengthOfVector = numberOfPoints;
         for (int i = 0; i < numberOfPoints; i++)
@@ -213,11 +426,11 @@ public class CutFunction : MonoBehaviour
             }
 
             Vector3 temp_vector = new Vector3(startValue + i * increment, yValue, 0);
-            vertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
+            globalVertexPositions[i] = Quaternion.AngleAxis(angle, Vector3.forward) * temp_vector + transform.parent.transform.position;
 
             if (i == 0) continue;
 
-            length += (vertexPositions[i] - vertexPositions[i - 1]).magnitude;
+            length += (globalVertexPositions[i] - globalVertexPositions[i - 1]).magnitude;
             if (length > maxLengthOverride)
             {
                 lengthOfVector = i;
@@ -226,50 +439,9 @@ public class CutFunction : MonoBehaviour
         }
 
         // shorten vector
-        Array.Resize(ref vertexPositions, lengthOfVector);
-        return vertexPositions;
+        Array.Resize(ref globalVertexPositions, lengthOfVector);
+        return globalVertexPositions;
     }
-
-    public LayerMask layerMask;   // The layer(s) to check for collisions
-
-    public Vector3[] Draw()
-    {
-        Vector3[] vertexPositions = CalculateVertexPositions();
-        Vector3[] shiftedVertexPositions = ShiftVertexPositions(vertexPositions);
-
-        DrawLine(vertexPositions.Length, vertexPositions);
-        lineRenderer.widthCurve = new AnimationCurve(new Keyframe(0, 0.1f), new Keyframe(1, 0.1f));
-        addCollider(shiftedVertexPositions.ToList());
-
-        
-
-        return vertexPositions;
-    }
-
-    float GetDistanceToEdge(Collider2D collider, EdgeCollider2D edge)
-    {
-        if (collider == null) return Mathf.Infinity;
-
-        // Find the closest point on the edgeCollider and calculate the distance
-        Vector2 closestPoint = edge.ClosestPoint(collider.transform.position);
-        return Vector2.Distance(collider.transform.position, closestPoint);
-    }
-
-    public Vector3[] CalculateVertexPositions()
-    {
-        Vector3[] vertexPositionsPositive = GetPath(0.0f, currentLineLengthData.endValue, currentLineLengthData.maxLength);
-        Vector3[] vertexPositionsNegative = GetPath(0.0f, currentLineLengthData.startValue, currentLineLengthData.maxLength);
-
-        Array.Reverse(vertexPositionsNegative);
-
-        Vector3[] vertexPositions = new Vector3[vertexPositionsNegative.Length + vertexPositionsPositive.Length];
-
-        vertexPositionsNegative.CopyTo(vertexPositions, 0);
-        vertexPositionsPositive.CopyTo(vertexPositions, vertexPositionsNegative.Length);
-
-        return vertexPositions;
-    }
-
     public Vector3[] ShiftVertexPositions(Vector3[] vertexPositions)
     {
         Vector3[] shiftedVertexPositions = new Vector3[vertexPositions.Length];
