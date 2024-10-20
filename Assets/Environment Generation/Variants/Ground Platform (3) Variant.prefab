@@ -31,8 +31,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
+      propertyPath: maxX
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: minX
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathOperation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
       propertyPath: mathExpression
       value: 0.75*x + 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: maxX
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: minX
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
@@ -169,8 +194,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1927248444820940892, guid: 74facda5f2f71f046afa07c18c96c878,
         type: 3}
+      propertyPath: maxX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: mathOperation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
       propertyPath: mathExpression
       value: x - (0.05 * x)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: maxX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: mathOperation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4471622947378032915, guid: 74facda5f2f71f046afa07c18c96c878,
         type: 3}
@@ -301,6 +356,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: maxX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: mathExpression
       value: x - 2
       objectReference: {fileID: 0}
@@ -418,6 +488,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: maxX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: mathExpression
       value: x - (0.10 * x)
       objectReference: {fileID: 0}
@@ -505,8 +585,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: minX
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: mathExpression
       value: x/3 + 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510596170883701303, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5510596170883701303, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -533,6 +628,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -564,6 +669,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550567742809342840, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550567742809342840, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7550567742809342840, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}

@@ -512,7 +512,7 @@ MonoBehaviour:
   mathOperation: 0
   mathExpression: 2*x - 1
   minX: 2
-  maxX: 5
+  maxX: 7
   xValueText: {fileID: 7724554569971274367}
   operationTypeText: {fileID: 5399791810802205214}
 --- !u!1 &619345777111835177
@@ -944,10 +944,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d94d750f645eb4b9775686a637afa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mathOperation: 2
+  mathOperation: 0
   mathExpression: x * 0.8
-  minX: 1
-  maxX: 10
+  minX: 10
+  maxX: 20
   xValueText: {fileID: 3491097373651421198}
   operationTypeText: {fileID: 4007190872541076148}
 --- !u!1 &1240540278949665022
@@ -1565,10 +1565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d94d750f645eb4b9775686a637afa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mathOperation: 0
+  mathOperation: 1
   mathExpression: x/2 + 4
-  minX: 1
-  maxX: 10
+  minX: 7
+  maxX: 13
   xValueText: {fileID: 8930416305815276358}
   operationTypeText: {fileID: 6499817061317221159}
 --- !u!1 &1748606766999436048
@@ -2140,10 +2140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d94d750f645eb4b9775686a637afa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mathOperation: 2
+  mathOperation: 0
   mathExpression: 2 * x - 6
-  minX: 1
-  maxX: 10
+  minX: 6
+  maxX: 8
   xValueText: {fileID: 2174129655797457502}
   operationTypeText: {fileID: 1856247386058682596}
 --- !u!1 &2845012314245626789
@@ -3208,8 +3208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mathOperation: 0
   mathExpression: (x + 10) / 4
-  minX: 1
-  maxX: 10
+  minX: 6
+  maxX: 8
   xValueText: {fileID: 2320538441610088615}
   operationTypeText: {fileID: 137639152289120454}
 --- !u!1 &5601009484790317586
@@ -4112,8 +4112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mathOperation: 0
   mathExpression: x - (0.15 * x)
-  minX: 1
-  maxX: 10
+  minX: 10
+  maxX: 20
   xValueText: {fileID: 1038894028339755767}
   operationTypeText: {fileID: 3437988021286791830}
 --- !u!1 &7256031285080303951
@@ -4579,10 +4579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d94d750f645eb4b9775686a637afa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mathOperation: 2
+  mathOperation: 0
   mathExpression: 3*x - 5
-  minX: 1
-  maxX: 3
+  minX: 2
+  maxX: 6
   xValueText: {fileID: 6137029126579544198}
   operationTypeText: {fileID: 5964352738707550780}
 --- !u!1 &7716052337583636657
@@ -5819,10 +5819,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d94d750f645eb4b9775686a637afa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mathOperation: 2
+  mathOperation: 1
   mathExpression: x - 1
-  minX: 1
-  maxX: 10
+  minX: 5
+  maxX: 13
   xValueText: {fileID: 5041511902690425279}
   operationTypeText: {fileID: 4763036077888989957}
 --- !u!1 &8919655713111087496
@@ -6421,8 +6421,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
+      propertyPath: maxX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: minX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathOperation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
       propertyPath: mathExpression
       value: x * 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: maxX
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: minX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathOperation
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
