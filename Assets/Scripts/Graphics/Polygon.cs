@@ -36,17 +36,19 @@ public class Polygon : MonoBehaviour
             ComparePolygon();
             comparePolygon = false;
         }
+        if (initBoard)
+        {
+            InitBoard(-3, 3, 500, 0, 8);
+            SetPolygon();
+            initBoard = false;
+
+        }
     }
 
     private void Start()
     {
         polygon = GetComponent<PolygonCollider2D>();
-        if (initBoard)
-        {
-            InitBoard(-3, 3, 500, 0, 8);
-            SetPolygon();
-
-        }
+        
     }
     public void SetPolygon()
     {
