@@ -6,5 +6,5 @@ public class Platform : MonoBehaviour
 
     public ChoicePoint[] platformChoicePoints;
 
-
+    public VotingGate votingGate;
 }

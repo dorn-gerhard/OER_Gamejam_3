@@ -28,8 +28,6 @@ public class GroundScrolling : MonoBehaviour
             }
             _platformEntries.Add(new PlatformEntry { platform = platform, inUse = false });
         }
-
-        Debug.Log($"Initialized {_platformEntries.Count} platform entries.");
     }
 
     private void SelectInitialPlatforms()
@@ -107,6 +105,9 @@ public class GroundScrolling : MonoBehaviour
         // Call the new method to set random X values for gates
         SetRandomXValuesForGates(platformComponent);
 
+        // Set random opponent voting power
+        SetRandomOpponentVotingPower(platformComponent);
+
         _activePlatformsQueue.Enqueue(platformEntry);
 
         if (_activePlatformsQueue.Count > maxActivePlatforms)
@@ -134,6 +135,20 @@ public class GroundScrolling : MonoBehaviour
                 int randomXValue = Random.Range(choicePoint.rightGate.minX, choicePoint.rightGate.maxX + 1);
                 choicePoint.rightGate.SetRandomXValue();
             }
+        }
+    }
+
+    // Method to set random opponent voting power
+    private void SetRandomOpponentVotingPower(Platform platform)
+    {
+        VotingGate votingGate = platform.GetComponent<VotingGate>();
+        if (votingGate != null)
+        {
+            votingGate.SetOpponentVotingPower();
+        }
+        else
+        {
+            Debug.LogWarning($"No VotingGate component found on platform: {platform.name}");
         }
     }
 

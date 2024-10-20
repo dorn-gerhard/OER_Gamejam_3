@@ -67,8 +67,6 @@ public class VotingPowerLogic : MonoBehaviour
 
         LevelState.UpdateVotingPower();
 
-        // Optional: Log the new voting power for debugging purposes
-        Debug.Log($"Updated Voting Power: {LevelState.VotingPower}");
     }
 
 }
