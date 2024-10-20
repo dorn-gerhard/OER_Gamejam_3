@@ -25,7 +25,15 @@ public class GameManager : MonoBehaviour
 
     public void Cook()
     {
-        EvaluateResultForStrawberryJam();
+        if (EvaluateResultForStrawberryJam() == true)
+        {
+            //load the picture with happy chef
+        }
+        else
+        {
+            //load the picture with sad chef
+        }
+
     }
 
     // Method to evaluate the result based on the pot's weight

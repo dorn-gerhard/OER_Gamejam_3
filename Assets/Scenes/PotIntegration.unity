@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 176582448}
   - component: {fileID: 176582450}
   - component: {fileID: 176582451}
+  - component: {fileID: 176582452}
   m_Layer: 0
   m_Name: pot_foreground_empty
   m_TagString: Untagged
@@ -407,6 +408,19 @@ PolygonCollider2D:
       - {x: 1.38, y: -2}
       - {x: 1.91, y: 1.56}
   m_UseDelaunayMesh: 0
+--- !u!114 &176582452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176582447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9665a05b30969d4f8bfb8a42842f3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pot_filled: {fileID: 21300000, guid: fb7b7958458a842bcb520cce0e87a55c, type: 3}
 --- !u!4 &379136725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8818916213467863217, guid: 6fffeeb5325cebe4f86f1666228b0f4e,
@@ -900,6 +914,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 270348604346426133, guid: 6fffeeb5325cebe4f86f1666228b0f4e,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270348604346426133, guid: 6fffeeb5325cebe4f86f1666228b0f4e,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270348604346426133, guid: 6fffeeb5325cebe4f86f1666228b0f4e,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270348604346426133, guid: 6fffeeb5325cebe4f86f1666228b0f4e,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1970207555484494851, guid: 6fffeeb5325cebe4f86f1666228b0f4e,
         type: 3}
       propertyPath: m_Name
