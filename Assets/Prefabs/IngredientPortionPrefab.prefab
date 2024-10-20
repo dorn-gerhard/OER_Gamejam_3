@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4190128046073381773}
   - component: {fileID: -9011255965315975564}
   - component: {fileID: 7507486180586055393}
+  - component: {fileID: -86253268147003389}
   m_Layer: 0
   m_Name: IngredientPortionPrefab
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.72033, y: -16.444403, z: -10.787319}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -171,3 +172,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-86253268147003389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025976783821516098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c8ff71aefee4b9c946fd210886ce73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDraggable: 0
