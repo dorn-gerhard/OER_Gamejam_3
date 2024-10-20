@@ -36,13 +36,21 @@ public class IngredientSpawner : MonoBehaviour
     {
         GameObject newInstance = Instantiate(ingredientPrefab);
         newInstance.name = ingredient.Name;
-
+        
         //newInstance.transform.position = Vector3.zero;
         newInstance.transform.position = transform != null ? transform.position : Vector3.zero;
 
+        SpriteRenderer spriteRenderer = newInstance.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = ingredient.IngredienContainerSprite;
+
+        BoxCollider2D boxCollider = newInstance.GetComponent<BoxCollider2D>();
+        boxCollider.size = spriteRenderer.sprite.bounds.size;
+
+        IngredientDataHolder dataHolder = newInstance.GetComponent<IngredientDataHolder>();
+        dataHolder.ingredient = ingredient;
+
         Debug.Log($"{ingredient.Name} spawned.");
 
-        newInstance.GetComponent<SpriteRenderer>().sprite = ingredient.Sprite;
     }
 
   
