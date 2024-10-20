@@ -8,6 +8,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1792206534670210098}
     m_Modifications:
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 391853ef7e404e7e2b38eb5e50db5bdf,
+        type: 3}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathExpression
+      value: 3*x - 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathExpression
+      value: 2*x - 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7176014607054751167, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,6 +89,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.7633333
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44df21480e25f53eaa397ce31b9bedde,
+        type: 3}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9148924054447542416, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
       propertyPath: m_Name
@@ -102,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 312792015660484506, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: x \cdot 0.8
+      value: x + 7
       objectReference: {fileID: 0}
     - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -126,10 +178,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c0ef61d8727fca3768facfacc8eed303,
+      objectReference: {fileID: 21300000, guid: ca4c54f2a323d7aac92d1e5d2ce0cf34,
         type: 3}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1585759850201587382, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Mesh
@@ -153,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 2111294968015516361, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: \frac{x + 15}{3}
+      value: 2*x - 3
       objectReference: {fileID: 0}
     - target: {fileID: 2228799069194715636, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -223,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 2371094560619077333, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: x \cdot 0.85
+      value: x + 5
       objectReference: {fileID: 0}
     - target: {fileID: 2534583650830566204, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -233,10 +300,25 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2569293771684269256, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569293771684269256, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569293771684269256, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bed9e15b5d4f2e9eba7e6de06b3d6acc,
+      objectReference: {fileID: 21300000, guid: fed7749237f2ee54f919dd7e94347d5c,
         type: 3}
+    - target: {fileID: 2569293771684269256, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: maxX
@@ -254,10 +336,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3092601278498926422, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.6166667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092601278498926422, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092601278498926422, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d1fea5aab130a766fa14e338578cd973,
+      objectReference: {fileID: 21300000, guid: 5c4ac67ca10e67b1384e1453d22c6c3d,
         type: 3}
+    - target: {fileID: 3092601278498926422, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3283324324102526588, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -270,10 +367,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3742686188218030597, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.75333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742686188218030597, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742686188218030597, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 555022e955bdef30e98a7e9bc4c2d81f,
+      objectReference: {fileID: 21300000, guid: 1c695f27622a4d9c6b79e26db4ebad7f,
         type: 3}
+    - target: {fileID: 3742686188218030597, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4178285785120271238, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: maxX
@@ -287,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 4178285785120271238, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: \frac{x \cdot 3}{5} + 5
+      value: 2*x + 1
       objectReference: {fileID: 0}
     - target: {fileID: 5057563563816769450, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -342,14 +454,29 @@ PrefabInstance:
     - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: x \cdot 0.75
+      value: 3*x - 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684568254711356625, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.7266667
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684568254711356625, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 5684568254711356625, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4d33045984cc32384a0f02dbf59486a0,
+      objectReference: {fileID: 21300000, guid: 9328edfa9186ad863a1dc697e9611692,
         type: 3}
+    - target: {fileID: 5684568254711356625, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6104650664569043871, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: maxX
@@ -368,14 +495,29 @@ PrefabInstance:
     - target: {fileID: 6104650664569043871, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: \frac{x^2 + 60}{20}
+      value: x + 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338875358136215938, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6066667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338875358136215938, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 6338875358136215938, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c9be2ca440b561cf098425d8f67e5545,
+      objectReference: {fileID: 21300000, guid: 017e795d8aad31249a65cac470979ada,
         type: 3}
+    - target: {fileID: 6338875358136215938, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6791344199535134184, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Sprite
@@ -384,10 +526,25 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6824328808702282268, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824328808702282268, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824328808702282268, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5879b0f724fcada8f952dfe00078a869,
+      objectReference: {fileID: 21300000, guid: 916fd67d03eccc3efbee298ef6530279,
         type: 3}
+    - target: {fileID: 6824328808702282268, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: maxX
@@ -406,7 +563,7 @@ PrefabInstance:
     - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: \frac{x}{1.33}
+      value: 4*x - 10
       objectReference: {fileID: 0}
     - target: {fileID: 7088105825707064316, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -415,10 +572,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.75333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 91091ea0dab40ee18a35b4133c29ddee,
+      objectReference: {fileID: 21300000, guid: 5b2cd924e34c23106b58a9ad9fa03b97,
         type: 3}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7742227479280024609, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Name
@@ -447,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 8072843281680523984, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: mathExpression
-      value: x \cdot 0.75 + 2
+      value: x + 8
       objectReference: {fileID: 0}
     - target: {fileID: 8284151764479856004, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}

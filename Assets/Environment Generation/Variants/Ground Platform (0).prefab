@@ -377,12 +377,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b9d2dcd4af7c61c4dbbed1220a3b1026, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 373a83c000afd5f9297bf52e4d1bd842, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 0.46, y: 0.34666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathOperation: 0
-  mathExpression: 2x - 1
+  mathExpression: 2*x - 1
   minX: 2
   maxX: 5
   xValueText: {fileID: 7724554569971274367}
@@ -680,12 +680,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4973492481587738398}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &659023457878610421
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,12 +759,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b5f2a32ee688c3284822f338cb9d47c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd72c6baa5e7400b891e172f38610a6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 0.47666666, y: 0.19333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathOperation: 2
-  mathExpression: \frac{x}{2}
+  mathExpression: x * 0.8
   minX: 1
   maxX: 10
   xValueText: {fileID: 3491097373651421198}
@@ -1115,12 +1115,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3504004167980830349}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &1307339431982760330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,12 +1286,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 8383400719661950254}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &1532024893100998215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathOperation: 0
-  mathExpression: \frac{x}{2} + 4
+  mathExpression: x/2 + 4
   minX: 1
   maxX: 10
   xValueText: {fileID: 8930416305815276358}
@@ -1736,12 +1736,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 6186101093540769319}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &1864124828382072928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,12 +2013,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1249606982134100096}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &2478172322287479804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,7 +2141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathOperation: 2
-  mathExpression: x + 5
+  mathExpression: 2 * x - 6
   minX: 1
   maxX: 10
   xValueText: {fileID: 2174129655797457502}
@@ -2219,12 +2219,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b9d2dcd4af7c61c4dbbed1220a3b1026, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0da76deb57ca9d9d9412628456182bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 0.75333333, y: 0.19333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2303,12 +2303,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 549d9fc3fa5ab4d3590148120ffebf01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 268eb5e63d7ad467cbe56c07914c5ca1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 1.1866666, y: 0.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2631,12 +2631,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4542354226512829136}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &3999304565127838256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,12 +2855,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 6487720578517929854}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &4569351763108442798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,12 +3026,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2233337701313389789}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &4751289969699805924
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,7 +3207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathOperation: 0
-  mathExpression: x + 5
+  mathExpression: (x + 10) / 4
   minX: 1
   maxX: 10
   xValueText: {fileID: 2320538441610088615}
@@ -3285,12 +3285,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54a540622dc7d2cdcb55311d7ed75c52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e6d16caf9d9ffb5cb059389ec997464, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 0.74333334, y: 0.19333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3461,12 +3461,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2224327647505935615}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &6530145475175370426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,12 +3674,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 32da1f63aabb05766a65ce24cee1fb9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86f2cd3165bed7f60ad233117a53f7e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 0.58666664, y: 0.30333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4111,7 +4111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathOperation: 0
-  mathExpression: x \cdot 0.5
+  mathExpression: x - (0.15 * x)
   minX: 1
   maxX: 10
   xValueText: {fileID: 1038894028339755767}
@@ -4281,12 +4281,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4982507258772635452}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &7467329391987486779
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,12 +4452,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 131167632467072159}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &7593957954524195108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathOperation: 2
-  mathExpression: 3x - 5
+  mathExpression: 3*x - 5
   minX: 1
   maxX: 3
   xValueText: {fileID: 6137029126579544198}
@@ -4750,12 +4750,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 7265058403095773489}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &7807941488997687761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4882,12 +4882,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9225ee107b8553bfe988dd9cfa0cdf54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2218334ee5be78342abed6118a98e9b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 0.75333333, y: 0.19333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5521,12 +5521,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 6195119999293154821}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &8610143204828031234
 GameObject:
   m_ObjectHideFlags: 0
@@ -5692,12 +5692,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1228945452221681062}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &8772800566533386269
 GameObject:
   m_ObjectHideFlags: 0
@@ -5990,12 +5990,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 8362827187413735432}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &8973270862581348584
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,12 +6122,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d4e2c925f5243f0b18b6a80920f43d18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6cea2c77ef9d8cfbb1f9547a902cf30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.34, y: 0.13}
+  m_Size: {x: 0.6166667, y: 0.19333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6298,12 +6298,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3494995356437055151}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1001 &981666314752045151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6398,6 +6398,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3386740560795644783}
     m_Modifications:
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae8a0ae363cffe76c9a9f5af0cdf7855,
+        type: 3}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathExpression
+      value: x * 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathExpression
+      value: x + 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7176014607054751167, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6447,6 +6478,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.46333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e1dfe982d4d2c78b097c31308dfc901e,
+        type: 3}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9148924054447542416, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}

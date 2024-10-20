@@ -8,6 +8,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6414184630466737407}
     m_Modifications:
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9433333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5835294b6c345ce0b89c70917d438551,
+        type: 3}
+    - target: {fileID: 1203032526196480479, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathExpression
+      value: 0.75*x + 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: mathExpression
+      value: 0.5*x + 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7176014607054751167, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,6 +89,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f7c3f483a3b343b1b8601ef11952f75f,
+        type: 3}
+    - target: {fileID: 7899615300236730123, guid: f6c2ef38c00235d44b78da91a05054e6,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9148924054447542416, guid: f6c2ef38c00235d44b78da91a05054e6,
         type: 3}
       propertyPath: m_Name
@@ -94,6 +146,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6414184630466737407}
     m_Modifications:
+    - target: {fileID: 1203032526196480479, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6166667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203032526196480479, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fe35b5f418f894e8bf28a542b4c1546,
+        type: 3}
+    - target: {fileID: 1203032526196480479, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927248444820940892, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: mathExpression
+      value: x - (0.05 * x)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471622947378032915, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: mathExpression
+      value: x - 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7176014607054751167, guid: 74facda5f2f71f046afa07c18c96c878,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -154,6 +237,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.1866666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899615300236730123, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 598e52bf7bc59dbd5a27602940b10012,
+        type: 3}
+    - target: {fileID: 7899615300236730123, guid: 74facda5f2f71f046afa07c18c96c878,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9148924054447542416, guid: 74facda5f2f71f046afa07c18c96c878,
         type: 3}
       propertyPath: m_Name
@@ -195,10 +299,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Choice Point (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: x - 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1062921274437435166, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.36333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.34666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 327e36c5e34994cbe85a5fa5d1b30334,
+        type: 3}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1585759850201587382, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -265,6 +395,53 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2534583650830566204, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.62333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534583650830566204, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534583650830566204, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a204f57813ff52f0a83fa0e1f66b6068,
+        type: 3}
+    - target: {fileID: 2534583650830566204, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: x - (0.10 * x)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280238755669257568, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9533333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280238755669257568, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280238755669257568, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2834073395def8712b731e035b34bc4e,
+        type: 3}
+    - target: {fileID: 4280238755669257568, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5057563563816769450, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: votingGate
@@ -305,10 +482,93 @@ PrefabInstance:
       propertyPath: platformChoicePoints.Array.data[4]
       value: 
       objectReference: {fileID: 2976238573881651789}
+    - target: {fileID: 5077073624661355444, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077073624661355444, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.30666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077073624661355444, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: df06615532aab9d35845cf40409649ab,
+        type: 3}
+    - target: {fileID: 5077073624661355444, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: x/3 + 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510596170883701303, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: 0.9*x - 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791344199535134184, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.1866666
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791344199535134184, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791344199535134184, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 64ada025da53f517ca355ab36f263838,
+        type: 3}
+    - target: {fileID: 6791344199535134184, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: (x + 8) / 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7088105825707064316, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.30666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a6992008fa1130f5ac0b1708073135c,
+        type: 3}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550567742809342840, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: 0.8*x + 2
       objectReference: {fileID: 0}
     - target: {fileID: 7742227479280024609, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
