@@ -26,11 +26,6 @@ public class CalculateWeight : MonoBehaviour
             weightText.text = "" + weight.ToString("F2") + " kg";
         }
 
-        if (weightSlider != null)
-        {
-            // Assuming the slider's max value is set appropriately
-            weightSlider.value = weight;
-        }
     }
 
     // Called when another collider enters the trigger collider attached to the object
@@ -43,8 +38,7 @@ public class CalculateWeight : MonoBehaviour
             float ingredientWeight = ingredientData.ingredient.Weight;
 
             // Add the weight to the total weight
-            weight += ingredientWeight;
-            Debug.Log("Added weight: " + ingredientWeight + ", Total weight: " + weight);
+            weight += ingredientWeight/1000f;
 
             // Store the weight in the dictionary
             ingredientWeights[collision.gameObject] = ingredientWeight;
@@ -67,7 +61,6 @@ public class CalculateWeight : MonoBehaviour
             // Get the stored weight and subtract it from the total weight
             float ingredientWeight = ingredientWeights[collision.gameObject];
             weight -= ingredientWeight;
-            Debug.Log("Removed weight: " + ingredientWeight + ", Total weight: " + weight);
 
             // Remove the ingredient from the dictionary
             ingredientWeights.Remove(collision.gameObject);
