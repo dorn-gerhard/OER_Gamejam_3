@@ -124,7 +124,7 @@ public class FillPolygon : MonoBehaviour
 
         for (int j = 0; j < polygonCollider2D.GetTotalPointCount(); j++)
         {
-            Vector2 actual = points[j];
+            Vector2 actual = points[j] + new Vector2(transform.position.x, transform.position.y);
             lineRenderer.SetPosition(j, new Vector3(actual.x, actual.y, 0));
         }
 

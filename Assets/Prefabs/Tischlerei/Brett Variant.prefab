@@ -86,42 +86,42 @@ PrefabInstance:
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[0].x
-      value: -9.1
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[0].y
-      value: -2.5
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[1].x
-      value: -9.1
+      value: 1.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[1].y
-      value: 5.5
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[2].x
-      value: -3.1
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[2].y
-      value: 5.5
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[3].x
-      value: -5.66
+      value: 5.04
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
       propertyPath: m_Positions.Array.data[3].y
-      value: -2.5
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 5426288034515997364, guid: f2651cd63e3914b48857bf1378319585,
         type: 3}
@@ -263,4 +263,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c68b252012d044abbf83c4558f9450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionLineWidth: 0.4
+  selectionLineWidth: 0.1
