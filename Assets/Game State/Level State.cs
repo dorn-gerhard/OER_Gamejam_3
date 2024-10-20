@@ -11,6 +11,7 @@ public class LevelState : MonoBehaviour
     public UserInterface userInterface;
 
     public AnimatorManager playerAnimManager;
+    public CrowdVisuals crowdVisuals;
 
     // New public variable for the threshold, set in the inspector
     public int votingPowerThreshold = 1000; // Default value, change as needed
@@ -20,12 +21,15 @@ public class LevelState : MonoBehaviour
     {
         Instance = this;
         ResetLevelState();
+        playerAnimManager.GetAllAnimators();
         UpdateVotingPower();
     }
 
     public static void UpdateVotingPower()
     {
         Instance.userInterface.UpdateVotingPowerText(VotingPower);
+        Instance.crowdVisuals.UpdateVotingPower(VotingPower);
+        Instance.playerAnimManager.SetBoolForAll("Is Walking", true);
         Instance.CheckVotingPowerThreshold(); // Check after updating the text
     }
 
