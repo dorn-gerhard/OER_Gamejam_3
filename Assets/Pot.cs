@@ -21,9 +21,11 @@ public class Pot : MonoBehaviour
         string ingredient = collision.gameObject.name;
         addedIngredients.Add(ingredient);
 
-        //TODO
-        //collision.gameObject.weight; 
-        weightIngredient.Add(1.0f);
+
+
+            //TODO
+            //collision.gameObject.weight; 
+            weightIngredient.Add(1.0f);
 
         // Check if the object has a Rigidbody2D before modifying it
         Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
@@ -38,6 +40,8 @@ public class Pot : MonoBehaviour
         {
             dragAndDrop.enabled = false;
         }
+
+
 
 
 
