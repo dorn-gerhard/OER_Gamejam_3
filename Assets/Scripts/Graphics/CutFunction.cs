@@ -352,11 +352,12 @@ public class CutFunction : MonoBehaviour
         int k_final = 400;
         while (k < k_final)
         {
-            yield return new WaitForSecondsRealtime(0.004f);
+            //yield return new WaitForSecondsRealtime(0.004f);
             //print("WaitAndPrint " + Time.unscaledTime);
             lineRenderer.widthCurve = GetLaserCurve((float)k / (2.0f + (float)k_final), 0.2f);
             k++;
         }
+        yield return null;
     }
 
   

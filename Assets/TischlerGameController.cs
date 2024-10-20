@@ -73,7 +73,13 @@ public class TischlerGameController : MonoBehaviour
         currentGoal = goals[0];
         //currentGoal = goals[UnityEngine.Random.Range(1, goals.Count - 1)];
 
+        //var brett = FindObjectOfType<PolygonSelecter>().GetComponent<Polygon>();
+        //brett.InitBoard(-3, 3, 500, 0, 8);
+        //brett.SetPolygon();
+
         StartNewRound();
+
+
     }
 
     public void StartNewRound()

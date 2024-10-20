@@ -48,7 +48,7 @@ public class Polygon : MonoBehaviour
     private void Start()
     {
         polygon = GetComponent<PolygonCollider2D>();
-        
+        SetPolygon();
     }
     public void SetPolygon()
     {
