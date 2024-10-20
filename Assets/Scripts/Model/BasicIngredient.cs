@@ -5,13 +5,13 @@ public class BasicIngredient : ScriptableObject, IIngredient
 {
     [SerializeField] private string ingredientName;
     [SerializeField] private float ingredientWeight;
-    [SerializeField] private Sprite ingredienContainerSprite;
+    [SerializeField] private Sprite ingredientContainerSprite;
     [SerializeField] private Sprite ingredientPortionSprite;
 
 
     public string Name => ingredientName;
     public float Weight => ingredientWeight;
-    public Sprite IngredienContainerSprite => ingredienContainerSprite;
+    public Sprite IngredientContainerSprite => ingredientContainerSprite;
     public Sprite IngredientPortionSprite => ingredientPortionSprite;
 
 

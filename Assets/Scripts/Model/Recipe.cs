@@ -8,7 +8,7 @@ public class Recipe : ScriptableObject, IIngredient
     [SerializeField] private float ingredientWeight;
     [SerializeField] private List<IngredientAmount> ingredients;
     [SerializeField] private string recipeInstruction;
-    [SerializeField] private Sprite ingredienContainerSprite;
+    [SerializeField] private Sprite ingredientContainerSprite;
     [SerializeField] private Sprite ingredientPortionSprite;
 
 
@@ -18,6 +18,6 @@ public class Recipe : ScriptableObject, IIngredient
     public List<IngredientAmount> GetIngredients => ingredients;
 
 
-    public Sprite IngredienContainerSprite => ingredienContainerSprite;
+    public Sprite IngredientContainerSprite => ingredientContainerSprite;
     public Sprite IngredientPortionSprite => ingredientPortionSprite;
 }

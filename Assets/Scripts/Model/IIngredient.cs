@@ -4,6 +4,6 @@ public interface IIngredient
 {
     string Name {get;}
     float Weight {get;}
-    Sprite IngredienContainerSprite { get; }
+    Sprite IngredientContainerSprite { get; }
     Sprite IngredientPortionSprite { get; }
 }
