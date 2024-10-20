@@ -46,12 +46,12 @@ public class SpawnPortion : MonoBehaviour
 
         //newInstance.transform.position = Vector3.zero;
         newInstance.transform.position = position != null ? position : Vector3.zero;
-        newInstance.transform.localScale *= 0.75f;
         SpriteRenderer spriteRenderer = newInstance.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = ingredient.IngredientPortionSprite;
 
         BoxCollider2D boxCollider = newInstance.GetComponent<BoxCollider2D>();
         boxCollider.size = spriteRenderer.sprite.bounds.size;
+
 
         //portionData.isDragging = true;
         //portionData.offset = newInstance.transform.position - GetMouseWorldPosition();
