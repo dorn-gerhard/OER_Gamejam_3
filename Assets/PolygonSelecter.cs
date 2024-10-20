@@ -47,6 +47,8 @@ public class PolygonSelecter : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
+        if (!TischlerGameController.current.doSelection) return;
+
         //The mouse is no longer hovering over the GameObject so output this message each frame
         Debug.Log("Selected GameObject." + gameObject.name);
 

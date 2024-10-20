@@ -31,6 +31,8 @@ public class TischlerGameController : MonoBehaviour
 
     public static TischlerGameController current;
 
+    public bool doSelection = false;
+
     [Serializable]
     public struct CutOption
     {
@@ -55,22 +57,23 @@ public class TischlerGameController : MonoBehaviour
 
     void StartNewRound()
     {
+        doSelection = false;
+
         Line.SetActive(false);
 
         choosePartDisplay.SetActive(false);
         resultDisplay.SetActive(false);
         cutDisplay.SetActive(false);
 
-        playerController.SetActive(true);
-
-        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
-        playerController.GetComponent<PlayerMove2D>().enabled = false;
+        playerController.SetActive(false);
 
         StartCutSelection();
     }
 
     public void SelectPolygon(GameObject selectedPolygon)
     {
+        doSelection = false;
+
         foreach (var selector in FindObjectsOfType<PolygonSelecter>())
         {
             if (selector.gameObject == selectedPolygon) continue;
@@ -127,14 +130,12 @@ public class TischlerGameController : MonoBehaviour
 
         cutDisplay.SetActive(true);
 
-        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(true);
-        playerController.GetComponent<PlayerMove2D>().enabled = true;
+        playerController.SetActive(true);
     }
 
     public void Cut()
     {
-        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
-        playerController.GetComponent<PlayerMove2D>().enabled = false;
+        playerController.SetActive(false);
 
         StartCoroutine(CutRoutine());
     }
@@ -142,7 +143,8 @@ public class TischlerGameController : MonoBehaviour
     public IEnumerator CutRoutine()
     {
         //stop movement
-        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
+        playerController.SetActive(true);
+
         playerController.GetComponent<PlayerMove2D>().enabled = false;
 
         // do we need to call cut directly here?
@@ -155,9 +157,13 @@ public class TischlerGameController : MonoBehaviour
 
         Line.SetActive(false);
 
+        playerController.GetComponent<PlayerMove2D>().enabled = true;
+        playerController.SetActive(false);
+
         if (IsStillPossible)
         {
             choosePartDisplay.SetActive(true);
+            doSelection = true;
             //StartCutSelection();
         }
         else
