@@ -41,7 +41,12 @@ public class Gate : MonoBehaviour
             // Ensure the result is a valid number and convert it to float
             if (result is double || result is int || result is float)
             {
-                return (float)System.Convert.ToDouble(result);
+                float outputValue = (float)System.Convert.ToDouble(result);
+
+                // Log the operation with the appropriate phrase
+                Debug.Log(GetOperationPhrase(outputValue));
+
+                return outputValue;
             }
         }
         catch (EvaluationException e)
@@ -51,6 +56,24 @@ public class Gate : MonoBehaviour
 
         // Return 1 in case of any errors
         return 1;
+    }
+
+    // Method to get the operation phrase based on the selected math operation
+    private string GetOperationPhrase(float output)
+    {
+        switch (mathOperation)
+        {
+            case MathModifierType.Addition:
+                return $"Added {output}";
+            case MathModifierType.Subtraction:
+                return $"Subtracted {output}";
+            case MathModifierType.Multiplication:
+                return $"Multiplied by {output}";
+            case MathModifierType.Division:
+                return $"Divided by {output}";
+            default:
+                return $"Calculated {output}";
+        }
     }
 
     // Awake method to update text based on operation type
