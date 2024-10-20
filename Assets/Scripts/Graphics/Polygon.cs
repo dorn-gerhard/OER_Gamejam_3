@@ -11,6 +11,8 @@ public class Polygon : MonoBehaviour
     public Vector2[] lowerPoints;
     public Vector2[] upperPoints;
     public int nPoints;
+    public float minY;
+    public float maxY;
     PolygonCollider2D polygon;
 
     public bool setPolygon = false;
@@ -54,6 +56,8 @@ public class Polygon : MonoBehaviour
     {
         minX = minXInput;
         maxX = maxXInput;
+        minY = minYInput;
+        maxY = maxYInput;
         nPoints = numberOfGridPoints;
         lowerPoints = new Vector2[numberOfGridPoints];
         upperPoints = new Vector2[numberOfGridPoints];
@@ -66,5 +70,7 @@ public class Polygon : MonoBehaviour
         }
 
     }
+
+   
 
 }
