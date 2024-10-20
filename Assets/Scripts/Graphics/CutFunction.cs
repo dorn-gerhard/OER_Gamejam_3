@@ -25,7 +25,6 @@ public class CutFunction : MonoBehaviour
     public Transform circle; 
 
     public float ComboConfidenceGain = 3;
-    public Polygon brett;
 
     [Header("Slider")]
     
@@ -96,8 +95,8 @@ public class CutFunction : MonoBehaviour
         Vector3 shift = transform.parent.transform.position;
         cutPoints = edge.points.ToList<Vector2>().Select(x => new Vector2(x.x + shift.x, x.y  + shift.y)).ToList();
         yield return StartCoroutine(LaserBeam(2.0f)); 
-        GameObject brett = FindObjectOfType<Polygon>().gameObject;
-        CutCurveWithPolygon(brett);
+        GameObject brett2 = FindObjectOfType<PolygonSelecter>().gameObject;
+        CutCurveWithPolygon(brett2);
 
         yield return null;
     }
@@ -223,6 +222,7 @@ public class CutFunction : MonoBehaviour
         endUpper = laser.Length - 1;
         // handle right side handling
         // three posibilities:
+        Debug.Log("laser length: " + laser.Length);
         Debug.Log("laser last: " + (laser.Last()));
 
         Debug.Log("startLower: " + startLower + ", start Upper: " + startUpper);
