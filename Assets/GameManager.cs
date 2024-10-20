@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Sprite chefHappy;
     public Sprite chefSad;
     public Image chefImage; // Reference to the UI.Image component
+    public Button retryButton;
 
 
     // Start is called before the first frame update
@@ -43,6 +45,15 @@ public class GameManager : MonoBehaviour
             Debug.Log("The cooking was unsuccessful. Showing sad chef.");
         }
 
+        retryButton.enabled = true;
+        retryButton.gameObject.SetActive(true);
+
+    }
+
+    public void Retry()
+    {
+        Debug.Log("Loading new scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Method to evaluate the result based on the pot's weight
