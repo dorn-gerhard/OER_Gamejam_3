@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrettZiel
       objectReference: {fileID: 0}
+    - target: {fileID: 7576897780795529532, guid: da702d9c84f214300848818fe7edd521,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
       propertyPath: m_Loop
@@ -86,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
       propertyPath: m_Positions.Array.data[0].y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
@@ -96,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
       propertyPath: m_Positions.Array.data[1].y
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
@@ -106,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
       propertyPath: m_Positions.Array.data[2].y
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
@@ -116,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}
       propertyPath: m_Positions.Array.data[3].y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7657964680478397187, guid: da702d9c84f214300848818fe7edd521,
         type: 3}

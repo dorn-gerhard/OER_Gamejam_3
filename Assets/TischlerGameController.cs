@@ -29,6 +29,8 @@ public class TischlerGameController : MonoBehaviour
     public Image cutSelectionImage2;
     public Image cutSelectionImage3;
 
+    public static TischlerGameController current;
+
     [Serializable]
     public struct CutOption
     {
@@ -46,6 +48,8 @@ public class TischlerGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        current = this;
+
         StartNewRound();
     }
 
@@ -59,14 +63,28 @@ public class TischlerGameController : MonoBehaviour
 
         playerController.SetActive(true);
 
+        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
+        playerController.GetComponent<PlayerMove2D>().enabled = false;
+
+        StartCutSelection();
+    }
+
+    public void SelectPolygon(GameObject selectedPolygon)
+    {
+        foreach (var selector in FindObjectsOfType<PolygonSelecter>())
+        {
+            if (selector.gameObject == selectedPolygon) continue;
+
+            Destroy(selector.gameObject);
+        }
+
+        choosePartDisplay.SetActive(false);
+
         StartCutSelection();
     }
 
     private void StartCutSelection()
     {
-        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(true);
-        playerController.GetComponent<PlayerMove2D>().enabled = true;
-
         List<CutOption> shuffledList = new List<CutOption>(cutOptions);
         for (int i = 0; i < shuffledList.Count; i++)
         {
@@ -108,10 +126,16 @@ public class TischlerGameController : MonoBehaviour
         cutOptionsDisplay.SetActive(false);
 
         cutDisplay.SetActive(true);
+
+        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(true);
+        playerController.GetComponent<PlayerMove2D>().enabled = true;
     }
 
     public void Cut()
     {
+        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(false);
+        playerController.GetComponent<PlayerMove2D>().enabled = false;
+
         StartCoroutine(CutRoutine());
     }
 
@@ -133,7 +157,8 @@ public class TischlerGameController : MonoBehaviour
 
         if (IsStillPossible)
         {
-            StartCutSelection();
+            choosePartDisplay.SetActive(true);
+            //StartCutSelection();
         }
         else
         {
@@ -162,9 +187,6 @@ public class TischlerGameController : MonoBehaviour
             resultDisplayText.text = failText;
             resultDisplay.SetActive(true);
         }
-
-        playerController.GetComponent<PlayerMove2D>().fixedJoystick.gameObject.SetActive(true);
-        playerController.GetComponent<PlayerMove2D>().enabled = true;
 
         yield return null;
     }
