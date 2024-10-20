@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Strawberry
   ingredientWeight: 0
-  ingredienContainerSprite: {fileID: 21300000, guid: 34f4b402afba84f298fdf163bbc7f960,
+  ingredientContainerSprite: {fileID: 21300000, guid: 34f4b402afba84f298fdf163bbc7f960,
     type: 3}
   ingredientPortionSprite: {fileID: 21300000, guid: 34f4b402afba84f298fdf163bbc7f960,
     type: 3}

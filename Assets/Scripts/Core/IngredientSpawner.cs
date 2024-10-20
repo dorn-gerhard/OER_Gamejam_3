@@ -15,6 +15,8 @@ public class IngredientSpawner : MonoBehaviour
     {
         start.x -= 3.5f;
         start.y -= 2;
+        start.z -= 0.5f;
+        SpawnRecipeIngredients();
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class IngredientSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && recipe != null)
         {
-            SpawnRecipeIngredients();
+            //SpawnRecipeIngredients();
         }
     }
 
