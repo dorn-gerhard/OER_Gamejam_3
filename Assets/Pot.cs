@@ -14,18 +14,15 @@ public class Pot : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Increase the weight by 3 when an ingredient is added
-        weight += 3;
-        Debug.Log("Current weight: " + weight);
+
 
         // Get the name of the collided ingredient
         string ingredient = collision.gameObject.name;
         addedIngredients.Add(ingredient);
 
-
-
             //TODO
-            //collision.gameObject.weight; 
-            weightIngredient.Add(1.0f);
+         float weight = collision.gameObject.GetComponent<IngredientDataHolder>().ingredient.Weight; 
+         weightIngredient.Add(1.0f);
 
         // Check if the object has a Rigidbody2D before modifying it
         Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
