@@ -17,5 +17,7 @@ MonoBehaviour:
   ingredients:
   - ingredient: {fileID: 11400000, guid: cb3c0974dde33f74a8ea6c31e893d140, type: 2}
     amount: 0
+  - ingredient: {fileID: 11400000, guid: 619b87e8743ac43228b49aa3477791db, type: 2}
+    amount: 0
   recipeInstruction: 
   sprite: {fileID: 0}
