@@ -8,10 +8,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 312792015660484506, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 312792015660484506, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: x \cdot 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977497391070030832, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: 2 \cdot x - 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529156309541144368, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ef61d8727fca3768facfacc8eed303,
+        type: 3}
     - target: {fileID: 1585759850201587382, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111294968015516361, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111294968015516361, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111294968015516361, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111294968015516361, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: \frac{x + 15}{3}
       objectReference: {fileID: 0}
     - target: {fileID: 2228799069194715636, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -68,6 +124,54 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2371094560619077333, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371094560619077333, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371094560619077333, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: x \cdot 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534583650830566204, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc754a98ca8f0b19999d7f08ec121fe3,
+        type: 3}
+    - target: {fileID: 2569293771684269256, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bed9e15b5d4f2e9eba7e6de06b3d6acc,
+        type: 3}
+    - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963465227461702335, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: \frac{x + 10}{4}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092601278498926422, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1fea5aab130a766fa14e338578cd973,
+        type: 3}
     - target: {fileID: 3283324324102526588, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -77,6 +181,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Choice Point (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742686188218030597, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 555022e955bdef30e98a7e9bc4c2d81f,
+        type: 3}
+    - target: {fileID: 4178285785120271238, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178285785120271238, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178285785120271238, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: \frac{x \cdot 3}{5} + 5
       objectReference: {fileID: 0}
     - target: {fileID: 5057563563816769450, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
@@ -113,11 +238,96 @@ PrefabInstance:
       propertyPath: platformChoicePoints.Array.data[4]
       value: 
       objectReference: {fileID: 3049459893075229746}
+    - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086763742215366952, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: x \cdot 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684568254711356625, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d33045984cc32384a0f02dbf59486a0,
+        type: 3}
+    - target: {fileID: 6104650664569043871, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104650664569043871, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104650664569043871, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104650664569043871, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: \frac{x^2 + 60}{20}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338875358136215938, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c9be2ca440b561cf098425d8f67e5545,
+        type: 3}
+    - target: {fileID: 6791344199535134184, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28fc56de1eabbd5c6a55bfbc9d89e7a4,
+        type: 3}
+    - target: {fileID: 6824328808702282268, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5879b0f724fcada8f952dfe00078a869,
+        type: 3}
+    - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072696450087350375, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: \frac{x}{1.33}
+      objectReference: {fileID: 0}
     - target: {fileID: 7088105825707064316, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7506289433982271972, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 91091ea0dab40ee18a35b4133c29ddee,
+        type: 3}
     - target: {fileID: 7742227479280024609, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
       propertyPath: m_Name
@@ -127,6 +337,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072843281680523984, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: maxX
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072843281680523984, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: minX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072843281680523984, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathOperation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072843281680523984, guid: d83e6a5f3fb999246aef3da9e641c4af,
+        type: 3}
+      propertyPath: mathExpression
+      value: x \cdot 0.75 + 2
       objectReference: {fileID: 0}
     - target: {fileID: 8882668059379273391, guid: d83e6a5f3fb999246aef3da9e641c4af,
         type: 3}
