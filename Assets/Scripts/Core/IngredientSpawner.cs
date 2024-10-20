@@ -7,10 +7,14 @@ public class IngredientSpawner : MonoBehaviour
 {
     [SerializeField] GameObject ingredientPrefab;
     [SerializeField] Recipe recipe;
+
+    Vector3 start = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        start.x -= 3.5f;
+        start.y -= 2;
     }
 
     // Update is called once per frame
@@ -37,8 +41,7 @@ public class IngredientSpawner : MonoBehaviour
         GameObject newInstance = Instantiate(ingredientPrefab);
         newInstance.name = ingredient.Name;
         
-        Vector3 start = Vector3.zero;
-        start.x -= 5;
+        start.x -= 1.5f;
         newInstance.transform.position = transform != null ? transform.position : start;
 
         SpriteRenderer spriteRenderer = newInstance.GetComponent<SpriteRenderer>();
