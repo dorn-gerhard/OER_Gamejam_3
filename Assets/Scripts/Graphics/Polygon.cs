@@ -19,27 +19,34 @@ public class Polygon : MonoBehaviour
 
     public bool setPolygon = false;
     public bool initBoard = false;
+    public bool comparePolygon = false;
 
     public void OnValidate()
     {
 
-        if (initBoard)
-        {
-            InitBoard(-3, 3, 500, 0, 3);
-            initBoard = false;
-
-        }
+       
         if (setPolygon)
         {
             SetPolygon();
             setPolygon = false;
+        }
+
+        if (comparePolygon)
+        {
+            ComparePolygon();
+            comparePolygon = false;
         }
     }
 
     private void Start()
     {
         polygon = GetComponent<PolygonCollider2D>();
-        
+        if (initBoard)
+        {
+            InitBoard(-3, 3, 500, 0, 8);
+            SetPolygon();
+
+        }
     }
     public void SetPolygon()
     {
@@ -96,6 +103,67 @@ public class Polygon : MonoBehaviour
         nPoints = numberPoints;
         polygon = polygonInput;
         SetPolygon();
+
+    }
+
+    public float ComparePolygon()
+    {
+        Polygon reference = GameObject.FindGameObjectWithTag("Ziel").GetComponent<Polygon>();
+
+        float gridMinX = Math.Min(minX, reference.minX);
+        float gridMaxX = Math.Max(maxX, reference.maxX);
+        float gridMinY = Math.Min(minY, reference.minY);
+        float gridMaxY = Math.Max(maxY, reference.maxY);
+
+        float xrange = gridMaxX - gridMinX;
+        float yrange = gridMaxY - gridMinY;
+
+        float increment = Math.Max(xrange, yrange) / 999;
+
+        int ixMax = (int)Math.Ceiling(xrange / increment);
+        int iyMax = (int)Math.Ceiling(yrange / increment);
+
+        GameObject  cursor= new GameObject();
+        //Instantiate(cursor);
+        
+    
+        
+
+        BoxCollider2D box = cursor.AddComponent<BoxCollider2D>();
+
+        box.size = new Vector2(increment, increment);
+        ContactFilter2D mode = new ContactFilter2D();
+        
+        List<Collider2D> collisions = new List<Collider2D>();
+        int union = 0;
+        int intersection = 0;
+
+        for (int ix = 0; ix < ixMax; ix++)
+        {
+            for (int iy = 0; iy < iyMax; iy++)
+            {
+                box.transform.position = new Vector3(gridMinX + ix * increment, gridMinY + iy * increment, 0);
+
+                
+                box.OverlapCollider(mode, collisions);
+                if (collisions.Contains(polygon) || collisions.Contains(reference.polygon))
+                {
+                    union += 1;
+                }
+
+                if (collisions.Contains(polygon) && collisions.Contains(reference.polygon))
+                {
+                    intersection += 1;
+                }
+
+
+
+            }
+        }
+
+        Debug.Log("Overlap: " + intersection / union + " %");
+
+        return intersection / union;
 
     }
 
