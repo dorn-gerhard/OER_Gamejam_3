@@ -124,7 +124,8 @@ public class Polygon : MonoBehaviour
 
         box.size = new Vector2(increment, increment);
         ContactFilter2D mode = new ContactFilter2D();
-        
+        mode = mode.NoFilter();
+
         List<Collider2D> collisions = new List<Collider2D>();
         int union = 0;
         int intersection = 0;
