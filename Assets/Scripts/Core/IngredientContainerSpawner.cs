@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class IngredientSpawner : MonoBehaviour
 {
     [SerializeField] GameObject ingredientPrefab;
     [SerializeField] Recipe recipe;
 
-    Vector3 start = Vector3.zero;
+    private List<Transform> freeSpawnSlots;
 
     // Start is called before the first frame update
     void Start()
     {
-        //TODO: slots for spawning on the table
-        start.x -= 2.5f;
-        start.y -= 2;
-        start.z -= 0.5f;
+        freeSpawnSlots = transform.Cast<Transform>().Where(child => child.name.Contains("IngredientSlot")).ToList();
+        
         SpawnRecipeIngredients();
     }
 
@@ -32,18 +31,19 @@ public class IngredientSpawner : MonoBehaviour
         {
             
             if (ingredientAmount.ingredient is BasicIngredient)
-                SpawnObject(ingredientAmount.ingredient as BasicIngredient, null);
+                SpawnObject(ingredientAmount.ingredient as BasicIngredient);
         }
     }
 
-    public void SpawnObject(BasicIngredient ingredient, Transform transform)
+    public void SpawnObject(BasicIngredient ingredient)
     {
-        GameObject newInstance = Instantiate(ingredientPrefab);
+        Transform spawnSlot = popFreeSlot();
+
+        GameObject newInstance = Instantiate(ingredientPrefab, spawnSlot);
+
         newInstance.name = ingredient.Name;
-        
-        start.x -= 2f; //TODO: slots for spawning on the table
-        newInstance.transform.position = transform != null ? transform.position : start;
-        newInstance.transform.localScale *= 2;
+        newInstance.transform.position = spawnSlot.position;
+
         SpriteRenderer spriteRenderer = newInstance.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = ingredient.IngredientContainerSprite;
 
@@ -53,9 +53,15 @@ public class IngredientSpawner : MonoBehaviour
         IngredientDataHolder dataHolder = newInstance.GetComponent<IngredientDataHolder>();
         dataHolder.ingredient = ingredient;
 
-        Debug.Log($"{ingredient.Name} spawned.");
+        Debug.Log($"{ingredient.Name} Container spawned.");
 
     }
 
-  
+    private Transform popFreeSlot()
+    {
+        Transform lastTransform = freeSpawnSlots[freeSpawnSlots.Count - 1];
+        freeSpawnSlots.RemoveAt(freeSpawnSlots.Count - 1);
+        return lastTransform;
+    }
+
 }
