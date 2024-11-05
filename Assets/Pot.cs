@@ -1,43 +1,50 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
+    [HideInInspector]
     public float weight = 0f;
-    private List<String> addedIngredients = new List<String>();
+    private List<string> addedIngredients = new List<string>();
     private List<float> weightIngredient = new List<float>();
+    private HashSet<int> uniqueIngredientIDs = new HashSet<int>(); // Track unique ingredient IDs
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Get the unique ID of the collided ingredient
+        int ingredientID = collision.gameObject.GetInstanceID();
 
-        // Get the name of the collided ingredient
-        string ingredient = collision.gameObject.name;
-        addedIngredients.Add(ingredient);
-
-         float weight = collision.gameObject.GetComponent<IngredientDataHolder>().ingredient.Weight; 
-         weightIngredient.Add(weight);
-
-
-        // Check if the object has a Rigidbody2D before modifying it
-        Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        // Check if the ingredient ID is already in the unique set
+        if (!uniqueIngredientIDs.Contains(ingredientID))
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
-        }
+            // Add the ingredient ID to the set to prevent future collisions
+            uniqueIngredientIDs.Add(ingredientID);
 
-        // Find the DragAndDrop script on the collided object and disable it
-        DragAndDrop dragAndDrop = collision.gameObject.GetComponent<DragAndDrop>();
-        if (dragAndDrop != null)
-        {
-            dragAndDrop.enabled = false;
-        }
+            // Add ingredient name and weight to the lists
+            string ingredient = collision.gameObject.name;
+            addedIngredients.Add(ingredient);
 
+            float weight = collision.gameObject.GetComponent<IngredientDataHolder>().ingredient.Weight;
+            weightIngredient.Add(weight);
+
+            // Check if the object has a Rigidbody2D before modifying it
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.bodyType = RigidbodyType2D.Dynamic;
+            }
+
+            // Find the DragAndDrop script on the collided object and disable it
+            DragAndDrop dragAndDrop = collision.gameObject.GetComponent<DragAndDrop>();
+            if (dragAndDrop != null)
+            {
+                dragAndDrop.enabled = false;
+            }
+        }
     }
 
- 
 
+    //this method is called from GameManager
     public Dictionary<string, float> CalculateWeightOfEachIngredient()
     {
         if (addedIngredients.Count != weightIngredient.Count)
@@ -67,6 +74,4 @@ public class Pot : MonoBehaviour
         }
         return ingredientWeights;
     }
-
-
 }

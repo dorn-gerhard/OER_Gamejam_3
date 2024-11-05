@@ -4,26 +4,11 @@ using UnityEngine;
 
 public class ReplaceSprite : MonoBehaviour
 {
-    public Sprite pot_filled;
-    [SerializeField] AudioSource dropSound;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    public Sprite potFilled;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         string ingredient = collision.gameObject.name;
-        dropSound.Play();
 
         if (ingredient == "Strawberry")
         {
@@ -31,7 +16,7 @@ public class ReplaceSprite : MonoBehaviour
             SpriteRenderer spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
-                spriteRenderer.sprite = pot_filled; // Change to the desired sprite
+                spriteRenderer.sprite = potFilled; // Change to the desired sprite
             }
             else
             {
