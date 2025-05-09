@@ -1019,7 +1019,7 @@ PrefabInstance:
         type: 3}
       propertyPath: recipe
       value: 
-      objectReference: {fileID: 11400000, guid: fe9919c7b20a24434bccbe6f35744640,
+      objectReference: {fileID: 11400000, guid: 423d74749bf924c5da762fc1a0092693,
         type: 2}
     - target: {fileID: 9109976277384220995, guid: 48187381642d7294b893c0b8071be6d7,
         type: 3}
