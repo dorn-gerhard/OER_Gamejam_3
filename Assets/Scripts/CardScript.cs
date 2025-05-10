@@ -14,7 +14,7 @@ public class CardScript : MonoBehaviour
         Setup(nominator, denominator);
     }
 
-    public int nominator { get; private set; } = 1; 
+    public int nominator { get; private set; } = 1;
     public int denominator { get; private set; } = 2;
     public ActionType actionType { get; private set; } = ActionType.Add;
 
@@ -35,7 +35,7 @@ public class CardScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnCardClicked()
@@ -73,6 +73,22 @@ public class CardScript : MonoBehaviour
         {
             CardDenominator.text = denominator.ToString();
         }
+    }
+
+    bool CanReduce()
+    {
+        var gcd = GreatestCommonDivisor(denominator, nominator);
+        return gcd is not 1;
+    }
+
+    public void Reduce()
+    {
+        var gcd = GreatestCommonDivisor(denominator, nominator);
+
+        nominator /= gcd;
+        denominator /= gcd;
+
+        UpdateDisplay();
     }
 
     //ripped from stackoverflow

@@ -18,12 +18,11 @@ public class Board : MonoBehaviour
 
         var cardObject = Instantiate(cardPrefab, gameObject.transform);
         TableCard = cardObject.GetComponent<CardScript>();
-        TableCard.Setup(1, 4);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //set random start value
+        var denominator = (int)Random.Range(2, 5.99f);
+        var nominator = Mathf.Min(denominator - 1, (int)Random.Range(2, 5.99f));
+
+        TableCard.Setup(nominator, denominator);
     }
 }
