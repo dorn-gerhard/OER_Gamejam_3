@@ -76,3 +76,5 @@ crashlytics-build.properties
 .godot/
 
 .DS_Store
+
+.idea/
