@@ -14,18 +14,19 @@ public class FunctionPeopleManager : MonoBehaviour
     private ReactToDecision personReact;
     
     [SerializeField] private Transform functionPersonSpawnTransform;
+    [SerializeField] private UnityEvent onAnswerSelected;
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
+    [SerializeField] private UnityEvent onPersonReplaced;
     
     
 
     private void Start()
     {
         functionDatas = GetComponent<FunctionDataCollection>();
-        NewFunctionPerson();
     }
 
-    void NewFunctionPerson()
+    public void NewFunctionPerson()
     {
         currentPerson = Instantiate(functionPerson, functionPersonSpawnTransform.position, Quaternion.identity);
         functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
@@ -34,7 +35,7 @@ public class FunctionPeopleManager : MonoBehaviour
         personReact.onReactionFinish.AddListener(replaceFunctionPerson);
     }
 
-    void DestroyFunctionPerson()
+    private void DestroyFunctionPerson()
     {
         functionAttributes = null;
         personReact.onReactionFinish.RemoveAllListeners();
@@ -44,6 +45,7 @@ public class FunctionPeopleManager : MonoBehaviour
     
     public void Check(bool answer)
     {
+        onAnswerSelected.Invoke();
         if (functionAttributes.hasCorrectAttributes() == answer)
         {
             onCorrect.Invoke();
@@ -62,6 +64,7 @@ public class FunctionPeopleManager : MonoBehaviour
     {
         DestroyFunctionPerson();
         NewFunctionPerson();
+        onPersonReplaced.Invoke();
     }
 
     public void WorkdayFinish(Workday.WorkdayReport workdayReport)
