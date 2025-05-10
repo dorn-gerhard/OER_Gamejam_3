@@ -29,7 +29,6 @@ func angles_in_same_triangle(angles: Array[TriangleAngle2D]) -> bool:
 			if not p in base_points:
 				return false
 	return true
-	
 
 func execute() -> bool:
 	var angles = level_manager.selected_angles
@@ -51,6 +50,8 @@ func execute() -> bool:
 		for a in angles:
 			if not a.known:
 				a.known = true
+				move_made.emit()
+				
 		return true
 
 	return false
