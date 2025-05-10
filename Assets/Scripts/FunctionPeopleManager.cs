@@ -19,8 +19,6 @@ public class FunctionPeopleManager : MonoBehaviour
     [SerializeField] private UnityEvent onIncorrect;
     [SerializeField] private UnityEvent onPersonReplaced;
     
-    
-
     private void Start()
     {
         functionDatas = GetComponent<FunctionDataCollection>();
