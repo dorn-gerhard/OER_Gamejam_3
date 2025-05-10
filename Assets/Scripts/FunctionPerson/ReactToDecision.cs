@@ -18,19 +18,47 @@ public class ReactToDecision : MonoBehaviour
         if(wasAccepted)
         {
             getsAccepted();
+
         }
         else
         {
             getsRejected();
         }
     }
+    float TimeSinceStartedMoving = 0;
+    private IEnumerator movePerson(int decision)
+    {
+        while (TimeSinceStartedMoving <4)
+        {
+
+
+            yield return new WaitForEndOfFrame();
+
+            if (decision == 0)
+            {
+                gameObject.transform.position += new Vector3(-2,0,0)*Time.deltaTime;
+
+            }
+            else
+            {
+                gameObject.transform.position += new Vector3(+2,0,0)*Time.deltaTime;
+            }
+
+
+            TimeSinceStartedMoving += Time.deltaTime;
+        }
+
+        yield return null;
+    }
     private void getsRejected()
     {
         faceExpressions.sprite = sadFace;
+        StartCoroutine(movePerson(0));
     }
     
     private void getsAccepted()
     {
         faceExpressions.sprite = happyFace;
+        StartCoroutine(movePerson(1));
     }
 }
