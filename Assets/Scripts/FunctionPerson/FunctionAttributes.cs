@@ -5,15 +5,10 @@ public class FunctionAttributes : MonoBehaviour
 {
     private FunctionData functionData;
     [SerializeField] private SpriteRenderer functionGraphSpot;
-    [SerializeField] private string functionAttributes;
-    [SerializeField] public bool hasCorrectAttributes;
+
     public delegate void OnFunctionAttributesLoaded(string functionAttributes);
     public static event OnFunctionAttributesLoaded FunctionAttributesLoaded;
-    void Start()
-    {
-        attributeTextField = GameObject.FindWithTag("Attributes")?.GetComponent<TMP_Text>();
-        
-    }
+
 
     public void UpdateFunctionData(FunctionData newFunctionData)
     {
@@ -22,8 +17,8 @@ public class FunctionAttributes : MonoBehaviour
     }
     private void ShowQuestion()
     {
-        functionGraphSpot.sprite = functionGraph;
-        FunctionAttributesLoaded?.Invoke(functionAttributes);
+        functionGraphSpot.sprite = functionData.functionGraph;
+        FunctionAttributesLoaded?.Invoke(functionData.functionAttributes);
     }
 
     public bool hasCorrectAttributes()
