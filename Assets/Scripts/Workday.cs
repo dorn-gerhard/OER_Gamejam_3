@@ -1,16 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Workday : MonoBehaviour
 {
+    public struct WorkdayReport
+    {
+        public int CorrectPeople;
+        public int MaximumPeople;
+
+        public WorkdayReport(int correctPeople, int maximumPeople)
+        {
+            CorrectPeople = correctPeople;
+            MaximumPeople = maximumPeople;
+        }
+    }
+    
     [SerializeField] private int maximumFunctionPeople = 5;
     [SerializeField] private UnityEvent<int,int> onFunctionPersonCounterUpdated;
-    [SerializeField] private UnityEvent onWorkdayComplete;
+    [SerializeField] private UnityEvent<WorkdayReport> onWorkdayComplete;
     
     private int completedFunctionPeople = 0;
+    private int correctFunctionPeople = 0;
 
     private void Start()
     {
@@ -18,7 +28,18 @@ public class Workday : MonoBehaviour
         onFunctionPersonCounterUpdated.Invoke(completedFunctionPeople, maximumFunctionPeople);
     }
 
-    public void IncrementFunctionPeople()
+    public void AnsweredCorrect()
+    {
+        correctFunctionPeople++;
+        IncrementFunctionPeople();
+    }
+
+    public void AnsweredIncorrect()
+    {
+        IncrementFunctionPeople();
+    }
+
+    private void IncrementFunctionPeople()
     {
         if (completedFunctionPeople >= maximumFunctionPeople) { return; }
         completedFunctionPeople++;
@@ -30,7 +51,7 @@ public class Workday : MonoBehaviour
     {
         if (completedFunctionPeople >= maximumFunctionPeople)
         {
-            onWorkdayComplete.Invoke();
+            onWorkdayComplete.Invoke(new WorkdayReport(correctFunctionPeople, completedFunctionPeople));
         }
     }
 }
