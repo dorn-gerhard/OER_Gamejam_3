@@ -12,12 +12,24 @@ public class ReactToDecision : MonoBehaviour
     {
         faceExpressions.sprite = waitingFace;
     }
-    public void getsRejected()
+
+    public void doReaction(bool wasAccepted)
+    {
+        if(wasAccepted)
+        {
+            getsAccepted();
+        }
+        else
+        {
+            getsRejected();
+        }
+    }
+    private void getsRejected()
     {
         faceExpressions.sprite = sadFace;
     }
     
-    public void getsAccepted()
+    private void getsAccepted()
     {
         faceExpressions.sprite = happyFace;
     }
