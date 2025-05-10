@@ -317,6 +317,22 @@ PrefabInstance:
       propertyPath: m_text
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2385887082780786395}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reduce
+      objectReference: {fileID: 0}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CardScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4466335404891695279, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
       propertyPath: m_Name
       value: Denominator
@@ -433,6 +449,22 @@ PrefabInstance:
     - target: {fileID: 438614581246444089, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
       propertyPath: m_text
       value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2385887082780786395}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reduce
+      objectReference: {fileID: 0}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CardScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 860166560824728876, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4466335404891695279, guid: 95ed6c2d266391349aa464e1cc3a1bb1, type: 3}
       propertyPath: m_Name
