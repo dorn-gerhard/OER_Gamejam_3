@@ -10,6 +10,7 @@ public class ReactToDecision : MonoBehaviour
     [SerializeField] private Sprite sadFace;
     [SerializeField] private Sprite waitingFace;
 
+    public UnityEvent onReactionStarted;
     public UnityEvent onReactionFinish;
     private void Start()
     {
@@ -18,6 +19,7 @@ public class ReactToDecision : MonoBehaviour
 
     public void doReaction(bool wasAccepted)
     {
+        
         if(wasAccepted)
         {
             getsAccepted();
@@ -27,12 +29,13 @@ public class ReactToDecision : MonoBehaviour
         {
             getsRejected();
         }
+        onReactionStarted.Invoke();
     }
 
-    float TimeSinceStartedMoving = 0;
+    private float timeSinceStartedMoving = 0;
     private IEnumerator movePerson(int decision)
     {
-        while (TimeSinceStartedMoving <4)
+        while (timeSinceStartedMoving <4)
         {
 
 
@@ -49,7 +52,7 @@ public class ReactToDecision : MonoBehaviour
             }
 
 
-            TimeSinceStartedMoving += Time.deltaTime;
+            timeSinceStartedMoving += Time.deltaTime;
         }
         onReactionFinish.Invoke();
         yield return null;
