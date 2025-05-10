@@ -74,3 +74,5 @@ crashlytics-build.properties
 
 # Godot 4+ specific ignores
 .godot/
+
+.idea/
