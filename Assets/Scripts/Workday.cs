@@ -39,15 +39,13 @@ public class Workday : MonoBehaviour
     public void AnsweredCorrect()
     {
         correctFunctionPeople++;
-        IncrementFunctionPeople();
     }
 
     public void AnsweredIncorrect()
     {
-        IncrementFunctionPeople();
     }
 
-    private void IncrementFunctionPeople()
+    public void IncrementFunctionPeople()
     {
         if (completedFunctionPeople >= maximumFunctionPeople) { return; }
         completedFunctionPeople++;
