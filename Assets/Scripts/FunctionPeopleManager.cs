@@ -9,7 +9,7 @@ public class FunctionPeopleManager : MonoBehaviour
     private FunctionAttributes functionAttributes;
     private ReactToDecision personReact;
     
-    [SerializeField] private UnityEvent<bool> onAnswered;
+    [SerializeField] private UnityEvent onAnswered;
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
 
@@ -22,21 +22,24 @@ public class FunctionPeopleManager : MonoBehaviour
     {
         GameObject person = Instantiate(functionPerson);
         functionAttributes = person.GetComponent<FunctionAttributes>();
-
+        personReact = person.GetComponent<ReactToDecision>();
     }
     
     public void Check(bool answer)
     {
-        onAnswered.Invoke(answer);
+        onAnswered.Invoke();
         if (functionAttributes.hasCorrectAttributes == answer)
         {
-            
+            onCorrect.Invoke();
         }
         else
         {
-
+            onIncorrect.Invoke();
+        }
+        if (personReact != null)
+        {
+            personReact.doReaction(answer);
         }
     }
-
 
 }
