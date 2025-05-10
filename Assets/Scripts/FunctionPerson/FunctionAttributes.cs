@@ -3,26 +3,27 @@ using TMPro;
 
 public class FunctionAttributes : MonoBehaviour
 {
-    [SerializeField] private Sprite functionGraph;
+    private FunctionData functionData;
     [SerializeField] private SpriteRenderer functionGraphSpot;
-    [SerializeField] private string functionAttributes;
-    [SerializeField] public bool hasCorrectAttributes;
-    private TMP_Text attributeTextField;
-    void Start()
+
+    public delegate void OnFunctionAttributesLoaded(string functionAttributes);
+    public static event OnFunctionAttributesLoaded FunctionAttributesLoaded;
+
+
+    public void UpdateFunctionData(FunctionData newFunctionData)
     {
-        attributeTextField = GameObject.FindWithTag("Attributes")?.GetComponent<TMP_Text>();
+        functionData = newFunctionData;
         ShowQuestion();
     }
-
-    public void ShowQuestion()
+    private void ShowQuestion()
     {
-        functionGraphSpot.sprite = functionGraph;
-        if (attributeTextField != null)
-        {
-            attributeTextField.text = functionAttributes;
-        }
+        functionGraphSpot.sprite = functionData.functionGraph;
+        FunctionAttributesLoaded?.Invoke(functionData.functionAttributes);
     }
 
-
+    public bool hasCorrectAttributes()
+    {
+        return functionData.is_correct;
+    }
 
 }

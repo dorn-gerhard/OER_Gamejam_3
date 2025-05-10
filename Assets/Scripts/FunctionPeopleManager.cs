@@ -3,30 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(FunctionDataCollection))]
 public class FunctionPeopleManager : MonoBehaviour
 {
     [SerializeField] GameObject functionPerson;
+
+    private FunctionDataCollection functionDatas;
+    private GameObject currentPerson;
     private FunctionAttributes functionAttributes;
     private ReactToDecision personReact;
     
+    [SerializeField] private Transform functionPersonSpawnTransform;
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
+    
+    
 
     private void Start()
     {
+        functionDatas = GetComponent<FunctionDataCollection>();
         NewFunctionPerson();
     }
 
     void NewFunctionPerson()
     {
-        GameObject person = Instantiate(functionPerson);
-        functionAttributes = person.GetComponent<FunctionAttributes>();
-        personReact = person.GetComponent<ReactToDecision>();
+        currentPerson = Instantiate(functionPerson, functionPersonSpawnTransform.position, Quaternion.identity);
+        functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
+        functionAttributes.UpdateFunctionData(functionDatas.nextData());
+        personReact = currentPerson.GetComponent<ReactToDecision>();
+    }
+
+    void DestroyFunctionPerson()
+    {
+        functionAttributes = null;
+        personReact = null;
+        Destroy(currentPerson);
     }
     
     public void Check(bool answer)
     {
-        if (functionAttributes.hasCorrectAttributes == answer)
+        if (functionAttributes.hasCorrectAttributes() == answer)
         {
             onCorrect.Invoke();
         }
@@ -38,6 +54,9 @@ public class FunctionPeopleManager : MonoBehaviour
         {
             personReact.doReaction(answer);
         }
+        DestroyFunctionPerson();
+        NewFunctionPerson();
     }
+
 
 }
