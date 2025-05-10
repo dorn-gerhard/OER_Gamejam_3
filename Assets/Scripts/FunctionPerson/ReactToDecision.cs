@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ReactToDecision : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ReactToDecision : MonoBehaviour
     [SerializeField] private Sprite happyFace;
     [SerializeField] private Sprite sadFace;
     [SerializeField] private Sprite waitingFace;
+
+    public UnityEvent onReactionFinish;
     private void Start()
     {
         faceExpressions.sprite = waitingFace;
@@ -25,6 +28,7 @@ public class ReactToDecision : MonoBehaviour
             getsRejected();
         }
     }
+
     float TimeSinceStartedMoving = 0;
     private IEnumerator movePerson(int decision)
     {
@@ -47,7 +51,7 @@ public class ReactToDecision : MonoBehaviour
 
             TimeSinceStartedMoving += Time.deltaTime;
         }
-
+        onReactionFinish.Invoke();
         yield return null;
     }
     private void getsRejected()

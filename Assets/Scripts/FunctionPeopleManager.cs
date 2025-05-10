@@ -31,11 +31,13 @@ public class FunctionPeopleManager : MonoBehaviour
         functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
         functionAttributes.UpdateFunctionData(functionDatas.nextData());
         personReact = currentPerson.GetComponent<ReactToDecision>();
+        personReact.onReactionFinish.AddListener(replaceFunctionPerson);
     }
 
     void DestroyFunctionPerson()
     {
         functionAttributes = null;
+        personReact.onReactionFinish.RemoveAllListeners();
         personReact = null;
         Destroy(currentPerson);
     }
@@ -54,9 +56,16 @@ public class FunctionPeopleManager : MonoBehaviour
         {
             personReact.doReaction(answer);
         }
+    }
+
+    public void replaceFunctionPerson()
+    {
         DestroyFunctionPerson();
         NewFunctionPerson();
     }
 
-
+    public void WorkdayFinish(Workday.WorkdayReport workdayReport)
+    {
+        DestroyFunctionPerson();
+    }
 }
