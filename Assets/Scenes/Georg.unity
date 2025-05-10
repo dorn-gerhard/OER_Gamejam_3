@@ -1964,7 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013d8b3cb397b4267ab615e031a08261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumFunctionPeople: 5
+  maximumFunctionPeople: 8
   onWorkdayStarted:
     m_PersistentCalls:
       m_Calls:
