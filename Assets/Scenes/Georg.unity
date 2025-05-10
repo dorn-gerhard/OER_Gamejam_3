@@ -545,7 +545,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355742729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1473836351}
+        m_TargetAssemblyTypeName: Workday, Assembly-CSharp
+        m_MethodName: StartWorkday
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &355742729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,21 +1794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   functionPerson: {fileID: 3226501347837529254, guid: c0a24a3812bb07648999e5c39b41290d, type: 3}
-  onAnswered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1473836351}
-        m_TargetAssemblyTypeName: Workday, Assembly-CSharp
-        m_MethodName: IncrementFunctionPeople
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   onCorrect:
     m_PersistentCalls:
       m_Calls:
@@ -1951,6 +1948,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumFunctionPeople: 5
+  onWorkdayStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1033661241}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onFunctionPersonCounterUpdated:
     m_PersistentCalls:
       m_Calls:

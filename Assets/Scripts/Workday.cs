@@ -31,6 +31,7 @@ public class Workday : MonoBehaviour
     public void StartWorkday()
     {
         completedFunctionPeople = 0;
+        correctFunctionPeople = 0;
         onFunctionPersonCounterUpdated.Invoke(completedFunctionPeople, maximumFunctionPeople);
         onWorkdayStarted.Invoke();
     }
