@@ -11,10 +11,7 @@ public class CardScript : MonoBehaviour
 
     public CardScript(int nominator, int denominator)
     {
-        this.nominator = nominator;
-        this.denominator = denominator;
-
-        UpdateDisplay();
+        Start();
     }
 
     public int nominator { get; private set; } = 1; 
@@ -25,7 +22,10 @@ public class CardScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.nominator = nominator;
+        this.denominator = denominator;
+
+        UpdateDisplay();
     }
 
     // Update is called once per frame

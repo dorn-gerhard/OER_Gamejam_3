@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 5117561608444034139}
   - component: {fileID: 9202973405160918923}
   m_Layer: 5
-  m_Name: nominator (TMP)
+  m_Name: numerator (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8331056483829509364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af42190f0874c74488ee62a317432539, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c5ccf003fed54778bc8b196c2b02416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CardNumerator: {fileID: 9202973405160918923}

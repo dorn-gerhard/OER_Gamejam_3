@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     /// </summary>
     public readonly List<CardScript> Cards;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
             var denominator = (int) Random.Range(2, 5.99f);
             var nominator = Mathf.Min(denominator - 1, (int) Random.Range(2, 5.99f));
 
+            
             //should actually be a GameObject
             Cards.Add(new CardScript(nominator, denominator));
         }
