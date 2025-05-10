@@ -11,16 +11,20 @@ public class CardScript : MonoBehaviour
 
     public CardScript(int nominator, int denominator)
     {
-        this.nominator = nominator;
-        this.denominator = denominator;
-
-        UpdateDisplay();
+        Setup(nominator, denominator);
     }
 
     public int nominator { get; private set; } = 1; 
     public int denominator { get; private set; } = 2;
     public ActionType actionType { get; private set; } = ActionType.Add;
 
+    public void Setup(int nominator, int denominator)
+    {
+        this.nominator = nominator;
+        this.denominator = denominator;
+
+        UpdateDisplay();
+    }
 
     // Start is called before the first frame update
     void Start()

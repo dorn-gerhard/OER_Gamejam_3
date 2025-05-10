@@ -7,10 +7,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int cardCount = 5;
 
+    [SerializeField]
+    private GameObject cardPrefab;
+
     /// <summary>
     /// Current hand of player.
     /// </summary>
-    public readonly List<CardScript> Cards;
+    public readonly List<GameObject> Cards;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +24,10 @@ public class Player : MonoBehaviour
             var denominator = (int) Random.Range(2, 5.99f);
             var nominator = Mathf.Min(denominator - 1, (int) Random.Range(2, 5.99f));
 
-            //should actually be a GameObject
-            Cards.Add(new CardScript(nominator, denominator));
+            var cardObject = Instantiate(cardPrefab, gameObject.transform);
+            cardObject.GetComponent<CardScript>().Setup(nominator, denominator);
+
+            Cards.Add(cardObject);
         }
     }
 
