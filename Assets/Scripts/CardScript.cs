@@ -41,6 +41,7 @@ public class CardScript : MonoBehaviour
     public void OnCardClicked()
     {
         Board.Instance.TableCard.Add(this);
+        Destroy(this.gameObject);
     }
 
     public void Add(CardScript other)
@@ -63,8 +64,15 @@ public class CardScript : MonoBehaviour
 
     private void UpdateDisplay()
     {
-        CardNumerator.text = nominator.ToString();
-        CardDenominator.text = denominator.ToString();
+        if (CardNumerator != null)
+        {
+            CardNumerator.text = nominator.ToString();
+        }
+
+        if (CardDenominator != null)
+        {
+            CardDenominator.text = denominator.ToString();
+        }
     }
 
     //ripped from stackoverflow
