@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4ah5udylimr8"]
 
-[ext_resource type="Script" path="res://scripts/point.gd" id="1_jid7c"]
+[ext_resource type="Script" uid="uid://bods3o8e03kec" path="res://scripts/point.gd" id="1_jid7c"]
 
 [sub_resource type="Gradient" id="Gradient_vdq4t"]
 resource_local_to_scene = true

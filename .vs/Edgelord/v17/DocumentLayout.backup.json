@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chris\\Documents\\GitHub\\OER_Gamejam_3_Edgelord_2-Revenge-o\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}|Edgelord.csproj|c:\\users\\chris\\documents\\github\\oer_gamejam_3_edgelord_2-revenge-o\\scripts\\operations\\op_angle_sum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}|Edgelord.csproj|solutionrelative:scripts\\operations\\op_angle_sum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "op_angle_sum.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\Documents\\GitHub\\OER_Gamejam_3_Edgelord_2-Revenge-o\\scripts\\operations\\op_angle_sum.cs",
+              "RelativeDocumentMoniker": "scripts\\operations\\op_angle_sum.cs",
+              "ToolTip": "C:\\Users\\chris\\Documents\\GitHub\\OER_Gamejam_3_Edgelord_2-Revenge-o\\scripts\\operations\\op_angle_sum.cs",
+              "RelativeToolTip": "scripts\\operations\\op_angle_sum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T11:07:53.825Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

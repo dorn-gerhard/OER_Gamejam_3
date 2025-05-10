@@ -12,4 +12,3 @@ extends Resource
 
 func _to_string() -> String:
 	return("/%s%s%s" % [point_a, point_b, point_c])
-

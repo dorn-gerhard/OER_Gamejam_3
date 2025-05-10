@@ -59,6 +59,7 @@ func _init(start: float = 0, end: float = PI) -> void:
 	
 	collision_area.input_event.connect(_is_polygon_selected)
 	
+	
 
 func _draw():
 	const width: int = 3
