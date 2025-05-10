@@ -1,14 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CardScript : MonoBehaviour
 {
+    [SerializeField] TMP_Text CardNumerator;
+    [SerializeField] TMP_Text CardDenominator;
+
     public CardScript(int nominator, int denominator)
     {
         this.nominator = nominator;
         this.denominator = denominator;
+
+        UpdateDisplay();
     }
 
     public int nominator { get; private set; } = 1; 
@@ -44,11 +50,19 @@ public class CardScript : MonoBehaviour
 
             denominator = newDenominator;
             nominator = newNominator;
+
+            UpdateDisplay();
         }
         else
             throw new NotImplementedException();
     }
-    
+
+    private void UpdateDisplay()
+    {
+        CardNumerator.text = nominator.ToString();
+        CardDenominator.text = denominator.ToString();
+    }
+
     //ripped from stackoverflow
     static int LeastCommonMultiple(int a, int b)
     {
