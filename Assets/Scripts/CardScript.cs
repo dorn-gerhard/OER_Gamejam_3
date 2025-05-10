@@ -40,8 +40,11 @@ public class CardScript : MonoBehaviour
 
     public void OnCardClicked()
     {
-        Board.Instance.TableCard.Add(this);
-        Destroy(this.gameObject);
+        if (this.gameObject.transform.IsChildOf(Player.Instance.transform))
+        {
+            Board.Instance.TableCard.Add(this);
+            Destroy(this.gameObject);
+        }
     }
 
     public void Add(CardScript other)

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     [SerializeField]
     private int cardCount = 5;
 
@@ -13,6 +15,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
+
         //generate random hand
         for (int i = 0; i < cardCount; i++)
         {
