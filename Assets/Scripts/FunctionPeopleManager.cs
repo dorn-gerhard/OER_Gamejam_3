@@ -12,10 +12,12 @@ public class FunctionPeopleManager : MonoBehaviour
     private GameObject currentPerson;
     private FunctionAttributes functionAttributes;
     private ReactToDecision personReact;
-    
+    private ReactToDecision movePerson;
+
     [SerializeField] private Transform functionPersonSpawnTransform;
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
+    [SerializeField] private GameObject MovingGoalPosition;
     
     
 
@@ -28,8 +30,12 @@ public class FunctionPeopleManager : MonoBehaviour
     void NewFunctionPerson()
     {
         currentPerson = Instantiate(functionPerson, functionPersonSpawnTransform.position, Quaternion.identity);
+        movePerson = currentPerson.GetComponent<ReactToDecision>();
+        movePerson.movePersonToPoint(MovingGoalPosition.transform.position);
+
         functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
         functionAttributes.UpdateFunctionData(functionDatas.nextData());
+ 
         personReact = currentPerson.GetComponent<ReactToDecision>();
         personReact.onReactionFinish.AddListener(replaceFunctionPerson);
     }
