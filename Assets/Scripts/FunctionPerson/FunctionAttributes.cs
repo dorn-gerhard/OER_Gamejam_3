@@ -1,11 +1,12 @@
 using UnityEngine;
 using TMPro;
 
-public class ShowFunctionAndAttributes : MonoBehaviour
+public class FunctionAttributes : MonoBehaviour
 {
     [SerializeField] private Sprite functionGraph;
     [SerializeField] private SpriteRenderer functionGraphSpot;
     [SerializeField] private string functionAttributes;
+    [SerializeField] public bool hasCorrectAttributes;
     private TMP_Text attributeTextField;
     void Start()
     {
@@ -21,5 +22,7 @@ public class ShowFunctionAndAttributes : MonoBehaviour
             attributeTextField.text = functionAttributes;
         }
     }
+
+
 
 }

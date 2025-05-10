@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 666c14a81c0b16f4a9e9c3743d3f06a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -179,6 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4223230406287761672}
   - component: {fileID: 7708784561449242233}
+  - component: {fileID: 5966736806165700756}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -241,18 +242,42 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.227451, b: 0.78823537, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.5, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5966736806165700756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295399474100994448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63780cb137058a540822200604992f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hairSprite: {fileID: 7708784561449242233}
+  hairTypes:
+  - {fileID: 21300000, guid: e94fcce9c5cb13d42a90c39066e7a2a4, type: 3}
+  - {fileID: 21300000, guid: 89caf6a39f0322b46ad53c32d97a7fdb, type: 3}
+  - {fileID: 21300000, guid: 6992f6d897375314997a14f987103060, type: 3}
+  - {fileID: 0}
+  hairColors:
+  - {r: 0.5320754, g: 0.2479672, b: 0.2479672, a: 1}
+  - {r: 0.23773581, g: 0.23773581, b: 0.23773581, a: 1}
+  - {r: 0.2372726, g: 0.4339623, b: 0.13018864, a: 1}
+  - {r: 0, g: 0.22567603, b: 0.78867924, a: 1}
+  - {r: 1, g: 0, b: 0.58074284, a: 1}
 --- !u!1 &6306735349448485589
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +350,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4bdf722aa6de45542938f13e39b1b5dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -526,8 +551,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4bfd7b217194b444eb528bee51904fc9, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -535,6 +560,6 @@ SpriteRenderer:
   m_Size: {x: 10, y: 8.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
