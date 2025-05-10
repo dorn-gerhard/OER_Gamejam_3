@@ -92,6 +92,9 @@ public class CardScript : MonoBehaviour
         denominator /= gcd;
 
         UpdateDisplay();
+
+        //hacky score system
+        Score.Instance.Add(gcd - 1);
     }
 
     //ripped from stackoverflow

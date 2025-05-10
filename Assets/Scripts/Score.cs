@@ -5,19 +5,27 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
+    public static Score Instance;
+
     // Start is called before the first frame update
     [SerializeField] TMP_Text ScoreText;
 
-    public int ScoreNumber;
+    int currentScore;
+
     void Start()
     {
-        ScoreNumber = 10;
-        ScoreText.text = "Score: " + ScoreNumber.ToString();
+        Instance = this;
+        Update();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Add(int points)
     {
-        
+        currentScore += points;
+        Update();
+    }
+
+    public void Update()
+    {
+        ScoreText.text = $"Score: {currentScore}";
     }
 }
