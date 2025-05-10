@@ -69,7 +69,7 @@ public class CardScript : MonoBehaviour
     {
         if (CardNumerator != null)
         {
-            CardNumerator.text = nominator.ToString();
+            CardNumerator.text = nominator.ToString().Replace("1", "I");
         }
 
         if (CardDenominator != null)
