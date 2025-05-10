@@ -13,8 +13,11 @@ public class FunctionPeopleManager : MonoBehaviour
     private FunctionAttributes functionAttributes;
     private ReactToDecision personReact;
     
+    [SerializeField] private Transform functionPersonSpawnTransform;
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
+    
+    
 
     private void Start()
     {
@@ -24,7 +27,7 @@ public class FunctionPeopleManager : MonoBehaviour
 
     void NewFunctionPerson()
     {
-        currentPerson = Instantiate(functionPerson);
+        currentPerson = Instantiate(functionPerson, functionPersonSpawnTransform.position, Quaternion.identity);
         functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
         functionAttributes.UpdateFunctionData(functionDatas.nextData());
         personReact = currentPerson.GetComponent<ReactToDecision>();
