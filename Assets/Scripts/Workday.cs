@@ -16,6 +16,7 @@ public class Workday : MonoBehaviour
     }
     
     [SerializeField] private int maximumFunctionPeople = 5;
+    [SerializeField] private UnityEvent onWorkdayStarted;
     [SerializeField] private UnityEvent<int,int> onFunctionPersonCounterUpdated;
     [SerializeField] private UnityEvent<WorkdayReport> onWorkdayComplete;
     
@@ -24,8 +25,15 @@ public class Workday : MonoBehaviour
 
     private void Start()
     {
+        StartWorkday();
+    }
+
+    public void StartWorkday()
+    {
         completedFunctionPeople = 0;
+        correctFunctionPeople = 0;
         onFunctionPersonCounterUpdated.Invoke(completedFunctionPeople, maximumFunctionPeople);
+        onWorkdayStarted.Invoke();
     }
 
     public void AnsweredCorrect()
