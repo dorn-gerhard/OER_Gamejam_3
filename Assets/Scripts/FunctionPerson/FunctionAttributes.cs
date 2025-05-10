@@ -7,20 +7,16 @@ public class FunctionAttributes : MonoBehaviour
     [SerializeField] private SpriteRenderer functionGraphSpot;
     [SerializeField] private string functionAttributes;
     [SerializeField] public bool hasCorrectAttributes;
-    private TMP_Text attributeTextField;
+    public delegate void OnFunctionAttributesLoaded(string functionAttributes);
+    public static event OnFunctionAttributesLoaded FunctionAttributesLoaded;
     void Start()
     {
-        attributeTextField = GameObject.FindWithTag("Attributes")?.GetComponent<TMP_Text>();
         ShowQuestion();
     }
-
-    public void ShowQuestion()
+    private void ShowQuestion()
     {
         functionGraphSpot.sprite = functionGraph;
-        if (attributeTextField != null)
-        {
-            attributeTextField.text = functionAttributes;
-        }
+        FunctionAttributesLoaded?.Invoke(functionAttributes);
     }
 
 
