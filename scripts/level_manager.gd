@@ -15,7 +15,6 @@ signal selection_changed
 
 static var angle_selection_mode_active := false
 
-
 func _ready() -> void:
 	selection_changed.connect(_on_selection_changed)
 	current_level = start_level
@@ -85,6 +84,8 @@ func _on_point_released(point: Point) -> void:
 
 
 func _on_point_selected(point: Point) -> void:
+	print("Good job!")
+	Input.set_default_cursor_shape(Input.CURSOR_HELP)
 	selected_point = point
 	for connected_point in point.connected_points:
 		print(connected_point)

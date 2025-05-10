@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://duckuk8h1lwv4"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_c3ssa"]
+[ext_resource type="Script" uid="uid://ddisnce7n10el" path="res://scripts/level.gd" id="1_c3ssa"]
 [ext_resource type="PackedScene" uid="uid://c4ah5udylimr8" path="res://scenes/point.tscn" id="1_ppba2"]
-[ext_resource type="Script" path="res://scripts/line.gd" id="2_3fgod"]
-[ext_resource type="Script" path="res://scripts/angle.gd" id="3_jvylr"]
+[ext_resource type="Script" uid="uid://begmoc5k766xg" path="res://scripts/line.gd" id="2_3fgod"]
+[ext_resource type="Script" uid="uid://bjs268np45qkm" path="res://scripts/angle.gd" id="3_jvylr"]
 
 [sub_resource type="Resource" id="Resource_e33lc"]
 script = ExtResource("2_3fgod")

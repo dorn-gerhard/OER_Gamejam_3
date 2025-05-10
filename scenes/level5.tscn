@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dadqhwrkln7yo"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_pay2s"]
-[ext_resource type="Script" path="res://scripts/line.gd" id="2_y0ml0"]
-[ext_resource type="Script" path="res://scripts/angle.gd" id="3_gmj4l"]
+[ext_resource type="Script" uid="uid://ddisnce7n10el" path="res://scripts/level.gd" id="1_pay2s"]
+[ext_resource type="Script" uid="uid://begmoc5k766xg" path="res://scripts/line.gd" id="2_y0ml0"]
+[ext_resource type="Script" uid="uid://bjs268np45qkm" path="res://scripts/angle.gd" id="3_gmj4l"]
 [ext_resource type="PackedScene" uid="uid://c4ah5udylimr8" path="res://scenes/point.tscn" id="4_05kv4"]
 
 [sub_resource type="Resource" id="Resource_e33lc"]

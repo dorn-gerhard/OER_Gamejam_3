@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edgelord", "Edgelord.csproj", "{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{EB7DA71A-15DF-43AA-819A-4F0ADB8614C2}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

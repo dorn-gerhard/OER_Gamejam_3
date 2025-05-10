@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://d23p3d336a4t2"]
+[gd_scene load_steps=23 format=3 uid="uid://d23p3d336a4t2"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_1wg38"]
-[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_owbby"]
+[ext_resource type="Script" uid="uid://q63q17ac685c" path="res://scripts/main.gd" id="1_1wg38"]
+[ext_resource type="Script" uid="uid://dro04ndmhbjar" path="res://scripts/level_manager.gd" id="1_owbby"]
 [ext_resource type="Theme" uid="uid://dsppqoqt6f3pb" path="res://assets/button_theme.tres" id="3_4a52f"]
-[ext_resource type="Script" path="res://scripts/operations/op_deselect.gd" id="3_g2s2r"]
-[ext_resource type="Script" path="res://scripts/operations/op_pythagoras.gd" id="4_ux2ua"]
-[ext_resource type="Script" path="res://scripts/operations/op_sin.gd" id="5_1xyqm"]
-[ext_resource type="Script" path="res://scripts/operations/op_equality.gd" id="5_5dfvc"]
-[ext_resource type="Script" path="res://scripts/operations/op_cos.gd" id="6_8sd6l"]
+[ext_resource type="Script" uid="uid://yuqtasbq2y75" path="res://scripts/operations/op_deselect.gd" id="3_g2s2r"]
+[ext_resource type="Script" uid="uid://bm6e36s3tckse" path="res://scripts/operations/op_pythagoras.gd" id="4_ux2ua"]
+[ext_resource type="Script" uid="uid://sas7w6r32tsa" path="res://scripts/operations/op_sin.gd" id="5_1xyqm"]
+[ext_resource type="Script" uid="uid://cu1hqcq2qrk6f" path="res://scripts/operations/op_equality.gd" id="5_5dfvc"]
+[ext_resource type="Script" uid="uid://duef4542p7vsv" path="res://scripts/operations/op_cos.gd" id="6_8sd6l"]
 [ext_resource type="AudioStream" uid="uid://68giwkm4vsn8" path="res://assets/focus.wav" id="7_i72tj"]
-[ext_resource type="Script" path="res://scripts/operations/op_tan.gd" id="7_stadj"]
+[ext_resource type="Script" uid="uid://cenymxsy8neye" path="res://scripts/operations/op_tan.gd" id="7_stadj"]
+[ext_resource type="Script" uid="uid://dhamrkx4gr7c4" path="res://scripts/operations/op_angle_sum.gd" id="10_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://c7riaighvddt3" path="res://assets/necklord.svg" id="10_w4e5f"]
 
 [sub_resource type="Gradient" id="Gradient_74otk"]
@@ -673,11 +674,11 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mdmy2"]
 _data = {
-"RESET": SubResource("Animation_huyb7"),
-"game_won": SubResource("Animation_cku44"),
-"level_won": SubResource("Animation_aeq6t"),
-"nice": SubResource("Animation_gfmbr"),
-"too_bad": SubResource("Animation_ha3rr")
+&"RESET": SubResource("Animation_huyb7"),
+&"game_won": SubResource("Animation_cku44"),
+&"level_won": SubResource("Animation_aeq6t"),
+&"nice": SubResource("Animation_gfmbr"),
+&"too_bad": SubResource("Animation_ha3rr")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_nbkr0"]
@@ -788,13 +789,20 @@ theme = ExtResource("3_4a52f")
 text = "Equality"
 script = ExtResource("5_5dfvc")
 
+[node name="AngleSum" type="Button" parent="BottomUI/Actions"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_4a52f")
+text = "Angle Sum"
+script = ExtResource("10_eb6dy")
+
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_i72tj")
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mdmy2")
+&"": SubResource("AnimationLibrary_mdmy2")
 }
 
 [node name="HeadPivot" type="Node2D" parent="AnimationPlayer"]
