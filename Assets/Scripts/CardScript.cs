@@ -1,0 +1,81 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CardScript : MonoBehaviour
+{
+    public CardScript(int nominator, int denominator)
+    {
+        this.nominator = nominator;
+        this.denominator = denominator;
+    }
+
+    public int nominator { get; private set; } = 1; 
+    public int denominator { get; private set; } = 2;
+    public ActionType actionType { get; private set; } = ActionType.Add;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void OnCardClicked()
+    {
+        Board.Instance.TableCard.Add(this);
+    }
+
+    public void Add(CardScript other)
+    {
+        if (other.actionType is ActionType.Add)
+        {
+            int newDenominator = LeastCommonMultiple(denominator, other.denominator);
+
+            int newNominator = nominator * (newDenominator / denominator) +
+                other.nominator * (newDenominator / other.denominator);
+
+            denominator = newDenominator;
+            nominator = newNominator;
+        }
+        else
+            throw new NotImplementedException();
+    }
+    
+    //ripped from stackoverflow
+    static int LeastCommonMultiple(int a, int b)
+    {
+        return (a / GreatestCommonDivisor(a, b)) * b;
+    }
+
+    static int GreatestCommonDivisor(int a, int b)
+    {
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public enum ActionType
+    {
+        /// <summary>
+        /// +
+        /// </summary>
+        Add,
+
+        /// <summary>
+        /// *
+        /// </summary>
+        Multiply
+    }
+}

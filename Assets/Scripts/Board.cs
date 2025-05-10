@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Board : MonoBehaviour
 {
+    public static Board Instance = new();   
+
+    public CardScript TableCard { get; private set; } = new CardScript(1, 1);
+
     // Start is called before the first frame update
     void Start()
     {
