@@ -9,7 +9,6 @@ public class FunctionPeopleManager : MonoBehaviour
     private FunctionAttributes functionAttributes;
     private ReactToDecision personReact;
     
-    [SerializeField] private UnityEvent onAnswered;
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
 
@@ -27,7 +26,6 @@ public class FunctionPeopleManager : MonoBehaviour
     
     public void Check(bool answer)
     {
-        onAnswered.Invoke();
         if (functionAttributes.hasCorrectAttributes == answer)
         {
             onCorrect.Invoke();

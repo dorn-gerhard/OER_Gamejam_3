@@ -13,7 +13,6 @@ public class RandomizeHair : MonoBehaviour
         
         int typeIndex = Random.Range(0, hairTypes.Count);
         int colorIndex = Random.Range(0, hairColors.Count);
-        Debug.Log($"hair: {typeIndex}, color: {colorIndex}");
         hairSprite.sprite = hairTypes[typeIndex];
         hairSprite.color = hairColors[colorIndex];
     }
