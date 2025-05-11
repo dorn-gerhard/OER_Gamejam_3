@@ -5,10 +5,39 @@ using System.ComponentModel;
 using System.IO;
 using Newtonsoft.Json;
 
-public static class Highscore
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+
+public class Highscore : MonoBehaviour
 {
     static string FilePath => Path.Combine(UnityEngine.Application.dataPath, "Highscores.json");
+    [SerializeField] TMP_Text HighscorePlayers;
+    [SerializeField] TMP_Text HighscoreScores;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        List<Entry> highscores = GetHighscores();
+
+        HighscorePlayers.text = "";
+        HighscoreScores.text = "";
+
+        foreach (var highscore in highscores)
+        {
+            HighscorePlayers.text += highscore.Name + "\n";
+            HighscoreScores.text += highscore.Score + "\n";
+        }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     public static void AddHighscore(string username, int score)
     {
         List<Entry> entries = GetHighscores();

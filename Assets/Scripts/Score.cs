@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    private int currentScore;
+    public int currentScore;
 
     [SerializeField] TMP_Text ScoreText;
     [SerializeField] int ScoreMultiplier = 1;
