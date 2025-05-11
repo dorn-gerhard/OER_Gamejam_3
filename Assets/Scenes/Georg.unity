@@ -2225,6 +2225,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d74c1d094c66afb4d826e39d061d61be, type: 2}
   - {fileID: 11400000, guid: b9fa0da54243c9045bfcf993ad19302e, type: 2}
   - {fileID: 11400000, guid: 47efc24e962288c44ac3f0b8d8098f55, type: 2}
+  - {fileID: 11400000, guid: dccd0191911a87d4ba8b1ca4c2f9b9a1, type: 2}
+  - {fileID: 11400000, guid: 496817e28678cc544aea2818316a1ecc, type: 2}
+  - {fileID: 11400000, guid: bf93f848d7c98eb4f908c17451392d01, type: 2}
+  - {fileID: 11400000, guid: 486016f3ad3d38d4f85435fee86124ee, type: 2}
+  - {fileID: 11400000, guid: 544cccae7ae361d4a93d42a05f90bb03, type: 2}
 --- !u!1 &1395760013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,7 +2753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487434868}
   m_Layer: 0
-  m_Name: '---SFX---'
+  m_Name: ---SFX---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
