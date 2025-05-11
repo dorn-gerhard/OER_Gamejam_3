@@ -20,9 +20,15 @@ public class Board : MonoBehaviour
         TableCard = cardObject.GetComponent<CardScript>();
 
         //set random start value
-        var denominator = (int)Random.Range(2, 5.99f);
-        var nominator = Mathf.Min(denominator - 1, (int)Random.Range(2, 5.99f));
+        
+        var denominator = BoardCardDenominator();
+        var nominator = 1;
 
         TableCard.Setup(nominator, denominator);
+    }
+
+    int BoardCardDenominator()
+    {
+        return (int)Random.Range(2, 5.99f);
     }
 }
