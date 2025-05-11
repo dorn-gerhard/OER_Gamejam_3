@@ -10,6 +10,7 @@ public class ReactToDecision : MonoBehaviour
     [SerializeField] private Sprite sadFace;
     [SerializeField] private Sprite waitingFace;
     [SerializeField] private float MovingSpeed = 5;
+    [SerializeField] private float bobbingFrequency = 7f;
 
     public UnityEvent onReactionStarted;
     public UnityEvent onReactionFinish;
@@ -36,7 +37,8 @@ public class ReactToDecision : MonoBehaviour
     private float timeSinceStartedMoving = 0;
     private IEnumerator movePerson(int decision)
     {
-        while (timeSinceStartedMoving <4)
+        //float bobbingFrequency = 7f;
+        while (timeSinceStartedMoving <2.5f)
         {
 
 
@@ -44,12 +46,12 @@ public class ReactToDecision : MonoBehaviour
 
             if (decision == 0)
             {
-                gameObject.transform.position += new Vector3(-MovingSpeed,0,0)*Time.deltaTime;
+                gameObject.transform.position += new Vector3(-MovingSpeed,0.5f*Mathf.Sin(timeSinceStartedMoving * bobbingFrequency),0)*Time.deltaTime;
 
             }
             else
             {
-                gameObject.transform.position += new Vector3(+MovingSpeed,0,0)*Time.deltaTime;
+                gameObject.transform.position += new Vector3(+MovingSpeed,0.5f*Mathf.Sin(timeSinceStartedMoving * bobbingFrequency),0)*Time.deltaTime;
             }
 
 
@@ -58,9 +60,11 @@ public class ReactToDecision : MonoBehaviour
         onReactionFinish.Invoke();
         yield return null;
     }
-
+    private float TimeCounter = 0;
     private IEnumerator movePersonToPointRoutine(Vector3 GoalPosition)
     {
+        //float TimeCounter = 0;
+        //float bobbingFrequency = 8f;
         while (Mathf.Abs(GoalPosition.x-gameObject.transform.position.x )>1f)
         //while (Vector3.Distance(gameObject.transform.position, GoalPosition) > 1f)
 
@@ -71,12 +75,13 @@ public class ReactToDecision : MonoBehaviour
             Vector3 DirectionGoal = GoalPosition-gameObject.transform.position;
 
             Vector3 DirectionGoalNormalized = DirectionGoal.normalized;
-            gameObject.transform.position += MovingSpeed * new Vector3(DirectionGoalNormalized.x,0, 0) * Time.deltaTime;
             
-            //gameObject.transform.position += MovingSpeed * new Vector3(direction, 0, 0) * Time.deltaTime;
+            gameObject.transform.position += MovingSpeed * new Vector3(DirectionGoalNormalized.x, 0.1f*Mathf.Sin(TimeCounter*bobbingFrequency),0) * Time.deltaTime;
 
+            //gameObject.transform.position += MovingSpeed * new Vector3(direction, 0, 0) * Time.deltaTime;
+            TimeCounter += Time.deltaTime;
         }
-        //yield return null;
+        yield return null;
     }
     public void movePersonToPoint(Vector3 GoalPosition) 
     {
