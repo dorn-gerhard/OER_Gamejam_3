@@ -11,9 +11,14 @@ public class CardScript : MonoBehaviour
     int denominator = 2;
     ActionType actionType = ActionType.Add;
 
-    public void Setup(int nominator, int denominator)
+    public void Setup(int numerator, int denominator)
     {
-        this.nominator = nominator;
+        //make sure all cards are irreducible (e.g. 2/4 -> 1/2)
+        var gcd = GreatestCommonDivisor(numerator, denominator);
+        numerator /= gcd;
+        denominator /= gcd;
+
+        this.nominator = numerator;
         this.denominator = denominator;
 
         UpdateDisplay();
