@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,14 +7,9 @@ public class CardScript : MonoBehaviour
     [SerializeField] TMP_Text CardNumerator;
     [SerializeField] TMP_Text CardDenominator;
 
-    public CardScript(int nominator, int denominator)
-    {
-        Setup(nominator, denominator);
-    }
-
-    public int nominator { get; private set; } = 1;
-    public int denominator { get; private set; } = 2;
-    public ActionType actionType { get; private set; } = ActionType.Add;
+    int nominator = 1;
+    int denominator = 2;
+    ActionType actionType = ActionType.Add;
 
     public void Setup(int nominator, int denominator)
     {
@@ -30,12 +23,6 @@ public class CardScript : MonoBehaviour
     void Start()
     {
         UpdateDisplay();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void OnCardClicked()
@@ -67,15 +54,11 @@ public class CardScript : MonoBehaviour
 
     private void UpdateDisplay()
     {
-        if (CardNumerator != null)
-        {
-            CardNumerator.text = nominator.ToString().Replace("1", "I");
-        }
+        if (CardNumerator == null)
+            return;
 
-        if (CardDenominator != null)
-        {
-            CardDenominator.text = denominator.ToString();
-        }
+        CardNumerator.text = nominator.ToString().Replace("1", "I");
+        CardDenominator.text = denominator.ToString().Replace("1", "I");
     }
 
     bool CanReduce()
