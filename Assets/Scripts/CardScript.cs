@@ -54,12 +54,10 @@ public class CardScript : MonoBehaviour
             denominator = newDenominator;
             numerator = newNominator;
 
-            /*
             if (numerator > denominator) {
                 TimerScript.Instance.AddTime((int)(numerator / denominator));
                 numerator = numerator % denominator;
-            }
-            */
+            }            
 
             UpdateDisplay();
         }
@@ -114,6 +112,11 @@ public class CardScript : MonoBehaviour
     internal void Swap()
     {
         (numerator, denominator) = (denominator, numerator);
+        if (denominator < 0)
+        {
+            numerator = -numerator;
+            denominator = -denominator;
+        }
         UpdateDisplay();
     }
 
