@@ -8,6 +8,7 @@ public class TimerScript : MonoBehaviour
 {
     public static TimerScript Instance;
     [SerializeField] TMP_Text TimerText;
+    [SerializeField] int GameTime;
 
     private float remainingSeconds;
 
@@ -22,7 +23,7 @@ public class TimerScript : MonoBehaviour
         totalTime = 0.0f;
         lastTimeAdd = -1.0f;
 
-        remainingSeconds = 90.0f;
+        remainingSeconds = (float) GameTime;
         UpdateDisplay();
     }
 
