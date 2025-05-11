@@ -56,7 +56,7 @@ public class CardScript : MonoBehaviour
 
             if (numerator > denominator) {
                 TimerScript.Instance.AddTime((int)(numerator / denominator));
-                numerator -= denominator;
+                numerator = numerator % denominator;
             }
 
             UpdateDisplay();

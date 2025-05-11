@@ -22,7 +22,7 @@ public class TimerScript : MonoBehaviour
         totalTime = 0.0f;
         lastTimeAdd = -1.0f;
 
-        remainingSeconds = 30.0f;
+        remainingSeconds = 90.0f;
         UpdateDisplay();
     }
 

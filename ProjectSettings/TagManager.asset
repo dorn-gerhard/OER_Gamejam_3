@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Attributes
   - Card
+  - ActionCard
   layers:
   - Default
   - TransparentFX
