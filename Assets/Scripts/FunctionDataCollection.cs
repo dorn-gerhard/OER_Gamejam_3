@@ -6,27 +6,22 @@ using Random = UnityEngine.Random;
 
 public class FunctionDataCollection : MonoBehaviour
 {
-    public enum Difficulty
-    {
-        EASY,
-        MEDIUM,
-        HARD
-    }
-    
+      
     [SerializeField] private List<FunctionData> easyFunctions;
     [SerializeField] private List<FunctionData> mediumFunctions;
     [SerializeField] private List<FunctionData> hardFunctions;
     
     
-    public FunctionData nextData(Difficulty difficulty)
+    public FunctionData nextData(ComplexityManager.Difficulty difficulty)
     {
+        Debug.Log($"Difficulty: {difficulty}");
         switch (difficulty)
         {
-            case Difficulty.EASY:
+            case ComplexityManager.Difficulty.EASY:
                 return easyFunctions[Random.Range(0, easyFunctions.Count)];
-            case Difficulty.MEDIUM:
+            case ComplexityManager.Difficulty.MEDIUM:
                 return mediumFunctions[Random.Range(0, easyFunctions.Count)];
-            case Difficulty.HARD:
+            case ComplexityManager.Difficulty.HARD:
                 return hardFunctions[Random.Range(0, easyFunctions.Count)];
         }
         throw new Exception("This should be unreachable");

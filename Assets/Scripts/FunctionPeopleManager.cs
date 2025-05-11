@@ -9,6 +9,8 @@ public class FunctionPeopleManager : MonoBehaviour
 {
     [SerializeField] GameObject functionPerson;
 
+
+
     private FunctionDataCollection functionDatas;
     private GameObject currentPerson;
     private FunctionAttributes functionAttributes;
@@ -56,7 +58,7 @@ public class FunctionPeopleManager : MonoBehaviour
         movePerson.movePersonToPoint(MovingGoalPosition.transform.position);
 
         functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
-        functionAttributes.UpdateFunctionData(functionDatas.nextData(FunctionDataCollection.Difficulty.EASY));
+        functionAttributes.UpdateFunctionData(functionDatas.nextData(ComplexityManager.selectedDifficulty));
  
         personReact = currentPerson.GetComponent<ReactToDecision>();
         personReact.onReactionFinish.AddListener(replaceFunctionPerson);

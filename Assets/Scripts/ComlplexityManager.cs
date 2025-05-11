@@ -6,7 +6,7 @@ using UnityEngine;
 public class ComplexityManager : MonoBehaviour
 {
     public static ComplexityManager Instance { get; private set; }
-
+    public static Difficulty selectedDifficulty = Difficulty.EASY;
     public enum Difficulty
     {
        EASY,

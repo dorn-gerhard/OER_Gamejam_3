@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class Workday : MonoBehaviour
 {
+
     public struct WorkdayReport
     {
         public int CorrectPeople;
