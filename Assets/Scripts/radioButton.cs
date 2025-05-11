@@ -8,6 +8,14 @@ public class radioButton : MonoBehaviour
 
     public void turnOff()
     {
-        BackgroundMusic.volume =0f;
+        if (BackgroundMusic.volume == 0f)
+        {
+            BackgroundMusic.volume =0f;
+        }
+        else
+        {
+           BackgroundMusic.volume =0f;
+        }
+        
     }
 }
