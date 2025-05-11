@@ -12,12 +12,20 @@ public class FunctionPeopleManager : MonoBehaviour
     private GameObject currentPerson;
     private FunctionAttributes functionAttributes;
     private ReactToDecision personReact;
-    
+    private ReactToDecision movePerson;
+
     [SerializeField] private Transform functionPersonSpawnTransform;
     [SerializeField] private UnityEvent onAnswerSelected;
     [SerializeField] private UnityEvent onCorrect;
     [SerializeField] private UnityEvent onIncorrect;
+    [SerializeField] private GameObject MovingGoalPosition;
     [SerializeField] private UnityEvent onPersonReplaced;
+    
+    [Header("ConfusionMatrixEvents")]
+    [SerializeField] private UnityEvent onCorrectAccepted;
+    [SerializeField] private UnityEvent onIncorrectAccepted;
+    [SerializeField] private UnityEvent onCorrectDenied;
+    [SerializeField] private UnityEvent onIncorrectDenied;
     
     private void Start()
     {
@@ -27,8 +35,12 @@ public class FunctionPeopleManager : MonoBehaviour
     public void NewFunctionPerson()
     {
         currentPerson = Instantiate(functionPerson, functionPersonSpawnTransform.position, Quaternion.identity);
+        movePerson = currentPerson.GetComponent<ReactToDecision>();
+        movePerson.movePersonToPoint(MovingGoalPosition.transform.position);
+
         functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
         functionAttributes.UpdateFunctionData(functionDatas.nextData());
+ 
         personReact = currentPerson.GetComponent<ReactToDecision>();
         personReact.onReactionFinish.AddListener(replaceFunctionPerson);
     }
@@ -46,10 +58,26 @@ public class FunctionPeopleManager : MonoBehaviour
         onAnswerSelected.Invoke();
         if (functionAttributes.hasCorrectAttributes() == answer)
         {
+            if (answer)
+            {
+                onCorrectAccepted.Invoke();
+            }
+            else
+            {
+                onCorrectDenied.Invoke();
+            }
             onCorrect.Invoke();
         }
         else
         {
+            if (answer)
+            {
+                onIncorrectAccepted.Invoke();
+            }
+            else
+            {
+                onIncorrectDenied.Invoke();
+            }
             onIncorrect.Invoke();
         }
         if (personReact != null)

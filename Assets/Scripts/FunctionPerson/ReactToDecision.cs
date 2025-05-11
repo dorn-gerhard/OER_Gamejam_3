@@ -9,6 +9,7 @@ public class ReactToDecision : MonoBehaviour
     [SerializeField] private Sprite happyFace;
     [SerializeField] private Sprite sadFace;
     [SerializeField] private Sprite waitingFace;
+    [SerializeField] private float MovingSpeed = 5;
 
     public UnityEvent onReactionStarted;
     public UnityEvent onReactionFinish;
@@ -43,12 +44,12 @@ public class ReactToDecision : MonoBehaviour
 
             if (decision == 0)
             {
-                gameObject.transform.position += new Vector3(-2,0,0)*Time.deltaTime;
+                gameObject.transform.position += new Vector3(-MovingSpeed,0,0)*Time.deltaTime;
 
             }
             else
             {
-                gameObject.transform.position += new Vector3(+2,0,0)*Time.deltaTime;
+                gameObject.transform.position += new Vector3(+MovingSpeed,0,0)*Time.deltaTime;
             }
 
 
@@ -57,6 +58,32 @@ public class ReactToDecision : MonoBehaviour
         onReactionFinish.Invoke();
         yield return null;
     }
+
+    private IEnumerator movePersonToPointRoutine(Vector3 GoalPosition)
+    {
+        while (Mathf.Abs(GoalPosition.x-gameObject.transform.position.x )>1f)
+        //while (Vector3.Distance(gameObject.transform.position, GoalPosition) > 1f)
+
+        {
+            Debug.Log("this is the while loop");
+            yield return new WaitForEndOfFrame();
+
+            Vector3 DirectionGoal = GoalPosition-gameObject.transform.position;
+
+            Vector3 DirectionGoalNormalized = DirectionGoal.normalized;
+            gameObject.transform.position += MovingSpeed * new Vector3(DirectionGoalNormalized.x,0, 0) * Time.deltaTime;
+            
+            //gameObject.transform.position += MovingSpeed * new Vector3(direction, 0, 0) * Time.deltaTime;
+
+        }
+        //yield return null;
+    }
+    public void movePersonToPoint(Vector3 GoalPosition) 
+    {
+        StartCoroutine(movePersonToPointRoutine(GoalPosition));
+    }
+
+
     private void getsRejected()
     {
         faceExpressions.sprite = sadFace;
