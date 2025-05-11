@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FunctionDataCollection : MonoBehaviour
 {
@@ -11,7 +13,6 @@ public class FunctionDataCollection : MonoBehaviour
         HARD
     }
     
-    private int currentIndex = -1;
     [SerializeField] private List<FunctionData> easyFunctions;
     [SerializeField] private List<FunctionData> mediumFunctions;
     [SerializeField] private List<FunctionData> hardFunctions;
@@ -22,21 +23,12 @@ public class FunctionDataCollection : MonoBehaviour
         switch (difficulty)
         {
             case Difficulty.EASY:
-                break;
+                return easyFunctions[Random.Range(0, easyFunctions.Count)];
             case Difficulty.MEDIUM:
-                break;
+                return mediumFunctions[Random.Range(0, easyFunctions.Count)];
             case Difficulty.HARD:
-                break;
+                return hardFunctions[Random.Range(0, easyFunctions.Count)];
         }
-
-        if (currentIndex + 2 > easyFunctions.Count) //Index out of Scope
-        {
-            return easyFunctions[0];
-        }
-        else
-        {
-            currentIndex++;
-            return easyFunctions[currentIndex];
-        }
-    }
+        throw new Exception("This should be unreachable");
+     }
 }
