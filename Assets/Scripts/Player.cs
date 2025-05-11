@@ -20,12 +20,18 @@ public class Player : MonoBehaviour
         //generate random hand
         for (int i = 0; i < cardCount; i++)
         {
-            var denominator = (int) Random.Range(2, 5.99f);
-            var nominator = Mathf.Min(denominator - 1, (int) Random.Range(1, 4.99f));
-
-            var cardObject = Instantiate(cardPrefab, gameObject.transform);
-            cardObject.GetComponent<CardScript>().Setup(nominator, denominator);
+            GenerateNewCard();
         }
+    }
+
+    //dirty hack for cards to instantiate themselves (bad habit)
+    internal void GenerateNewCard()
+    {
+        var denominator = (int)Random.Range(2, 5.99f);
+        var nominator = Mathf.Min(denominator - 1, (int)Random.Range(1, 4.99f));
+
+        var cardObject = Instantiate(cardPrefab, gameObject.transform);
+        cardObject.GetComponent<CardScript>().Setup(nominator, denominator);
     }
 
     // Update is called once per frame

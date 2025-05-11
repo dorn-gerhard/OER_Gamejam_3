@@ -30,7 +30,10 @@ public class CardScript : MonoBehaviour
         if (this.gameObject.transform.IsChildOf(Player.Instance.transform))
         {
             Board.Instance.TableCard.Add(this);
+
+            //replace card (apply cool visual effect?)
             Destroy(this.gameObject);
+            Player.Instance.GenerateNewCard();
         }
     }
 
