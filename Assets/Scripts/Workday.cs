@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Workday : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class Workday : MonoBehaviour
     private void Start()
     {
         StartWorkday();
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void StartWorkday()
