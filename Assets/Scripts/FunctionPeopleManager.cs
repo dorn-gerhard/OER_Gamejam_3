@@ -21,6 +21,12 @@ public class FunctionPeopleManager : MonoBehaviour
     [SerializeField] private GameObject MovingGoalPosition;
     [SerializeField] private UnityEvent onPersonReplaced;
     
+    [Header("ConfusionMatrixEvents")]
+    [SerializeField] private UnityEvent onCorrectAccepted;
+    [SerializeField] private UnityEvent onIncorrectAccepted;
+    [SerializeField] private UnityEvent onCorrectDenied;
+    [SerializeField] private UnityEvent onIncorrectDenied;
+    
     private void Start()
     {
         functionDatas = GetComponent<FunctionDataCollection>();
@@ -52,10 +58,26 @@ public class FunctionPeopleManager : MonoBehaviour
         onAnswerSelected.Invoke();
         if (functionAttributes.hasCorrectAttributes() == answer)
         {
+            if (answer)
+            {
+                onCorrectAccepted.Invoke();
+            }
+            else
+            {
+                onCorrectDenied.Invoke();
+            }
             onCorrect.Invoke();
         }
         else
         {
+            if (answer)
+            {
+                onIncorrectAccepted.Invoke();
+            }
+            else
+            {
+                onIncorrectDenied.Invoke();
+            }
             onIncorrect.Invoke();
         }
         if (personReact != null)
