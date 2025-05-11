@@ -269,8 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cd63eb602ac574d965ac61f56acfa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScore: 0
   ScoreText: {fileID: 184969630}
-  ScoreMultiplier: 10
+  ScoreMultiplier: 1
   PenaltyMultiplier: 1
 --- !u!224 &190909805 stripped
 RectTransform:
@@ -1245,6 +1246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f31e0069a675764796331ba3740ae22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UsernameEntry: {fileID: 0}
 --- !u!114 &1266084729
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -41,7 +41,11 @@ public class Highscore : MonoBehaviour
     public static void AddHighscore(string username, int score)
     {
         List<Entry> entries = GetHighscores();
-        entries.Add(new Entry(username, score));
+        
+        if (score > 0)
+        {
+            entries.Add(new Entry(username, score));
+        }
 
         var json = JsonConvert.SerializeObject(entries);
         File.WriteAllText(FilePath, json);
