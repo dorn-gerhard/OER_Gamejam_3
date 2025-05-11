@@ -7,7 +7,7 @@ public class CardScript : MonoBehaviour
     [SerializeField] TMP_Text CardNumerator;
     [SerializeField] TMP_Text CardDenominator;
 
-    int nominator = 1;
+    int numerator = 1;
     int denominator = 2;
     ActionType actionType = ActionType.Add;
 
@@ -18,7 +18,7 @@ public class CardScript : MonoBehaviour
         numerator /= gcd;
         denominator /= gcd;
 
-        this.nominator = numerator;
+        this.numerator = numerator;
         this.denominator = denominator;
 
         UpdateDisplay();
@@ -48,11 +48,11 @@ public class CardScript : MonoBehaviour
         {
             int newDenominator = LeastCommonMultiple(denominator, other.denominator);
 
-            int newNominator = nominator * (newDenominator / denominator) +
-                other.nominator * (newDenominator / other.denominator);
+            int newNominator = numerator * (newDenominator / denominator) +
+                other.numerator * (newDenominator / other.denominator);
 
             denominator = newDenominator;
-            nominator = newNominator;
+            numerator = newNominator;
 
             UpdateDisplay();
         }
@@ -65,20 +65,20 @@ public class CardScript : MonoBehaviour
         if (CardNumerator == null)
             return;
 
-        CardNumerator.text = nominator.ToString().Replace("1", "I");
+        CardNumerator.text = numerator.ToString().Replace("1", "I");
         CardDenominator.text = denominator.ToString().Replace("1", "I");
 
     }
 
     public bool CanReduce(int userDivisor)
     {
-        var gcd = GreatestCommonDivisor(denominator, nominator);
+        var gcd = GreatestCommonDivisor(denominator, numerator);
         return gcd % userDivisor is 0;
     }
 
     public void Reduce(int userDivisor)
     {
-        nominator /= userDivisor;
+        numerator /= userDivisor;
         denominator /= userDivisor;
 
         UpdateDisplay();
@@ -102,6 +102,16 @@ public class CardScript : MonoBehaviour
             a = temp;
         }
         return a;
+    }
+
+    internal void Swap()
+    {
+        (numerator, denominator) = (denominator, numerator);
+    }
+
+    internal void Negate()
+    {
+        numerator = -numerator;
     }
 
     public enum ActionType
