@@ -112,11 +112,13 @@ public class CardScript : MonoBehaviour
     internal void Swap()
     {
         (numerator, denominator) = (denominator, numerator);
+        UpdateDisplay();
     }
 
     internal void Negate()
     {
         numerator = -numerator;
+        UpdateDisplay();
     }
 
     public enum ActionType
