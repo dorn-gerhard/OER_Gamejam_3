@@ -17,6 +17,7 @@ public class Board : MonoBehaviour
         Instance = this;
 
         var cardObject = Instantiate(cardPrefab, gameObject.transform);
+        cardObject.tag = ""; //hack to unregister this as player card
         TableCard = cardObject.GetComponent<CardScript>();
 
         //random fraction

@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject cardPrefab;
 
+    public string Username { get; internal set; } = "";
+
     // Start is called before the first frame update
     void Start()
     {
