@@ -314,6 +314,11 @@ MonoBehaviour:
   happyFace: {fileID: 21300000, guid: 5fcf77eeff0e915408e22362b3b17893, type: 3}
   sadFace: {fileID: 21300000, guid: a1f0649bff19e86418f2a515767ee864, type: 3}
   waitingFace: {fileID: 21300000, guid: 4bdf722aa6de45542938f13e39b1b5dd, type: 3}
+  functionSprite: {fileID: 7544274699687294141}
+  functionBigScale: {x: 0.83, y: 0.83, z: 0.83}
+  functionSmallScale: {x: 0.4, y: 0.4, z: 0.4}
+  MovingSpeed: 5
+  bobbingFrequency: 7
   onReactionStarted:
     m_PersistentCalls:
       m_Calls:
@@ -680,7 +685,7 @@ Transform:
   m_GameObject: {fileID: 7544274699687294141}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: -1.38, z: 0}
+  m_LocalPosition: {x: -0.18, y: -3.4, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

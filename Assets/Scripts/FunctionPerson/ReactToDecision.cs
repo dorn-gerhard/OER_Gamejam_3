@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +11,10 @@ public class ReactToDecision : MonoBehaviour
     [SerializeField] private Sprite happyFace;
     [SerializeField] private Sprite sadFace;
     [SerializeField] private Sprite waitingFace;
+    [SerializeField] private GameObject functionSprite;
+    [SerializeField] private Vector3 functionBigScale = new Vector3(0.7f, 0.7f, 0.7f);
+    [SerializeField] private Vector3 functionSmallScale = new Vector3(0.4f, 0.4f, 0.4f);
+    
     [SerializeField] private float MovingSpeed = 5;
     [SerializeField] private float bobbingFrequency = 7f;
 
@@ -21,6 +27,7 @@ public class ReactToDecision : MonoBehaviour
     private void Start()
     {
         faceExpressions.sprite = waitingFace;
+        functionSprite.transform.localScale = functionSmallScale;
     }
 
     public void doReaction(bool wasAccepted)
@@ -35,6 +42,8 @@ public class ReactToDecision : MonoBehaviour
         {
             getsRejected();
         }
+
+        functionSprite.transform.DOScale(functionSmallScale, 0.15f);
         onReactionStarted.Invoke();
     }
 
@@ -81,6 +90,8 @@ public class ReactToDecision : MonoBehaviour
             //gameObject.transform.position += MovingSpeed * new Vector3(direction, 0, 0) * Time.deltaTime;
             TimeCounter += Time.deltaTime;
         }
+
+        functionSprite.transform.DOScale(functionBigScale, 0.15f);
         onReadyForAnswer.Invoke();
     }
     public void movePersonToPoint(Vector3 GoalPosition) 
