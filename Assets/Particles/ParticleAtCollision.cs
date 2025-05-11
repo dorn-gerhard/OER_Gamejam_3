@@ -8,6 +8,7 @@ namespace Particles
     {
         public ParticleSystem collisionParticles;
         [CanBeNull] public string collisionTag = null;
+        public AudioSource audioSource;
    
         private void OnCollisionEnter(Collision other)
         {
@@ -25,6 +26,8 @@ namespace Particles
                 ps.gameObject.SetActive(true);
                 Destroy(ps.gameObject, ps.main.duration);
             });
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.Play();
         }
     }
 }
