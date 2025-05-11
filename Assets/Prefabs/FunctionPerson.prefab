@@ -321,6 +321,12 @@ MonoBehaviour:
   bobbingFrequency: 7
   onReactionStarted:
     m_PersistentCalls:
+      m_Calls: []
+  onReactionFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  onWalkStarted:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1840409981989810750}
         m_TargetAssemblyTypeName: AudioRandomContainer, Assembly-CSharp
@@ -334,7 +340,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onReactionFinish:
+  onWalkFinish:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1840409981989810750}

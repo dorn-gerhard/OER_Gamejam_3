@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,6 +18,8 @@ public class ReactToDecision : MonoBehaviour
 
     public UnityEvent onReactionStarted;
     public UnityEvent onReactionFinish;
+    public UnityEvent onWalkStarted;
+    public UnityEvent onWalkFinish;
 
     public delegate void ReadyForAnswer();
     public static event ReadyForAnswer onReadyForAnswer;
@@ -45,6 +45,7 @@ public class ReactToDecision : MonoBehaviour
 
         functionSprite.transform.DOScale(functionSmallScale, 0.15f);
         onReactionStarted.Invoke();
+        onWalkStarted.Invoke();
     }
 
     private float timeSinceStartedMoving = 0;
@@ -68,10 +69,12 @@ public class ReactToDecision : MonoBehaviour
             timeSinceStartedMoving += Time.deltaTime;
         }
         onReactionFinish.Invoke();
+        onWalkFinish.Invoke();
     }
     private float TimeCounter = 0;
     private IEnumerator movePersonToPointRoutine(Vector3 GoalPosition)
     {
+        onWalkStarted.Invoke();
         //float TimeCounter = 0;
         //float bobbingFrequency = 8f;
         while (Mathf.Abs(GoalPosition.x-gameObject.transform.position.x )>1f)
@@ -92,6 +95,7 @@ public class ReactToDecision : MonoBehaviour
         }
 
         functionSprite.transform.DOScale(functionBigScale, 0.15f);
+        onWalkFinish.Invoke();
         onReadyForAnswer.Invoke();
     }
     public void movePersonToPoint(Vector3 GoalPosition) 
