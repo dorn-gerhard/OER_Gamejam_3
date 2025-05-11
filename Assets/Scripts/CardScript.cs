@@ -70,21 +70,14 @@ public class CardScript : MonoBehaviour
 
     }
 
-    bool CanReduce()
+    public bool CanReduce(int userDivisor)
     {
         var gcd = GreatestCommonDivisor(denominator, nominator);
-        return gcd is not 1;
+        return gcd % userDivisor is 0;
     }
 
     public void Reduce(int userDivisor)
     {
-        var gcd = GreatestCommonDivisor(denominator, nominator);
-        if (gcd % userDivisor != 0)
-        {
-            // TODO: trigger "fail" sound effect
-            return;
-        }
-
         nominator /= userDivisor;
         denominator /= userDivisor;
 

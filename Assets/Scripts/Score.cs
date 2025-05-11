@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public static Score Instance;
+    private int currentScore;
 
-    // Start is called before the first frame update
     [SerializeField] TMP_Text ScoreText;
+    [SerializeField] int ScoreMultiplier = 1;
+    [SerializeField] int PenaltyMultiplier = 1;
 
-    int currentScore;
+    public static Score Instance;
 
     void Start()
     {
@@ -20,12 +21,19 @@ public class Score : MonoBehaviour
 
     public void Add(int points)
     {
-        currentScore += points;
+        currentScore += ScoreMultiplier * points;
+        Update();
+    }
+
+    public void Punish(int points)
+    {
+        currentScore -= PenaltyMultiplier * points;
         Update();
     }
 
     public void Update()
     {
+        //not localized :(
         ScoreText.text = $"Score: {currentScore}";
     }
 }

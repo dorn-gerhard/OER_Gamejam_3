@@ -22,6 +22,14 @@ public class ChalkScript : MonoBehaviour
 
     public void OnClick()
     {
-        Board.Instance.TableCard.Reduce(ReduceNumber);
+        var tableCard = Board.Instance.TableCard;
+
+        if (!tableCard.CanReduce(ReduceNumber))
+        {
+            // TODO: trigger "fail" sound effect
+            Score.Instance.Punish(1);
+        }
+        else
+            Board.Instance.TableCard.Reduce(ReduceNumber);
     }
 }

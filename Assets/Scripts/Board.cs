@@ -19,16 +19,7 @@ public class Board : MonoBehaviour
         var cardObject = Instantiate(cardPrefab, gameObject.transform);
         TableCard = cardObject.GetComponent<CardScript>();
 
-        //set random start value
-        
-        var denominator = BoardCardDenominator();
-        var nominator = 1;
-
-        TableCard.Setup(nominator, denominator);
-    }
-
-    int BoardCardDenominator()
-    {
-        return (int)Random.Range(2, 5.99f);
+        //random fraction
+        TableCard.Setup(1, (int)Random.Range(2, 5.99f));
     }
 }

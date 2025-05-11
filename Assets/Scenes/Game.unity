@@ -270,6 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 184969630}
+  ScoreMultiplier: 10
+  PenaltyMultiplier: 1
 --- !u!224 &190909805 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 360196095025913164, guid: 0a3b363476aae854eaba96fa62e8651b, type: 3}
