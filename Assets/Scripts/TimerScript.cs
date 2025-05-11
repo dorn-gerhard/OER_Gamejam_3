@@ -27,8 +27,10 @@ public class TImerScript : MonoBehaviour
     private void UpdateDisplay()
     {
         var seconds = (int)(remainingSeconds % 60);
+        var prependZero = seconds <= 9;
+
         var minutes = (int)(remainingSeconds / 60);
-        TimerText.text = "Time: " + minutes.ToString().Replace("1", "I") + ":" + seconds.ToString().Replace("1", "I");
+        TimerText.text = "Time: " + minutes.ToString().Replace("1", "I") + ":" + (prependZero ? "0" : "") + seconds.ToString().Replace("1", "I");
     }
 
 }
