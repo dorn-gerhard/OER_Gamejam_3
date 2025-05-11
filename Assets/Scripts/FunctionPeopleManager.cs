@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,13 +21,29 @@ public class FunctionPeopleManager : MonoBehaviour
     [SerializeField] private UnityEvent onIncorrect;
     [SerializeField] private GameObject MovingGoalPosition;
     [SerializeField] private UnityEvent onPersonReplaced;
+    [SerializeField] private UnityEvent onPersonWaitingForAnswer;
     
     [Header("ConfusionMatrixEvents")]
     [SerializeField] private UnityEvent onCorrectAccepted;
     [SerializeField] private UnityEvent onIncorrectAccepted;
     [SerializeField] private UnityEvent onCorrectDenied;
     [SerializeField] private UnityEvent onIncorrectDenied;
+
+    private void InvokeWaitingEvent()
+    {
+        onPersonWaitingForAnswer.Invoke();
+    }
     
+    private void OnEnable()
+    {
+        ReactToDecision.onReadyForAnswer += InvokeWaitingEvent;
+    }
+
+    private void OnDisable()
+    {
+        ReactToDecision.onReadyForAnswer -= InvokeWaitingEvent;
+    }
+
     private void Start()
     {
         functionDatas = GetComponent<FunctionDataCollection>();
@@ -39,7 +56,7 @@ public class FunctionPeopleManager : MonoBehaviour
         movePerson.movePersonToPoint(MovingGoalPosition.transform.position);
 
         functionAttributes = currentPerson.GetComponent<FunctionAttributes>();
-        functionAttributes.UpdateFunctionData(functionDatas.nextData());
+        functionAttributes.UpdateFunctionData(functionDatas.nextData(FunctionDataCollection.Difficulty.EASY));
  
         personReact = currentPerson.GetComponent<ReactToDecision>();
         personReact.onReactionFinish.AddListener(replaceFunctionPerson);

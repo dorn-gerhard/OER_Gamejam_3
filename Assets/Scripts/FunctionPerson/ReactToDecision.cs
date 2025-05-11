@@ -14,6 +14,10 @@ public class ReactToDecision : MonoBehaviour
 
     public UnityEvent onReactionStarted;
     public UnityEvent onReactionFinish;
+
+    public delegate void ReadyForAnswer();
+    public static event ReadyForAnswer onReadyForAnswer;
+    
     private void Start()
     {
         faceExpressions.sprite = waitingFace;
@@ -40,8 +44,6 @@ public class ReactToDecision : MonoBehaviour
         //float bobbingFrequency = 7f;
         while (timeSinceStartedMoving <2.5f)
         {
-
-
             yield return new WaitForEndOfFrame();
 
             if (decision == 0)
@@ -53,12 +55,10 @@ public class ReactToDecision : MonoBehaviour
             {
                 gameObject.transform.position += new Vector3(+MovingSpeed,0.5f*Mathf.Sin(timeSinceStartedMoving * bobbingFrequency),0)*Time.deltaTime;
             }
-
-
+            
             timeSinceStartedMoving += Time.deltaTime;
         }
         onReactionFinish.Invoke();
-        yield return null;
     }
     private float TimeCounter = 0;
     private IEnumerator movePersonToPointRoutine(Vector3 GoalPosition)
@@ -69,7 +69,7 @@ public class ReactToDecision : MonoBehaviour
         //while (Vector3.Distance(gameObject.transform.position, GoalPosition) > 1f)
 
         {
-            Debug.Log("this is the while loop");
+            //Debug.Log("this is the while loop");
             yield return new WaitForEndOfFrame();
 
             Vector3 DirectionGoal = GoalPosition-gameObject.transform.position;
@@ -81,7 +81,7 @@ public class ReactToDecision : MonoBehaviour
             //gameObject.transform.position += MovingSpeed * new Vector3(direction, 0, 0) * Time.deltaTime;
             TimeCounter += Time.deltaTime;
         }
-        yield return null;
+        onReadyForAnswer.Invoke();
     }
     public void movePersonToPoint(Vector3 GoalPosition) 
     {

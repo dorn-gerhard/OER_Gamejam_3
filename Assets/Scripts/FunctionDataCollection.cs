@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class FunctionDataCollection : MonoBehaviour
 {
-    private int currentIndex = -1;
-    [SerializeField] private List<FunctionData> functionDatas;
-
-    private void Start()
+    public enum Difficulty
     {
-        if (functionDatas == null || functionDatas.Count == 0)
-        {
-            Debug.LogWarning("List of function datas is empty!!");
-        }
+        EASY,
+        MEDIUM,
+        HARD
     }
-    public FunctionData nextData()
+    
+    private int currentIndex = -1;
+    [SerializeField] private List<FunctionData> easyFunctions;
+    [SerializeField] private List<FunctionData> mediumFunctions;
+    [SerializeField] private List<FunctionData> hardFunctions;
+    
+    
+    public FunctionData nextData(Difficulty difficulty)
     {
-
-        if (currentIndex + 2 > functionDatas.Count) //Index out of Scope
+        switch (difficulty)
         {
-            return functionDatas[0];
+            case Difficulty.EASY:
+                break;
+            case Difficulty.MEDIUM:
+                break;
+            case Difficulty.HARD:
+                break;
+        }
+
+        if (currentIndex + 2 > easyFunctions.Count) //Index out of Scope
+        {
+            return easyFunctions[0];
         }
         else
         {
             currentIndex++;
-            return functionDatas[currentIndex];
-            
+            return easyFunctions[currentIndex];
         }
     }
 }
