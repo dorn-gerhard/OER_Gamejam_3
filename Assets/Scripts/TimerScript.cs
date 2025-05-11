@@ -25,7 +25,7 @@ public class TImerScript : MonoBehaviour
         }
         else
         {
-            Highscore.AddHighscore(Player.Instance.Username, Score.Instance.currentScore);
+            Highscore.AddHighscore(Player.Username, Score.Instance.currentScore);
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         }
         UpdateDisplay();
