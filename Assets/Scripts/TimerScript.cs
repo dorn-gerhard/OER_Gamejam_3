@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TImerScript : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class TImerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        remainingSeconds = 90.0f;
+        remainingSeconds = 30.0f;
         UpdateDisplay();
     }
 
@@ -21,6 +22,10 @@ public class TImerScript : MonoBehaviour
         if (remainingSeconds > 0.0f)
         {
             remainingSeconds -= Time.deltaTime;
+        }
+        else
+        {
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         }
         UpdateDisplay();
     }
