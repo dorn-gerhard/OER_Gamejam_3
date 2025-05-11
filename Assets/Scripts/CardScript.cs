@@ -6,8 +6,6 @@ public class CardScript : MonoBehaviour
 {
     [SerializeField] TMP_Text CardNumerator;
     [SerializeField] TMP_Text CardDenominator;
-    [SerializeField] GameObject NegativeSign;
-    [SerializeField] GameObject FractionPosition;
 
     int nominator = 1;
     int denominator = 2;
@@ -70,16 +68,6 @@ public class CardScript : MonoBehaviour
         CardNumerator.text = nominator.ToString().Replace("1", "I");
         CardDenominator.text = denominator.ToString().Replace("1", "I");
 
-        if (nominator < 0)
-        {
-            NegativeSign.SetActive(true);
-            FractionPosition.transform.position += new Vector3(10, 0, 0);
-        }
-        else
-        {
-            NegativeSign.SetActive(false);
-            FractionPosition.transform.position += new Vector3(0, 0, 0);
-        }
     }
 
     bool CanReduce()
