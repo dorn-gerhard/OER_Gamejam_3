@@ -67,17 +67,22 @@ public class CardScript : MonoBehaviour
         return gcd is not 1;
     }
 
-    public void Reduce()
+    public void Reduce(int userDivisor)
     {
         var gcd = GreatestCommonDivisor(denominator, nominator);
+        if (gcd % userDivisor != 0)
+        {
+            // TODO: trigger "fail" sound effect
+            return;
+        }
 
-        nominator /= gcd;
-        denominator /= gcd;
+        nominator /= userDivisor;
+        denominator /= userDivisor;
 
         UpdateDisplay();
 
         //hacky score system
-        Score.Instance.Add(gcd - 1);
+        Score.Instance.Add(userDivisor - 1);
     }
 
     //ripped from stackoverflow

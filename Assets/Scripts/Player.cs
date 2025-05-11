@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         for (int i = 0; i < cardCount; i++)
         {
             var denominator = (int) Random.Range(2, 5.99f);
-            var nominator = Mathf.Min(denominator - 1, (int) Random.Range(2, 5.99f));
+            var nominator = Mathf.Min(denominator - 1, (int) Random.Range(1, 4.99f));
 
             var cardObject = Instantiate(cardPrefab, gameObject.transform);
             cardObject.GetComponent<CardScript>().Setup(nominator, denominator);

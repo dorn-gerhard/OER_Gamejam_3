@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8758aa79da5840746a1366dd495a91bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReduceNumber: {fileID: 7792589226206372375}
+  ReduceNumberText: {fileID: 7792589226206372375}
+  ReduceNumber: 0
 --- !u!1 &8880639408385982317
 GameObject:
   m_ObjectHideFlags: 0
