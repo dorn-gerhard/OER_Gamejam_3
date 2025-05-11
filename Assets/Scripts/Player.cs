@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
+    public static string Username = "";
 
     [SerializeField]
     private int cardCount = 5;
@@ -12,7 +13,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject cardPrefab;
 
-    public string Username { get; internal set; } = "";
 
     // Start is called before the first frame update
     void Start()

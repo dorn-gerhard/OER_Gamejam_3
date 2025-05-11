@@ -23,7 +23,23 @@ public class MenuLogic : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
-        Player.Instance.Username = UsernameEntry.text;
+        Player.Username = UsernameEntry.text;
+
+        //fuck Unity's half-baked C# implementation!!
+        if (string.IsNullOrWhiteSpace(Player.Username.Replace(((char)8203).ToString(), "")))
+        {
+            //semi-random default names
+            var ran = Random.Range(1, 6);
+
+            Player.Username = ran switch
+            {
+                1 => "Spongebob",
+                2 => "Shrek",
+                3 => "McAss",
+                4 => "Baby Shark dodododooo",
+                _ => "Hello Kitty",
+            };
+        }
     }
     
     public void ExitGame()
