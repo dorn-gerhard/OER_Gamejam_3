@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76caa2a8299319d4094261178200b4a8, type: 3}
-  m_Name: TestFunction 1
+  m_Name: FunctionData6 2
   m_EditorClassIdentifier: 
-  functionAttributes: f(x)=x, lineare Funktion
-  functionGraph: {fileID: 21300000, guid: e93476f4240050048a970c8061114010, type: 3}
+  functionAttributes: "f(x)=x^2+7x<br>f\u2019(x)=2x<br>f(0)=0"
+  functionGraph: {fileID: 21300000, guid: 205fa22ded3bf0a4089367514df132cc, type: 3}
   is_correct: 0

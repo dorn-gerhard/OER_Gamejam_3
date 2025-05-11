@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76caa2a8299319d4094261178200b4a8, type: 3}
-  m_Name: FunctionData2
+  m_Name: FunctionData1 2
   m_EditorClassIdentifier: 
-  functionAttributes: 'f(x) = |x|<br> Hat keine Ableitung in 0<br> f(0) = 0 '
-  functionGraph: {fileID: 21300000, guid: a05bc865c7fd341e3a95e5853ab00cc6, type: 3}
+  functionAttributes: f(x) = sin(x)<br>f(0)=0
+  functionGraph: {fileID: 21300000, guid: d863fd138cf287248b2f87f43257a5e6, type: 3}
   is_correct: 1
