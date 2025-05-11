@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76caa2a8299319d4094261178200b4a8, type: 3}
+  m_Name: 01M1_FunctionData2
+  m_EditorClassIdentifier: 
+  functionAttributes: "f(x)=x<sup>3</sup>-2<br>f(2)=8<br>f\u2018(x)=-3x<sup>2"
+  functionGraph: {fileID: 21300000, guid: dc1060e794875dc47b78af2b698605ad, type: 3}
+  is_correct: 0

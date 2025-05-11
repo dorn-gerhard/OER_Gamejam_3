@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76caa2a8299319d4094261178200b4a8, type: 3}
+  m_Name: 06E3_FunctionData 2
+  m_EditorClassIdentifier: 
+  functionAttributes: f(x)=x<sup>3</sup><br>Cubic function
+  functionGraph: {fileID: 21300000, guid: 58d32fb3f97a00040848e08efb9df73e, type: 3}
+  is_correct: 0
