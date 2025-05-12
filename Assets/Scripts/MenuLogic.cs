@@ -35,7 +35,7 @@ public class MenuLogic : MonoBehaviour
             {
                 1 => "Spongebob",
                 2 => "Shrek",
-                3 => "McAss",
+                3 => "Ducktales",
                 4 => "Baby Shark dodododooo",
                 _ => "Hello Kitty",
             };
