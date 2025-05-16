@@ -162,7 +162,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.OER---Game---Jam-3.Frac-it-
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -871,16 +872,16 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: MaturaPlease
+  metroPackageName: FracIt
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Matura Please
+  metroApplicationDescription: Frac It
   wsaImages: {}
-  metroTileShortName: Matura Please
+  metroTileShortName: Frac It
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
