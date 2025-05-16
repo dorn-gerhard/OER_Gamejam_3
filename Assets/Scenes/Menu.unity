@@ -2694,7 +2694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f31e0069a675764796331ba3740ae22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UsernameEntry: {fileID: 0}
+  UsernameEntry: {fileID: 1343143383}
 --- !u!1 &1806483953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,7 +3028,9 @@ MonoBehaviour:
 
     HelloKitty
 
-    GameJamPlayer'
+    GameJamPlayer
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 06db768102ac27c41ad4494e4dd993d3, type: 2}
   m_sharedMaterial: {fileID: 5053110420360934327, guid: 06db768102ac27c41ad4494e4dd993d3, type: 2}
