@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76caa2a8299319d4094261178200b4a8, type: 3}
   m_Name: 02M1_FunctionData6 1
   m_EditorClassIdentifier: 
-  functionAttributes: f(x)=|x|<br>f(0)=0<br>f(-1)=-1
+  functionAttributes: f(x)=|x|<br>f(0)=0<br>f(-1)=1
   functionGraph: {fileID: 21300000, guid: 2536c8d4defd4ee4e81e81b5e6dba2ba, type: 3}
   is_correct: 1
