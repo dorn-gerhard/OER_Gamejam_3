@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Highscore : MonoBehaviour
 {
-    static string FilePath => Path.Combine(UnityEngine.Application.dataPath, "Highscores.json");
+    static string FilePath => Path.Combine(UnityEngine.Application.persistentDataPath, "Highscores.json");
     [SerializeField] TMP_Text HighscorePlayers;
     [SerializeField] TMP_Text HighscoreScores;
 

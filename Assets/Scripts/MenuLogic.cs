@@ -22,7 +22,6 @@ public class MenuLogic : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game", LoadSceneMode.Single);
         Player.Username = UsernameEntry.text;
 
         //fuck Unity's half-baked C# implementation!!
@@ -40,6 +39,8 @@ public class MenuLogic : MonoBehaviour
                 _ => "Hello Kitty",
             };
         }
+        
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
     
     public void ExitGame()
